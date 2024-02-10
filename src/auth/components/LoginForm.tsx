@@ -4,17 +4,10 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { loginFormSchema } from "@/auth/components/formSchema";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import {
-  Form,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormDescription,
-  FormMessage,
-} from "@/components/ui/form";
 
+import { Form } from "@/components/ui/form";
+import InputField from "@/components/InputField";
+import "@/styles/loginForm.scss";
 // 3. Define your form schema.
 
 function LoginForm() {
@@ -34,39 +27,24 @@ function LoginForm() {
   return (
     <>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
-          <FormField
-            control={form.control}
+        <form onSubmit={form.handleSubmit(onSubmit)} className='form'>
+          <InputField
+            form={form.control}
             name='username'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Username</FormLabel>
-                <FormControl>
-                  <Input placeholder='username' {...field} />
-                </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
+            label='Username'
+            placeholder='username'
           />
 
-          <FormField
-            control={form.control}
+          <InputField
+            form={form.control}
             name='password'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Password</FormLabel>
-                <FormControl>
-                  <Input type='password' placeholder='password' {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+            label='Password'
+            placeholder='password'
           />
 
-          <Button type='submit'>Submit</Button>
+          <Button className='button' type='submit'>
+            Submit
+          </Button>
         </form>
       </Form>
     </>
