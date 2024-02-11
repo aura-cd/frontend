@@ -1,9 +1,10 @@
+"use client";
 import React from "react";
-import LoginForm from "@/auth/components/LoginForm";
+import AuthButton from "@/auth/components/AuthButton";
 const page = () => {
   return (
     <div>
-      <LoginForm />
+      <AuthButton />
     </div>
   );
 };
