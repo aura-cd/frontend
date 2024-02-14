@@ -1,8 +1,7 @@
-import SideBar from "@/components/SideBar";
 import React from "react";
 
 const page = () => {
-  return <div>s</div>;
+  return <div>page</div>;
 };
 
 export default page;
