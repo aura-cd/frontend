@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@axa-fr/react-oidc": "^7.17.1",
+    "@emotion/react": "^11.11.3",
     "@hookform/resolvers": "^3.3.4",
+    "@mui/icons-material": "^5.15.10",
     "@mui/material": "^5.15.9",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
