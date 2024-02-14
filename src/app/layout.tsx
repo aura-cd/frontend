@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NextAuthProvider from "@/auth/components/AuthPlovider";
 import Sidebar from "@/components/sidebar/Sidebar";
+import { relative } from "path";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ja'>
-      <body className={inter.className}>
+      <body className={`${inter.className} relative`}>
         <NextAuthProvider>
-          <main>
-            <Sidebar />
-            {children}
-          </main>
+          <Sidebar />
+          <main className='absolute translate-x-[160px]'>{children}</main>
         </NextAuthProvider>
       </body>
     </html>
