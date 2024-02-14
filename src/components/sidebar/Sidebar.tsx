@@ -5,13 +5,8 @@ import { useParams, useRouter } from "next/navigation";
 import { SidebarData } from "./SidebarData";
 import "@/styles/Sidebar.scss";
 import SidebarIcon from "./SidebarIcon";
-interface SidebarDataProps {
-  title: string;
-  icon: ReactNode;
-  link: string;
-}
 
-function Sidebar() {
+const Sidebar: React.FC = () => {
   const router = useRouter();
   const params = useParams();
 
@@ -37,6 +32,6 @@ function Sidebar() {
       </ul>
     </div>
   );
-}
+};
 
 export default Sidebar;
