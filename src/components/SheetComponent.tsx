@@ -15,7 +15,7 @@ import { Children } from "react";
 
 import { ReactNode } from "react";
 
-export function SheetDemo({
+function SheetComponent({
   openButton,
   closeButton,
   children,
@@ -23,7 +23,7 @@ export function SheetDemo({
   title,
 }: {
   openButton: ReactNode;
-  closeButton: ReactNode;
+  closeButton: string;
   children: ReactNode;
   description: string;
   title: string;
@@ -46,3 +46,5 @@ export function SheetDemo({
     </Sheet>
   );
 }
+
+export default SheetComponent;

@@ -1,10 +1,18 @@
 import React from "react";
 import { TableData } from "@/mock/TableData";
-import { SheetDemo } from "@/components/SheetComponent";
+import SheetComponent from "@/components/SheetComponent";
+import { Button } from "@/components/ui/button";
 const page = () => {
   return (
     <>
-      <SheetDemo />
+      <SheetComponent
+        openButton={<Button>Open Sheet</Button>}
+        closeButton='Close Sheet'
+        description='This is a sheet component'
+        title='Sheet Component'
+      >
+        tesss
+      </SheetComponent>
     </>
   );
 };
