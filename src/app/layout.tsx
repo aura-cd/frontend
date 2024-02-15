@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/sidebar/Sidebar";
-import { relative } from "path";
-import AuthStatus from "@/lib/auth/authStatus";
-import SessionProviderWrapper from "@/lib/auth/sessionProviderWrapper";
+import AuthStatus from "@/components/auth/authStatus";
+import SessionProviderWrapper from "@/components/auth/sessionProviderWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
