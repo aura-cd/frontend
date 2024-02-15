@@ -1,10 +1,11 @@
-import GeneralTable from "@/components/Table/GeneralTable";
 import React from "react";
 import { TableData } from "@/mock/TableData";
+import { TableDemo } from "@/components/Table/GeneralTable";
 const page = () => {
   return (
     <>
-      <GeneralTable title={"General Table"} TableData={TableData} />
+      <h1>Table Demo</h1>
+      <TableDemo />
     </>
   );
 };
