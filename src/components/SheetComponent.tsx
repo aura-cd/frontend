@@ -11,37 +11,35 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { Children } from "react";
 
-export function SheetDemo() {
+import { ReactNode } from "react";
+
+export function SheetDemo({
+  openButton,
+  closeButton,
+  children,
+  description,
+  title,
+}: {
+  openButton: ReactNode;
+  closeButton: ReactNode;
+  children: ReactNode;
+  description: string;
+  title: string;
+}) {
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button variant='outline'>Open</Button>
-      </SheetTrigger>
+      <SheetTrigger asChild>{openButton}</SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save whe done.
-          </SheetDescription>
+          <SheetTitle>{title}</SheetTitle>
+          <SheetDescription>{description}</SheetDescription>
         </SheetHeader>
-        <div className='grid gap-4 py-4'>
-          <div className='grid grid-cols-4 items-center gap-4'>
-            <Label htmlFor='name' className='text-right'>
-              Name
-            </Label>
-            <Input id='name' value='Pedro Duarte' className='col-span-3' />
-          </div>
-          <div className='grid grid-cols-4 items-center gap-4'>
-            <Label htmlFor='username' className='text-right'>
-              Username
-            </Label>
-            <Input id='username' value='@peduarte' className='col-span-3' />
-          </div>
-        </div>
+        {children}
         <SheetFooter>
           <SheetClose asChild>
-            <Button type='submit'>Save changes</Button>
+            <Button type='submit'>{closeButton}</Button>
           </SheetClose>
         </SheetFooter>
       </SheetContent>
