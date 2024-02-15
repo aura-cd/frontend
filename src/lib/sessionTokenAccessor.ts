@@ -6,6 +6,7 @@ export async function getAccessToken() {
   const session: any = await getServerSession(authOptions);
 
   if (session) {
+    // トークンを復号化
     const accessTokenDecrypted = decrypt(session.accessToken);
   }
   return null;
@@ -14,6 +15,7 @@ export async function getAccessToken() {
 export async function getIdToken() {
   const session: any = await getServerSession(authOptions);
   if (session) {
+    // トークンを復号化
     const idTokenDecrypted = decrypt(session.idToken);
     return idTokenDecrypted;
   }

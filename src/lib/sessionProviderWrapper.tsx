@@ -1,5 +1,5 @@
 "use client";
-
+//provider
 import { SessionProvider } from "next-auth/react";
 
 const SessionProviderWrapper = ({
