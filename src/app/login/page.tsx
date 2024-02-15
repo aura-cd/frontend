@@ -1,11 +1,7 @@
 "use client";
 import React from "react";
 const page = () => {
-  return (
-    <div>
-      <AuthButton />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default page;
