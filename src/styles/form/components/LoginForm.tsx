@@ -2,7 +2,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { loginFormSchema } from "@/form/components/formSchema";
+import { loginFormSchema } from "@/styles/form/components/formSchema";
 import { Button } from "@/components/ui/button";
 
 import { Form } from "@/components/ui/form";
@@ -11,11 +11,10 @@ import "@/styles/loginForm.scss";
 // 3. Define your form schema.
 
 function LoginForm() {
-  // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof loginFormSchema>) {
     console.log(values);
   }
-  // 1. Define your form.
+
   const form = useForm<z.infer<typeof loginFormSchema>>({
     resolver: zodResolver(loginFormSchema),
     defaultValues: {
