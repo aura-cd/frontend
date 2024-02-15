@@ -1,11 +1,10 @@
 import React from "react";
 import { TableData } from "@/mock/TableData";
-import { TableDemo } from "@/components/Table/GeneralTable";
+import { SheetDemo } from "@/components/SheetComponent";
 const page = () => {
   return (
     <>
-      <h1>Table Demo</h1>
-      <TableDemo />
+      <SheetDemo />
     </>
   );
 };
