@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import NextAuthProvider from "@/auth/components/AuthPlovider";
 import Sidebar from "@/components/sidebar/Sidebar";
 import { relative } from "path";
 
@@ -20,10 +19,8 @@ export default function RootLayout({
   return (
     <html lang='ja'>
       <body className={`${inter.className} relative`}>
-        <NextAuthProvider>
-          <Sidebar />
-          <main className='absolute translate-x-[160px]'>{children}</main>
-        </NextAuthProvider>
+        <Sidebar />
+        <main className='absolute translate-x-[160px]'>{children}</main>
       </body>
     </html>
   );
