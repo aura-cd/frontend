@@ -2,17 +2,11 @@ import React from "react";
 import { TableData } from "@/mock/TableData";
 import SheetComponent from "@/components/SheetComponent";
 import { Button } from "@/components/ui/button";
+import TabComponent from "@/components/TabComponent";
 const page = () => {
   return (
     <>
-      <SheetComponent
-        openButton={<Button>Open Sheet</Button>}
-        closeButton='Close Sheet'
-        description='This is a sheet component'
-        title='Sheet Component'
-      >
-        tesss
-      </SheetComponent>
+      <TabComponent />
     </>
   );
 };
