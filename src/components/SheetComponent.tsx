@@ -48,3 +48,12 @@ function SheetComponent({
 }
 
 export default SheetComponent;
+
+// <SheetComponent
+// openButton={<Button>Open Sheet</Button>}
+// closeButton='Close Sheet'
+// description='This is a sheet component'
+// title='Sheet Component'
+// >
+// tesss
+// </SheetComponent>
