@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import TabComponent from "@/components/TabComponent";
 //配列の長さを合わせる
 type FixedLengthArray<
-  T extends readonly any[],
+  T extends string[] | ReactNode[],
   N extends number
 > = N extends T["length"] ? T : never;
 
