@@ -1,10 +1,9 @@
-import Editor from "@/components/Editor";
-import { useState } from "react";
+import AccordionComponent from "@/components/AccordionComponent";
 
 const page = () => {
   return (
     <div>
-      <Editor />
+      <AccordionComponent />
     </div>
   );
 };
