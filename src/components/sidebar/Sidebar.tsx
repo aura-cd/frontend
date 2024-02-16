@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { SidebarData } from "./SidebarData";
 import "@/styles/Sidebar.scss";
 import SidebarIcon from "./SidebarIcon";
+import AuthStatus from "../auth/authStatus";
 
 const Sidebar = () => {
   const router = useRouter();
@@ -31,6 +32,7 @@ const Sidebar = () => {
             );
           })}
         </ul>
+        <AuthStatus />
       </div>
     </>
   );

@@ -1,10 +1,6 @@
 import AccordionComponent from "@/components/AccordionComponent";
 
 const page = () => {
-  return (
-    <div>
-      <AccordionComponent />
-    </div>
-  );
+  return <div></div>;
 };
 export default page;

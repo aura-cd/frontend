@@ -23,10 +23,7 @@ export default function RootLayout({
       <html lang='ja'>
         <body className={`${inter.className} relative`}>
           <Sidebar />
-          <main className='absolute translate-x-[160px]'>
-            <AuthStatus />
-            {children}
-          </main>
+          <main className='absolute translate-x-[160px]'>{children}</main>
         </body>
       </html>
     </SessionProviderWrapper>
