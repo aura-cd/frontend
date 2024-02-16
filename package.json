@@ -11,6 +11,7 @@
   "dependencies": {
     "@axa-fr/react-oidc": "^7.17.1",
     "@emotion/react": "^11.11.3",
+    "@focus-reactive/react-yaml": "^1.1.2",
     "@hookform/resolvers": "^3.3.4",
     "@mui/icons-material": "^5.15.10",
     "@mui/material": "^5.15.9",
