@@ -5,23 +5,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const data = [
-  {
-    title: "Is it accessible?",
-    content: "Yes. It adheres to the WAI-ARIA design pattern.",
-  },
-  {
-    title: "Is it styled?",
-    content:
-      "Yes. It comes with default styles that matches the other components&apos; aesthetic.",
-  },
-  {
-    title: "Is it animated?",
-    content: "Yes. animated by default, but you can disable it if you prefer.",
-  },
-];
-
-function AccordionComponent() {
+interface AccordionComponentProps {
+  data: [{ title: string; content: string }];
+}
+function AccordionComponent(props: AccordionComponentProps) {
+  const { data } = props;
   return (
     <Accordion type='single' collapsible className='w-full'>
       {data.map((item, index) => (
