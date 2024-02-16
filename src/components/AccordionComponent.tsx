@@ -26,12 +26,8 @@ function AccordionComponent() {
     <Accordion type='single' collapsible className='w-full'>
       {data.map((item, index) => (
         <AccordionItem key={index} className='mb-4' value={`item-${index}`}>
-          <AccordionTrigger className='bg-gray-100 p-4'>
-            {item.title}
-          </AccordionTrigger>
-          <AccordionContent className='bg-gray-200 p-4'>
-            {item.content}
-          </AccordionContent>
+          <AccordionTrigger>{item.title}</AccordionTrigger>
+          <AccordionContent>{item.content}</AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>
