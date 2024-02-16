@@ -1,17 +1,31 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const TabComponent = () => {
+interface TabComponentProps {
+  tabValue: string[];
+  content: ReactNode[];
+}
+
+const TabComponent = (props: TabComponentProps) => {
+  const { tabValue, content } = props;
   return (
     <Tabs defaultValue='account' className='w-[400px]'>
       <TabsList>
-        <TabsTrigger value='account'>Account</TabsTrigger>
-        <TabsTrigger value='password'>Password</TabsTrigger>
+        {tabValue &&
+          tabValue.map((tab: string) => (
+            <TabsTrigger key={tab} value={tab}>
+              {tab}
+            </TabsTrigger>
+          ))}
       </TabsList>
-      <TabsContent value='account'>
-        Make changes to your account here.
-      </TabsContent>
-      <TabsContent value='password'>Change your password here.</TabsContent>
+
+      {content &&
+        content.map((con: ReactNode, index: number) => (
+          //@ts-ignore
+          <TabsContent key={index} value={tabValue[index]}>
+            {con}
+          </TabsContent>
+        ))}
     </Tabs>
   );
 };
