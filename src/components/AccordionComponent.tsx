@@ -6,12 +6,12 @@ import {
 } from "@/components/ui/accordion";
 
 interface AccordionComponentProps {
-  data: [{ title: string; content: string }];
+  data: { title: string; content: string }[];
 }
 function AccordionComponent(props: AccordionComponentProps) {
   const { data } = props;
   return (
-    <Accordion type='single' collapsible className='w-full'>
+    <Accordion type='single' collapsible className='container'>
       {data.map((item, index) => (
         <AccordionItem key={index} className='mb-4' value={`item-${index}`}>
           <AccordionTrigger>{item.title}</AccordionTrigger>
