@@ -32,7 +32,13 @@ const Sidebar = () => {
             );
           })}
         </ul>
-        <AuthStatus />
+        <div
+          style={{
+            margin: "0,auto",
+          }}
+        >
+          <AuthStatus />
+        </div>
       </div>
     </>
   );

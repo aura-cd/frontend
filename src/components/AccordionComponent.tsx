@@ -1,24 +1,33 @@
+import "@/styles/componentStyles/accordion.scss";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
 interface AccordionComponentProps {
   data: { title: string; content: string }[];
 }
 function AccordionComponent(props: AccordionComponentProps) {
   const { data } = props;
   return (
-    <Accordion type='single' collapsible className='container'>
-      {data.map((item, index) => (
-        <AccordionItem key={index} className='mb-4' value={`item-${index}`}>
-          <AccordionTrigger>{item.title}</AccordionTrigger>
-          <AccordionContent>{item.content}</AccordionContent>
-        </AccordionItem>
-      ))}
-    </Accordion>
+    <div className='container'>
+      <Accordion type='single' collapsible>
+        {data.map((item, index) => (
+          <AccordionItem
+            key={index}
+            className='itemContainer'
+            value={`item-${index}`}
+          >
+            <AccordionTrigger className='trigger'>
+              {item.title}
+            </AccordionTrigger>
+            <AccordionContent>{item.content}</AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </div>
   );
 }
 

@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/sidebar/Sidebar";
 
-import AuthStatus from "@/components/auth/authStatus";
 import SessionProviderWrapper from "@/components/auth/sessionProviderWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,9 +20,10 @@ export default function RootLayout({
   return (
     <SessionProviderWrapper>
       <html lang='ja'>
-        <body className={`${inter.className} relative`}>
+        <body className={`${inter.className} flex direction-normal `}>
           <Sidebar />
-          <main className='absolute translate-x-[160px]'>{children}</main>
+
+          <main className='flex grid-rows-1 w-[90%]'>{children}</main>
         </body>
       </html>
     </SessionProviderWrapper>

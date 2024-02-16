@@ -1,5 +1,6 @@
 import AccordionComponent from "@/components/AccordionComponent";
 import React from "react";
+import "@/styles/pageStyles/home.scss";
 const accordionData = [
   {
     title: "Title 1",

@@ -30,7 +30,6 @@ export default function AuthStatus() {
   } else if (session) {
     return (
       <div className='my-3'>
-        Logged in as
         <span className='text-yellow-100'>{session.user?.email}</span>{" "}
         <button
           className='bg-blue-900 font-bold text-white py-1 px-2 rounded border border-gray-50'
