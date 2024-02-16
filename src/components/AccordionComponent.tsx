@@ -5,28 +5,35 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+const data = [
+  {
+    title: "Is it accessible?",
+    content: "Yes. It adheres to the WAI-ARIA design pattern.",
+  },
+  {
+    title: "Is it styled?",
+    content:
+      "Yes. It comes with default styles that matches the other components&apos; aesthetic.",
+  },
+  {
+    title: "Is it animated?",
+    content: "Yes. animated by default, but you can disable it if you prefer.",
+  },
+];
+
 function AccordionComponent() {
   return (
     <Accordion type='single' collapsible className='w-full'>
-      <AccordionItem value='item-1'>
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value='item-2'>
-        <AccordionTrigger>Is it styled?</AccordionTrigger>
-        <AccordionContent>
-          Yes. It comes with default styles that matches the other
-          components&apos; aesthetic.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value='item-3'>
-        <AccordionTrigger>Is it animated?</AccordionTrigger>
-        <AccordionContent>
-          Yes. animated by default, but you can disable it if you prefer.
-        </AccordionContent>
-      </AccordionItem>
+      {data.map((item, index) => (
+        <AccordionItem key={index} className='mb-4' value={`item-${index}`}>
+          <AccordionTrigger className='bg-gray-100 p-4'>
+            {item.title}
+          </AccordionTrigger>
+          <AccordionContent className='bg-gray-200 p-4'>
+            {item.content}
+          </AccordionContent>
+        </AccordionItem>
+      ))}
     </Accordion>
   );
 }
