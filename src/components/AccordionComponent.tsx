@@ -20,9 +20,7 @@ function AccordionComponent(props: AccordionComponentProps) {
             className='itemContainer'
             value={`item-${index}`}
           >
-            <AccordionTrigger className='trigger'>
-              {item.title}
-            </AccordionTrigger>
+            <AccordionTrigger className='title'>{item.title}</AccordionTrigger>
             <AccordionContent>{item.content}</AccordionContent>
           </AccordionItem>
         ))}
