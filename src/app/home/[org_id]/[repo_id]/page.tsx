@@ -5,7 +5,7 @@ import ButtonArea from "../../components/ButtonArea";
 
 const page = () => {
   return (
-    <div>
+    <div className='container'>
       <Breadcrumb />
       <div>
         <div>
