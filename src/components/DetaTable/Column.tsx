@@ -9,7 +9,7 @@ import {
 } from "@radix-ui/react-dropdown-menu";
 import { CaretSortIcon, DotsHorizontalIcon } from "@radix-ui/react-icons";
 import { ColumnDef } from "@tanstack/react-table";
-import { Payment } from "./DataTableComponent";
+import { Payment } from "./Types";
 import { Button } from "../ui/button";
 
 export const columns: ColumnDef<Payment>[] = [
