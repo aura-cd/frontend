@@ -6,12 +6,11 @@ import ButtonArea from "../../components/ButtonArea";
 
 const page = () => {
   return (
-    <div className='container'>
+    <div>
       <Breadcrumb />
       <div>
-        <div className='tableContainer '>
+        <div>
           <ButtonArea />
-
           <DataTableComponent />
         </div>
       </div>
