@@ -21,7 +21,7 @@ const page = () => {
     },
   ];
   return (
-    <div className='container'>
+    <div>
       <Breadcrumb />
       <div>
         <ButtonArea />

@@ -1,5 +1,5 @@
 import Breadcrumb from "@/components/Breadcrumb";
-import "@/styles/pageStyles/home.scss";
+import "@/styles/componentStyles/appButton.scss";
 import ButtonArea from "./components/ButtonArea";
 import AccordionComponent from "@/components/AccordionComponent";
 import { accordionData } from "./components/data";

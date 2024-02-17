@@ -1,7 +1,6 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import DataTableComponent from "@/components/DetaTable/DataTableComponent";
 import React from "react";
-import "@/styles/pageStyles/repoPage.scss";
 import ButtonArea from "../../components/ButtonArea";
 
 const page = () => {
@@ -11,7 +10,7 @@ const page = () => {
       <div>
         <div>
           <ButtonArea />
-          <DataTableComponent pageSize={8} />
+          <DataTableComponent pageSize={5} />
         </div>
       </div>
     </div>
