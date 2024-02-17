@@ -2,10 +2,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { loginFormSchema } from "@/components/form/components/formSchema";
+import { loginFormSchema } from "@/components/form/formSchema";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
-import InputField from "@/components/InputField";
+import InputField from "@/components/form/InputField";
 import "@/styles/loginForm.scss";
 // 3. Define your form schema.
 

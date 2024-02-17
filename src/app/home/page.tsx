@@ -1,12 +1,17 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import DataTableComponent from "@/components/DetaTable/DataTableComponent";
-import React from "react";
-
+import "@/styles/pageStyles/home.scss";
+import ButtonArea from "./ButtonArea";
+import AccordionComponent from "@/components/AccordionComponent";
+import { accordionData } from "./data";
 const page = () => {
   return (
-    <div>
+    <div className='container'>
       <Breadcrumb />
-      <DataTableComponent />
+      <div className='mainContainer'>
+        <ButtonArea />
+        <AccordionComponent data={accordionData} />
+      </div>
     </div>
   );
 };
