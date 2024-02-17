@@ -2,11 +2,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import React from "react";
 
 const page = () => {
-  return (
-    <div>
-      <Breadcrumb />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default page;
