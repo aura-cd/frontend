@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/table";
 import useTableHooks from "./useTableHooks";
 
-function DataTableComponent(props: { colSpan: number }) {
+function DataTableComponent() {
   const { table } = useTableHooks();
   return (
     <div className='container'>
@@ -69,7 +69,10 @@ function DataTableComponent(props: { colSpan: number }) {
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={props.colSpan} className='h-24 text-center'>
+                <TableCell
+                  colSpan={columns.length}
+                  className='h-24 text-center'
+                >
                   No results.
                 </TableCell>
               </TableRow>
@@ -78,10 +81,6 @@ function DataTableComponent(props: { colSpan: number }) {
         </Table>
       </div>
       <div className='flex items-center justify-end space-x-2 py-4'>
-        <div className='flex-1 text-sm text-muted-foreground'>
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
-        </div>
         <div className='space-x-2'>
           <Button
             variant='outline'

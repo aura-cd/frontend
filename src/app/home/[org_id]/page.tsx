@@ -26,7 +26,7 @@ const page = () => {
       <div>
         <ButtonArea />
         <TableComponent data={data} />
-        <DataTableComponent colSpan={3} />
+        <DataTableComponent />
       </div>
     </div>
   );
