@@ -16,8 +16,10 @@ import {
 } from "@/components/ui/table";
 import useTableHooks from "./useTableHooks";
 
-function DataTableComponent() {
-  const { table } = useTableHooks();
+function DataTableComponent(props: { pageSize: number }) {
+  const { table } = useTableHooks({
+    pageSize: props.pageSize,
+  });
   return (
     <div className='container'>
       <div className='flex items-center py-4'>

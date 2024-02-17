@@ -12,7 +12,7 @@ import {
 } from "@tanstack/react-table";
 import { data } from "./Datas";
 import { columns } from "./Column";
-const useTableHooks = () => {
+const useTableHooks = (props: { pageSize: number }) => {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
@@ -38,7 +38,7 @@ const useTableHooks = () => {
       rowSelection,
       pagination: {
         pageIndex: 0,
-        pageSize: 5,
+        pageSize: props.pageSize,
       },
     },
   });

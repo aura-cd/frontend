@@ -11,7 +11,7 @@ const page = () => {
       <div>
         <div>
           <ButtonArea />
-          <DataTableComponent />
+          <DataTableComponent pageSize={8} />
         </div>
       </div>
     </div>
