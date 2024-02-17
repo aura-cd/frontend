@@ -1,6 +1,7 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import TableComponent from "@/components/TableComponent";
 import React from "react";
+import ButtonArea from "../components/ButtonArea";
 
 const page = () => {
   const header = ["Name", "Deployments"];
@@ -22,7 +23,8 @@ const page = () => {
     <div className='container'>
       <Breadcrumb />
       <div className='mainContainer'>
-        <TableComponent data={data} header={header} />
+        <ButtonArea />
+        <TableComponent data={data} />
       </div>
     </div>
   );

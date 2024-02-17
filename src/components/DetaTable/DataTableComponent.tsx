@@ -1,16 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { ChevronDownIcon } from "@radix-ui/react-icons";
 import { flexRender } from "@tanstack/react-table";
 import { columns } from "./Column";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import "@/styles/componentStyles/dataTable.scss";
 import { Input } from "@/components/ui/input";
 import {
   Table,
@@ -25,7 +19,7 @@ import useTableHooks from "./useTableHooks";
 function DataTableComponent() {
   const { table } = useTableHooks();
   return (
-    <div className='w-full'>
+    <div className='container'>
       <div className='flex items-center py-4'>
         <Input
           placeholder='Filter emails...'
