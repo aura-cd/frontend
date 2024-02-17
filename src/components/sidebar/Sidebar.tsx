@@ -5,7 +5,8 @@ import { useParams, useRouter } from "next/navigation";
 import { SidebarData } from "./SidebarData";
 import "@/styles/componentStyles/Sidebar.scss";
 import SidebarIcon from "./SidebarIcon";
-import AuthStatus from "@/components/auth/AuthStatus";
+import AuthStatus from "@/components/auth/authStatus";
+import Link from "next/link";
 
 const Sidebar = () => {
   const router = useRouter();
@@ -18,17 +19,16 @@ const Sidebar = () => {
         <ul className='SidebarList'>
           {SidebarData.map(({ title, icon, link }) => {
             return (
-              <li
-                key={link}
-                id={link === params.page ? "active" : ""}
-                className='row'
-                onClick={() => {
-                  router.push(link);
-                }}
-              >
-                <div id='icon'>{icon}</div>
-                <div id='title'>{title}</div>
-              </li>
+              <Link href={link} key={link}>
+                <li
+                  key={link}
+                  id={link === params.page ? "active" : ""}
+                  className='row'
+                >
+                  <div id='icon'>{icon}</div>
+                  <div id='title'>{title}</div>
+                </li>
+              </Link>
             );
           })}
         </ul>

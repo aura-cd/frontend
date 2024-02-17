@@ -11,7 +11,7 @@ const Breadcrumb = () => {
     <div className='flex items-center text-sm px-4 w-full'>
       {/* ホームアイコンとして "/" へのリンクを表示 */}
       <Link href='/' className='links'>
-        root{" "}
+        root
       </Link>
       {/* 現在のURLを「/」で分割し、各パスセグメントを処理 */}
       {router.split("/").map((path: any, index: number) => {
@@ -20,13 +20,7 @@ const Breadcrumb = () => {
           joinedPath += path + "/";
           return (
             <Link key={index} href={`/${joinedPath}`}>
-              <div className='links'>/ {path}</div>
-            </Link>
-          );
-        } else if (router.split("/").length <= 2) {
-          return (
-            <Link key={index} href={`/${joinedPath}`}>
-              <div className='links'>/ {path}</div>
+              <div className='links'>/{path}</div>
             </Link>
           );
         }
