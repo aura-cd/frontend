@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
-import "@/styles/pageStyles/home.scss";
+import "@/styles/componentStyles/appButton.scss";
 
 const InstallAppButton = () => {
   return (

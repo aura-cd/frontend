@@ -1,16 +1,13 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-
+import "@/styles/componentStyles/table.scss";
 interface TableComponentProps {
-  header: string[];
   data: {
     name: string;
     deployments: number;
@@ -18,23 +15,20 @@ interface TableComponentProps {
 }
 
 function TableDemo(props: TableComponentProps) {
-  const { header, data } = props;
+  const { data } = props;
   return (
-    <Table>
+    <Table className='table'>
       <TableHeader>
         <TableRow>
-          {header.map((head) => (
-            <TableHead key={head} className='w-[100px]'>
-              {head}
-            </TableHead>
-          ))}
+          <TableHead className='w-[300px]'>Name</TableHead>
+          <TableHead className='header-deployments'>Deployments</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((row) => (
+        {data.map((row: any) => (
           <TableRow key={row.name}>
             <TableCell>{row.name}</TableCell>
-            <TableCell>{row.deployments}</TableCell>
+            <TableCell className='row-deployments'>{row.deployments}</TableCell>
           </TableRow>
         ))}
       </TableBody>

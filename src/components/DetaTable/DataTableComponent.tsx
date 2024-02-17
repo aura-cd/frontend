@@ -1,16 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { ChevronDownIcon } from "@radix-ui/react-icons";
 import { flexRender } from "@tanstack/react-table";
 import { columns } from "./Column";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import "@/styles/componentStyles/dataTable.scss";
 import { Input } from "@/components/ui/input";
 import {
   Table,
@@ -22,16 +16,18 @@ import {
 } from "@/components/ui/table";
 import useTableHooks from "./useTableHooks";
 
-function DataTableComponent() {
-  const { table } = useTableHooks();
+function DataTableComponent(props: { pageSize: number }) {
+  const { table } = useTableHooks({
+    pageSize: props.pageSize,
+  });
   return (
-    <div className='w-full'>
+    <div className='container'>
       <div className='flex items-center py-4'>
         <Input
-          placeholder='Filter emails...'
-          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
+          placeholder='Filter Name...'
+          value={(table.getColumn("Name")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
+            table.getColumn("Name")?.setFilterValue(event.target.value)
           }
           className='max-w-sm'
         />
@@ -87,10 +83,6 @@ function DataTableComponent() {
         </Table>
       </div>
       <div className='flex items-center justify-end space-x-2 py-4'>
-        <div className='flex-1 text-sm text-muted-foreground'>
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
-        </div>
         <div className='space-x-2'>
           <Button
             variant='outline'

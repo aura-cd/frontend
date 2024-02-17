@@ -1,13 +1,17 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import DataTableComponent from "@/components/DetaTable/DataTableComponent";
 import React from "react";
+import ButtonArea from "../../components/ButtonArea";
 
 const page = () => {
   return (
     <div className='container'>
       <Breadcrumb />
-      <div className='mainContainer'>
-        <DataTableComponent />
+      <div>
+        <div>
+          <ButtonArea />
+          <DataTableComponent pageSize={5} />
+        </div>
       </div>
     </div>
   );
