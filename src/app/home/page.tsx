@@ -7,7 +7,7 @@ const page = () => {
   return (
     <div className='container'>
       <Breadcrumb />
-      <div className='mainContainer'>
+      <div>
         <ButtonArea />
         <AccordionComponent data={accordionData} />
       </div>

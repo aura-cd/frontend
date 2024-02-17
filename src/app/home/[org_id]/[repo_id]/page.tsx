@@ -8,7 +8,7 @@ const page = () => {
   return (
     <div className='container'>
       <Breadcrumb />
-      <div className='mainContainer'>
+      <div>
         <div className='tableContainer '>
           <ButtonArea />
 
