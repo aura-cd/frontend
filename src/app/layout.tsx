@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/sidebar/Sidebar";
+import Breadcrumb from "@/components/Breadcrumb";
 
 import SessionProviderWrapper from "@/components/auth/sessionProviderWrapper";
 
@@ -22,7 +23,6 @@ export default function RootLayout({
       <html lang='ja'>
         <body className={`${inter.className} flex direction-normal `}>
           <Sidebar />
-
           <main className='flex grid-rows-1 w-[90%]'>{children}</main>
         </body>
       </html>
