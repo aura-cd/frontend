@@ -3,8 +3,9 @@ import React, { use } from "react";
 import { ReactNode } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { SidebarData } from "./SidebarData";
-import "@/styles/Sidebar.scss";
+import "@/styles/componentStyles/Sidebar.scss";
 import SidebarIcon from "./SidebarIcon";
+import AuthStatus from "@/components/auth/AuthStatus";
 
 const Sidebar = () => {
   const router = useRouter();
@@ -31,6 +32,13 @@ const Sidebar = () => {
             );
           })}
         </ul>
+        <div
+          style={{
+            margin: "0,auto",
+          }}
+        >
+          <AuthStatus />
+        </div>
       </div>
     </>
   );

@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 .iconContainer {
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,9 +13,8 @@
 }
 
 .Sidebar {
-  position: absolute;
   height: 100vh;
-  width: 160px;
+
   background: rgb(0, 110, 228);
   background: linear-gradient(
     180deg,
@@ -26,7 +26,6 @@
 
 .SidebarList {
   height: auto;
-  padding: 0;
   width: 100%;
   :active {
     background-color: #a3dcff;
@@ -35,6 +34,8 @@
 
 .SidebarList .row {
   width: 100%;
+  max-width: 160px;
+  min-width: 160px;
   height: 60px;
   display: flex;
   color: white;
