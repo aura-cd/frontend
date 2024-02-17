@@ -1,18 +1,21 @@
 "use client";
 
-import * as React from "react";
-
+import { useState, useEffect } from "react";
 import { Progress } from "@/components/ui/progress";
+import { set } from "react-hook-form";
 
-const ProgressComponent = () => {
-  const [progress, setProgress] = React.useState(13);
+const ProgressComponent = (props: { value: number }) => {
+  const [progress, setProgress] = useState(props.value);
 
-  React.useEffect(() => {
-    const timer = setTimeout(() => setProgress(66), 500);
-    return () => clearTimeout(timer);
-  }, []);
+  useEffect(() => {
+    async function fetchData() {
+      await setProgress(props.value);
+      await console.log(progress);
+    }
+    fetchData();
+  }, [props.value]);
 
-  return <Progress value={progress} className='w-[60%]' />;
+  return <Progress value={progress} className={`w-[${progress - 100}%]`} />;
 };
 
 export default ProgressComponent;
