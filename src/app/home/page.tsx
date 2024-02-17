@@ -1,6 +1,8 @@
 import AccordionComponent from "@/components/AccordionComponent";
 import React from "react";
 import "@/styles/pageStyles/home.scss";
+import { useSearchParams } from "next/navigation";
+
 const accordionData = [
   {
     title: "Title 1",
@@ -15,7 +17,15 @@ const accordionData = [
     content: "Content 3",
   },
 ];
-const page = () => {
+const page = ({
+  params,
+  searchParams,
+}: {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+}) => {
+  const pageNum = searchParams.page;
+  console.log(pageNum);
   return (
     <div className='container'>
       <div>
