@@ -1,13 +1,5 @@
 import { Checkbox } from "@radix-ui/react-checkbox";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-} from "@radix-ui/react-dropdown-menu";
-import { CaretSortIcon, DotsHorizontalIcon } from "@radix-ui/react-icons";
+import { CaretSortIcon } from "@radix-ui/react-icons";
 import { ColumnDef } from "@tanstack/react-table";
 import { Payment } from "./Types";
 import { Button } from "../ui/button";
@@ -32,73 +24,85 @@ export const columns: ColumnDef<Payment>[] = [
         aria-label='Select row'
       />
     ),
-    enableSorting: false,
+    enableSorting: true,
     enableHiding: false,
   },
+
   {
-    accessorKey: "status",
-    header: "Status",
-    cell: ({ row }) => (
-      <div className='capitalize'>{row.getValue("status")}</div>
-    ),
-  },
-  {
-    accessorKey: "email",
+    accessorKey: "Name",
     header: ({ column }) => {
       return (
         <Button
           variant='ghost'
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Email
+          Name
           <CaretSortIcon className='ml-2 h-4 w-4' />
         </Button>
       );
     },
-    cell: ({ row }) => <div className='lowercase'>{row.getValue("email")}</div>,
+    cell: ({ row }) => <div className='lowercase'>{row.getValue("Name")}</div>,
   },
   {
-    accessorKey: "amount",
-    header: () => <div className='text-right'>Amount</div>,
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
-
-      // Format the amount as a dollar amount
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
-
-      return <div className='text-right font-medium'>{formatted}</div>;
-    },
-  },
-  {
-    id: "actions",
-    enableHiding: false,
-    cell: ({ row }) => {
-      const payment = row.original;
-
+    accessorKey: "Status",
+    header: ({ column }) => {
       return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant='ghost' className='h-8 w-8 p-0'>
-              <span className='sr-only'>Open menu</span>
-              <DotsHorizontalIcon className='h-4 w-4' />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align='end'>
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy payment ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <Button
+          variant='ghost'
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Status
+          <CaretSortIcon className='ml-2 h-4 w-4' />
+        </Button>
       );
     },
+    cell: ({ row }) => (
+      <div className='lowercase'>{row.getValue("Status")}</div>
+    ),
+  },
+  {
+    accessorKey: "Usage",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant='ghost'
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Usage
+          <CaretSortIcon className='ml-2 h-4 w-4' />
+        </Button>
+      );
+    },
+    cell: ({ row }) => <div className='lowercase'>{row.getValue("Usage")}</div>,
+  },
+  {
+    accessorKey: "Ver",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant='ghost'
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Ver
+          <CaretSortIcon className='ml-2 h-4 w-4' />
+        </Button>
+      );
+    },
+    cell: ({ row }) => <div className='lowercase'>{row.getValue("Ver")}</div>,
+  },
+  {
+    accessorKey: "Age",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant='ghost'
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Age
+          <CaretSortIcon className='ml-2 h-4 w-4' />
+        </Button>
+      );
+    },
+    cell: ({ row }) => <div className='lowercase'>{row.getValue("Age")}</div>,
   },
 ];
