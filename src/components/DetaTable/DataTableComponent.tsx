@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/table";
 import useTableHooks from "./useTableHooks";
 
-function DataTableComponent() {
+function DataTableComponent(props: { colSpan: number }) {
   const { table } = useTableHooks();
   return (
     <div className='container'>
@@ -69,10 +69,7 @@ function DataTableComponent() {
               ))
             ) : (
               <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className='h-24 text-center'
-                >
+                <TableCell colSpan={props.colSpan} className='h-24 text-center'>
                   No results.
                 </TableCell>
               </TableRow>

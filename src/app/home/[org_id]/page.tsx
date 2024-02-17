@@ -2,6 +2,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import TableComponent from "@/components/TableComponent";
 import React from "react";
 import ButtonArea from "../components/ButtonArea";
+import DataTableComponent from "@/components/DetaTable/DataTableComponent";
 
 const page = () => {
   const header = ["Name", "Deployments"];
@@ -25,6 +26,7 @@ const page = () => {
       <div>
         <ButtonArea />
         <TableComponent data={data} />
+        <DataTableComponent colSpan={3} />
       </div>
     </div>
   );
