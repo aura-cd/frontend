@@ -6,33 +6,17 @@ import LogContents from "./log/LogContents";
 import OptionContents from "./option/OptionContents";
 import InformationContents from "./information/InformationContents";
 
-const tabData = [
-  {
-    title: "Information",
-    content: <InformationContents />,
-  },
-  {
-    title: "Log",
-    content: <LogContents />,
-  },
-  {
-    title: "Option",
-    content: <OptionContents />,
-  },
-];
+const title = ["Log", "Option", "Information"];
+const tabData = [<LogContents />, <OptionContents />, <InformationContents />];
 const BranchTab = () => {
   return (
     <div>
       <SheetComponent
-        openButton={<Button>Open Sheet</Button>}
-        closeButton='Close Sheet'
+        openButton={<Button>Branch</Button>}
         description='This is a sheet component'
-        title='Sheet Component'
+        title='Branch'
       >
-        <TabComponent
-          tabValue={["Branch", "Tag", "Commit"]}
-          content={["Branch content", "Tag content", "Commit content"]}
-        />
+        <TabComponent title={title} tabData={tabData} />
       </SheetComponent>
     </div>
   );
