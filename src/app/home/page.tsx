@@ -3,7 +3,6 @@ import "@/styles/componentStyles/appButton.scss";
 import ButtonArea from "./components/ButtonArea";
 import AccordionComponent from "@/components/AccordionComponent";
 import { accordionData } from "./components/data";
-import ProgressComponent from "@/components/ProgressComponent";
 const page = () => {
   return (
     <div className='container'>
