@@ -7,11 +7,13 @@
 }
 
 .installAppButton {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   margin: 0 0 0 12px;
   color: #fff;
   background-color: #008bf5;
   :hover {
     background-color: #0077cc;
     opacity: 0.8;
+    box-shadow: 0 0 rgba(0, 0, 0, 0.1);
   }
 }
