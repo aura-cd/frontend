@@ -17,13 +17,11 @@ import { ReactNode } from "react";
 
 function SheetComponent({
   openButton,
-  closeButton,
   children,
   description,
   title,
 }: {
   openButton: ReactNode;
-  closeButton: string;
   children: ReactNode;
   description: string;
   title: string;
@@ -37,23 +35,10 @@ function SheetComponent({
           <SheetDescription>{description}</SheetDescription>
         </SheetHeader>
         {children}
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button type='submit'>{closeButton}</Button>
-          </SheetClose>
-        </SheetFooter>
+        <SheetFooter></SheetFooter>
       </SheetContent>
     </Sheet>
   );
 }
 
 export default SheetComponent;
-
-// <SheetComponent
-// openButton={<Button>Open Sheet</Button>}
-// closeButton='Close Sheet'
-// description='This is a sheet component'
-// title='Sheet Component'
-// >
-// tesss
-// </SheetComponent>

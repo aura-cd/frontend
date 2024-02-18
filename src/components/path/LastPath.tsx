@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import "@/styles/componentStyles/pankuzu.scss";
+import "@/styles//pankuzu.scss";
 
 const LastPath = () => {
   const router = usePathname();
