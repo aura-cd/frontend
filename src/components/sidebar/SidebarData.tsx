@@ -12,7 +12,7 @@ export const SidebarData: SidebarDataProps[] = [
   {
     title: "Home",
     icon: <Bs0CircleFill />,
-    link: "/home",
+    link: "/",
   },
   {
     title: "Doc",
