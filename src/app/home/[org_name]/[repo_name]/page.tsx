@@ -1,17 +1,17 @@
-import Breadcrumb from "@/components/Breadcrumb";
+import Pankuzu from "@/components/path/Pankuzu";
 import DataTableComponent from "@/components/DetaTable/DataTableComponent";
 import React from "react";
 import ButtonArea from "../../components/ButtonArea";
+import LastPath from "@/components/path/LastPath";
 
 const page = () => {
   return (
     <div className='container'>
-      <Breadcrumb />
+      <Pankuzu />
+      <LastPath />
       <div>
-        <div>
-          <ButtonArea />
-          <DataTableComponent pageSize={5} />
-        </div>
+        <ButtonArea />
+        <DataTableComponent pageSize={5} />
       </div>
     </div>
   );

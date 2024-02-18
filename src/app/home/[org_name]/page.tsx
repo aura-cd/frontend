@@ -1,8 +1,9 @@
-import Breadcrumb from "@/components/Breadcrumb";
+import Pankuzu from "@/components/path/Pankuzu";
 import TableComponent from "@/components/TableComponent";
 import React from "react";
 import ButtonArea from "../components/ButtonArea";
 import DataTableComponent from "@/components/DetaTable/DataTableComponent";
+import LastPath from "@/components/path/LastPath";
 
 const page = () => {
   const header = ["Name", "Deployments"];
@@ -22,7 +23,9 @@ const page = () => {
   ];
   return (
     <div className='container'>
-      <Breadcrumb />
+      <Pankuzu />
+      <LastPath />
+
       <div>
         <ButtonArea />
         <TableComponent data={data} />
