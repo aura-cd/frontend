@@ -23,7 +23,6 @@ jobs:
       - name: Install Dependencis
         run: |
           npm install
-          npm install -g eslint
 
       - name: check build
         run: |
