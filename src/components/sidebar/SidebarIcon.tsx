@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import "@/styles/componentStyles/Sidebar.scss";
+import "@/styles/Sidebar.scss";
 function SidebarIcon() {
   return (
     <div className=' m-auto w-100 '>

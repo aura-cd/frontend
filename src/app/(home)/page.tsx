@@ -1,5 +1,5 @@
 import Pankuzu from "@/components/path/Pankuzu";
-import "@/styles/componentStyles/appButton.scss";
+import "@/styles//appButton.scss";
 import ButtonArea from "./components/ButtonArea";
 import AccordionComponent from "@/components/AccordionComponent";
 import { accordionData } from "./components/data";

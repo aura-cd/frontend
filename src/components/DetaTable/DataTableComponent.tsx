@@ -4,7 +4,7 @@ import * as React from "react";
 import { flexRender } from "@tanstack/react-table";
 import { columns } from "./Column";
 import { Button } from "@/components/ui/button";
-import "@/styles/componentStyles/dataTable.scss";
+import "@/styles//dataTable.scss";
 import { Input } from "@/components/ui/input";
 import {
   Table,

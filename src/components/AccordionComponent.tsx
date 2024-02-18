@@ -1,4 +1,4 @@
-import "@/styles/componentStyles/accordion.scss";
+import "@/styles//accordion.scss";
 
 import {
   Accordion,
