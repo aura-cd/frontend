@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "@/styles/componentStyles/pankuzu.scss";
-const Breadcrumb = () => {
+const Pankuzu = () => {
   const router = usePathname();
   // 各パスセグメントを結合するための変数
   let joinedPath = "";
@@ -29,4 +29,4 @@ const Breadcrumb = () => {
   );
 };
 
-export default Breadcrumb;
+export default Pankuzu;

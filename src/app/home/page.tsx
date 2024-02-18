@@ -1,4 +1,4 @@
-import Breadcrumb from "@/components/Breadcrumb";
+import Pankuzu from "@/components/path/Pankuzu";
 import "@/styles/componentStyles/appButton.scss";
 import ButtonArea from "./components/ButtonArea";
 import AccordionComponent from "@/components/AccordionComponent";
@@ -7,11 +7,10 @@ import ProgressComponent from "@/components/ProgressComponent";
 const page = () => {
   return (
     <div className='container'>
-      <Breadcrumb />
+      <Pankuzu />
       <div>
         <ButtonArea />
         <AccordionComponent data={accordionData} />
-        <ProgressComponent value={62} />
       </div>
     </div>
   );
