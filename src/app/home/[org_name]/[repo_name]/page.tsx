@@ -8,12 +8,10 @@ const page = () => {
   return (
     <div className='container'>
       <Pankuzu />
+      <LastPath />
       <div>
-        <div>
-          <ButtonArea />
-          <DataTableComponent pageSize={5} />
-          <LastPath />
-        </div>
+        <ButtonArea />
+        <DataTableComponent pageSize={5} />
       </div>
     </div>
   );

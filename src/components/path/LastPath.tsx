@@ -6,13 +6,16 @@ const LastPath = () => {
   const router = usePathname();
   //rputerのlengthを取得
   const routerLength = router.split("/").length;
-  //二個目のパスセグメントを取得
-  const secondPath = router.split("/")[routerLength - 1];
-  console.log(secondPath);
+
+  const path = router.split("/")[routerLength - 1];
 
   return (
     <div className='flex items-center text-sm px-4 w-full'>
-      <div className=''>{secondPath}</div>
+      {routerLength === 1 ? (
+        <div className='path'>OrganisationName : {`< ${path} >`}</div>
+      ) : (
+        <div className='path'>RepositoryName : {`< ${path} >`}</div>
+      )}
     </div>
   );
 };

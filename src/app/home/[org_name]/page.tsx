@@ -3,6 +3,7 @@ import TableComponent from "@/components/TableComponent";
 import React from "react";
 import ButtonArea from "../components/ButtonArea";
 import DataTableComponent from "@/components/DetaTable/DataTableComponent";
+import LastPath from "@/components/path/LastPath";
 
 const page = () => {
   const header = ["Name", "Deployments"];
@@ -23,6 +24,8 @@ const page = () => {
   return (
     <div className='container'>
       <Pankuzu />
+      <LastPath />
+
       <div>
         <ButtonArea />
         <TableComponent data={data} />
