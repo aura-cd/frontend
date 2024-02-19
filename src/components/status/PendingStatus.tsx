@@ -1,7 +1,16 @@
 import React from "react";
+import { LuLoader } from "react-icons/lu";
+import "@/styles/status.scss";
+const PendingStatus = () => {
+  return (
+    <>
+      <div className='wrap'>
+        <LuLoader className='text-orange-500 text-2xl' />
 
-const Pending = () => {
-  return <div>Pending</div>;
+        <div className='text-orange-500 ml-1'>Pending</div>
+      </div>
+    </>
+  );
 };
 
-export default Pending;
+export default PendingStatus;

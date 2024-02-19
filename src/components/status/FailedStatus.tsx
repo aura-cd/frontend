@@ -1,7 +1,16 @@
 import React from "react";
+import { IoMdClose } from "react-icons/io";
+import "@/styles/status.scss";
+const FailedStatus = () => {
+  return (
+    <>
+      <div className='wrap'>
+        <IoMdClose className='text-red-500 text-2xl' />
 
-const Failed = () => {
-  return <div>Failed</div>;
+        <div className='text-red-500 ml-1'>Failed</div>
+      </div>
+    </>
+  );
 };
 
-export default Failed;
+export default FailedStatus;

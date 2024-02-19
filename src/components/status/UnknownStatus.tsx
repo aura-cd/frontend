@@ -1,12 +1,16 @@
 import React from "react";
-import { BsQuestionSquareFill } from "react-icons/bs";
-
-const Unknown = () => {
+import { BsQuestion } from "react-icons/bs";
+import "@/styles/status.scss";
+const UnknownStatus = () => {
   return (
-    <div>
-      <BsQuestionSquareFill />
-    </div>
+    <>
+      <div className='wrap'>
+        <BsQuestion className='text-gray-500 text-2xl' />
+
+        <div className='text-gray-500 ml-1'>Unknown</div>
+      </div>
+    </>
   );
 };
 
-export default Unknown;
+export default UnknownStatus;
