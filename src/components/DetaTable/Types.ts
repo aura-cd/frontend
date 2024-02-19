@@ -1,7 +1,9 @@
+import React from "react";
+
 export type Payment = {
   ID: string;
   Name: string;
-  Status: "Running" | "Pending" | "Succeeded" | "Unknown" | "Failed";
+  Status: JSX.Element;
   Usage: string;
   Ver: string;
   Age: string;
