@@ -6,14 +6,14 @@ import LogContents from "./log/LogContents";
 import OptionContents from "./option/OptionContents";
 import InformationContents from "./information/InformationContents";
 
-const title = ["Log", "Option", "Information"];
-const tabData = [<LogContents />, <OptionContents />, <InformationContents />];
+const title = ["Information", "Log", "Option"];
+const tabData = [<InformationContents />, <LogContents />, <OptionContents />];
 const BranchTab = () => {
   return (
     <div>
       <SheetComponent
         openButton={<Button>Branch</Button>}
-        description='This is a sheet component'
+        description='Branch description'
         title='Branch'
       >
         <TabComponent title={title} tabData={tabData} />
