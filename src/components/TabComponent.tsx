@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
+import "@/styles/tab.scss";
 type FixedLengthArray<
   T extends string[] | React.JSX.Element[],
   N extends number
@@ -15,10 +15,10 @@ const TabComponent = (props: TabContentTuple<2 | 3 | 4 | 5 | 6>) => {
   const { tabData, title } = props;
   return (
     <Tabs defaultValue='account' className='w-[400px]'>
-      <TabsList>
+      <TabsList className='list'>
         {title &&
           title.map((tab: string) => (
-            <TabsTrigger key={tab} value={tab}>
+            <TabsTrigger className='trigger' key={tab} value={tab}>
               {tab}
             </TabsTrigger>
           ))}
