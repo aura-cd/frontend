@@ -7,7 +7,7 @@ const SucceededStatus = () => {
       <div className='wrap'>
         <IoMdCheckmark className='text-blue-400 text-2xl' />
 
-        <div className='text-blue-400'>Succeeded</div>
+        <div className='text-blue-400 ml-1'>Succeeded</div>
       </div>
     </>
   );

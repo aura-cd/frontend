@@ -7,7 +7,7 @@ const RunningStatus = () => {
       <div className='wrap'>
         <IoMdCheckmark className='text-green-500 text-2xl' />
 
-        <div className='text-green-500'>Running</div>
+        <div className='text-green-500 ml-1'>Running</div>
       </div>
     </>
   );

@@ -7,7 +7,7 @@ const PendingStatus = () => {
       <div className='wrap'>
         <LuLoader className='text-orange-500 text-2xl' />
 
-        <div className='text-orange-500'>Pending</div>
+        <div className='text-orange-500 ml-1'>Pending</div>
       </div>
     </>
   );

@@ -7,7 +7,7 @@ const UnknownStatus = () => {
       <div className='wrap'>
         <BsQuestion className='text-gray-500 text-2xl' />
 
-        <div className='text-gray-500'>Unknown</div>
+        <div className='text-gray-500 ml-1'>Unknown</div>
       </div>
     </>
   );

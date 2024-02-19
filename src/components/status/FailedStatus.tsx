@@ -1,13 +1,13 @@
 import React from "react";
-import { IoCloseOutline } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
 import "@/styles/status.scss";
 const FailedStatus = () => {
   return (
     <>
       <div className='wrap'>
-        <IoCloseOutline className='text-red-500 text-2xl' />
+        <IoMdClose className='text-red-500 text-2xl' />
 
-        <div className='text-red-500'>Failed</div>
+        <div className='text-red-500 ml-1'>Failed</div>
       </div>
     </>
   );
