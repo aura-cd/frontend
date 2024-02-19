@@ -1,7 +1,7 @@
 import React from "react";
-
+import "./info.scss";
 const InformationContents = () => {
-  return <div>InformationContents</div>;
+  return <div className='wrap'>tessss</div>;
 };
 
 export default InformationContents;

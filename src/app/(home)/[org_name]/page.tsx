@@ -6,7 +6,6 @@ import DataTableComponent from "@/components/DetaTable/DataTableComponent";
 import LastPath from "@/components/path/LastPath";
 
 const page = () => {
-  const header = ["Name", "Deployments"];
   const data = [
     {
       name: "Invoice 001",
