@@ -1,7 +1,16 @@
 import React from "react";
+import { IoCloseOutline } from "react-icons/io5";
+import "@/styles/status.scss";
+const FailedStatus = () => {
+  return (
+    <>
+      <div className='wrap'>
+        <IoCloseOutline className='text-red-500 text-2xl' />
 
-const Failed = () => {
-  return <div>Failed</div>;
+        <div className='text-red-500'>Failed</div>
+      </div>
+    </>
+  );
 };
 
-export default Failed;
+export default FailedStatus;

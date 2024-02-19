@@ -1,7 +1,16 @@
 import React from "react";
+import { IoMdCheckmark } from "react-icons/io";
+import "@/styles/status.scss";
+const RunningStatus = () => {
+  return (
+    <>
+      <div className='wrap'>
+        <IoMdCheckmark className='text-green-500 text-2xl' />
 
-const Running = () => {
-  return <div>Running</div>;
+        <div className='text-green-500'>Running</div>
+      </div>
+    </>
+  );
 };
 
-export default Running;
+export default RunningStatus;
