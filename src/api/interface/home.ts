@@ -1,5 +1,5 @@
 export interface fetchHomeInterface {
-  organizationInfo: [
+  organizationInfos: [
     {
       organization: string;
       repositories: [string];

@@ -6,16 +6,19 @@ import AccordionComponent from "@/components/AccordionComponent";
 import { accordionData } from "./components/data";
 
 import Pankuzu from "@/components/path/Pankuzu";
+import { fetchHomeInterface } from "@/api/interface/home";
 import { fetchHome } from "@/api/home";
 
 const Page = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<fetchHomeInterface | undefined>();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetchHome();
-        setData(response);
+        if (response !== null || undefined) {
+          setData(response);
+        }
       } catch (error) {
         console.error("Error fetching data", error);
       }
@@ -26,9 +29,23 @@ const Page = () => {
 
   return (
     <div className='container'>
+      <div>
+        {data?.organizationInfos.map((organizationInfo, index) => {
+          return (
+            <div key={index}>
+              <h2>{organizationInfo.organization}</h2>
+              <ul>
+                {organizationInfo.repositories.map((repository, index) => {
+                  return <li key={index}>{repository}</li>;
+                })}
+              </ul>
+            </div>
+          );
+        })}
+      </div>
       <Pankuzu />
       <div>
-        <div>{data}</div> <ButtonArea />
+        <ButtonArea />
         <AccordionComponent data={accordionData} />
       </div>
     </div>
