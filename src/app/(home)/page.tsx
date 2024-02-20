@@ -16,7 +16,6 @@ const Page = () => {
       try {
         const response = await fetchHome();
         setData(response);
-        console.log("response", response);
       } catch (error) {
         console.error("Error fetching data", error);
       }

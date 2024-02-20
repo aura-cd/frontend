@@ -1,5 +1,6 @@
 "use client";
 import { fetchHomeInterface } from "@/api/interface/home";
+import { useEffect, useState } from "react";
 export const fetchHome = async () => {
   try {
     const response = await fetch(`http://localhost:8082/home`, {
