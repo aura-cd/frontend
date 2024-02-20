@@ -2,6 +2,30 @@
   display: flex;
 }
 
-.contentsContainer {
-  width: 90vw;
+.cardList {
+  width: 350px;
+  height: 200px;
+}
+.row-cardContainer {
+  width: 100%;
+
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #1777ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  h4 {
+    width: 340px;
+    margin: 5px 0 0 0;
+    text-align: left;
+    font-size: 1.3rem;
+  }
+  h3 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
 }
