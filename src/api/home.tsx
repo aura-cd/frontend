@@ -4,7 +4,7 @@ import { fetchHomeInterface } from "./interface/home";
 
 export const fetchHome = async () => {
   try {
-    const response = await fetch("http://localhost:8082/home", {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/home`, {
       method: "GET",
     });
     const data: fetchHomeInterface = await response.json();
