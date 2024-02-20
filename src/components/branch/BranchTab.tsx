@@ -13,7 +13,7 @@ const BranchTab = () => {
     <div>
       <SheetComponent
         openButton={<Button>Branch</Button>}
-        description='Branch description'
+        description='https://www.google.com'
         title='Branch'
       >
         <TabComponent title={title} tabData={tabData} />

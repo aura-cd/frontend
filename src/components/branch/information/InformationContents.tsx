@@ -1,7 +1,14 @@
 import React from "react";
-import "./info.scss";
+import "./style/contents.scss";
+import InfoCard from "./InfoCard";
+import InfoParameter from "./InfoParameter";
 const InformationContents = () => {
-  return <div className='wrap'>tessss</div>;
+  return (
+    <div className='wrap'>
+      <InfoCard />
+      <InfoParameter />
+    </div>
+  );
 };
 
 export default InformationContents;
