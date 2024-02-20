@@ -13,7 +13,11 @@ const ProgressComponent = (props: { value: number }) => {
     fetchData();
   }, [props.value]);
 
-  return <Progress value={progress} className={`w-[${progress - 100}%]`} />;
+  return (
+    <div className='w-full'>
+      <Progress value={progress} className={`w-[${progress - 100}%]`} />
+    </div>
+  );
 };
 
 export default ProgressComponent;

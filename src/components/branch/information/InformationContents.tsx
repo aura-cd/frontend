@@ -1,11 +1,12 @@
 import React from "react";
-import "./info.scss";
-import EditorArea from "./EditorArea";
+import "./style/contents.scss";
 import InfoCard from "./InfoCard";
+import InfoParameter from "./InfoParameter";
 const InformationContents = () => {
   return (
-    <div className='contentsContainer'>
+    <div className='wrap'>
       <InfoCard />
+      <InfoParameter />
     </div>
   );
 };
