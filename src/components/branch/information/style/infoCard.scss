@@ -11,13 +11,15 @@
 .row-cardContainer {
   width: 400px;
   padding: 0 20px;
-
+  margin: 20px 0;
+  height: 90px;
   justify-content: flex-start;
   background-color: #1777ff;
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   h4 {
-    margin: 8px 0 0 0;
+    margin: 10px 0 0 0;
+    padding-top: 10px;
     text-align: left;
     font-size: 1.3rem;
   }
