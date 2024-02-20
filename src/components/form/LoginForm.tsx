@@ -10,9 +10,7 @@ import "@/styles/loginForm.scss";
 // 3. Define your form schema.
 
 function LoginForm() {
-  function onSubmit(values: z.infer<typeof loginFormSchema>) {
-    console.log(values);
-  }
+  function onSubmit(values: z.infer<typeof loginFormSchema>) {}
 
   const form = useForm<z.infer<typeof loginFormSchema>>({
     resolver: zodResolver(loginFormSchema),

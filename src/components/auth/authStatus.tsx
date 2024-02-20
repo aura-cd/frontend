@@ -15,7 +15,6 @@ async function keycloakSessionLogOut() {
 
 export default function AuthStatus() {
   const { data: session, status } = useSession();
-  console.log(session);
   useEffect(() => {
     if (
       status != "loading" &&

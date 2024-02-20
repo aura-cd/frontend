@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import "@/styles//appButton.scss";
 import ButtonArea from "./components/ButtonArea";
 import AccordionComponent from "@/components/AccordionComponent";
@@ -6,21 +7,33 @@ import { accordionData } from "./components/data";
 
 import Pankuzu from "@/components/path/Pankuzu";
 import { fetchHome } from "@/api/home";
-const page = () => {
-  try {
-    const response = fetchHome();
-    console.log(response);
-  } catch (error) {
-    console.error("Error fetching data", error);
-  }
+
+const Page = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetchHome();
+        setData(response);
+        console.log("response", response);
+      } catch (error) {
+        console.error("Error fetching data", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className='container'>
       <Pankuzu />
       <div>
-        <ButtonArea />
+        <div>{data}</div> <ButtonArea />
         <AccordionComponent data={accordionData} />
       </div>
     </div>
   );
 };
-export default page;
+
+export default Page;
