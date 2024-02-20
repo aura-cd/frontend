@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import "@/styles//appButton.scss";
 import ButtonArea from "./components/ButtonArea";
 import AccordionComponent from "@/components/AccordionComponent";
-import { accordionData } from "./components/data";
 
 import Pankuzu from "@/components/path/Pankuzu";
 import { fetchHomeInterface } from "@/api/interface/home";
@@ -29,24 +28,10 @@ const Page = () => {
 
   return (
     <div className='container'>
-      <div>
-        {data?.organizationInfos.map((organizationInfo, index) => {
-          return (
-            <div key={index}>
-              <h2>{organizationInfo.organization}</h2>
-              <ul>
-                {organizationInfo.repositories.map((repository, index) => {
-                  return <li key={index}>{repository}</li>;
-                })}
-              </ul>
-            </div>
-          );
-        })}
-      </div>
       <Pankuzu />
       <div>
         <ButtonArea />
-        <AccordionComponent data={accordionData} />
+        <AccordionComponent data={data} />
       </div>
     </div>
   );
