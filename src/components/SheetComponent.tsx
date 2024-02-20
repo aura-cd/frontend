@@ -8,6 +8,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import "@/styles/sheet.scss";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 function SheetComponent({
@@ -26,8 +27,11 @@ function SheetComponent({
       <SheetTrigger asChild>{openButton}</SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>{title}</SheetTitle>
-          <SheetDescription>{description}</SheetDescription>
+          <SheetTitle className='title'>{title}</SheetTitle>
+
+          <Link href='/branch' passHref>
+            <p className='branch-link'>{description}</p>
+          </Link>
         </SheetHeader>
         {children}
         <SheetFooter></SheetFooter>
