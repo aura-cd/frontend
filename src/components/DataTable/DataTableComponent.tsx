@@ -1,5 +1,4 @@
 "use client";
-
 import * as React from "react";
 import { flexRender } from "@tanstack/react-table";
 import { columns } from "./Column";
@@ -16,11 +15,11 @@ import {
 } from "@/components/ui/table";
 import useTableHooks from "./useTableHooks";
 import SheetComponent from "../SheetComponent";
-import { repositoryRepoAppInterface } from "@/api/interface/repository";
+import { repositoryAppInterface } from "@/api/interface/repository";
 
 function DataTableComponent(props: {
   pageSize: number;
-  data: repositoryRepoAppInterface[];
+  data: repositoryAppInterface[];
 }) {
   const { table } = useTableHooks({
     pageSize: props.pageSize,

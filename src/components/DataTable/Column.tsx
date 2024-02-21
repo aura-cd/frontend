@@ -3,9 +3,9 @@ import { CaretSortIcon } from "@radix-ui/react-icons";
 import { ColumnDef } from "@tanstack/react-table";
 
 import { Button } from "../ui/button";
-import { repositoryRepoAppInterface } from "@/api/interface/repository";
+import { repositoryAppInterface } from "@/api/interface/repository";
 
-export const columns: ColumnDef<repositoryRepoAppInterface>[] = [
+export const columns: ColumnDef<repositoryAppInterface>[] = [
   {
     id: "select",
     header: ({ table }) => (

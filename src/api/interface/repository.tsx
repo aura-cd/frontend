@@ -34,16 +34,9 @@ export interface repoFormatInterface {
   ];
 }
 
-export interface repositoryRepoAppInterface {
-  name: string;
-  states: React.ReactNode;
-  version: string;
-  age: string;
-}
-
 export interface repositoryAppInterface {
   name: string;
-  status: string;
   version: string;
+  states: JSX.Element;
   age: string;
 }

@@ -1,12 +1,15 @@
+"use client";
 import Pankuzu from "@/components/path/Pankuzu";
 import TableComponent from "@/components/TableComponent";
 import React from "react";
 import ButtonArea from "../components/ButtonArea";
 import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import LastPath from "@/components/path/LastPath";
+import { RepoContext } from "@/api/RepositoryContext";
 
 const page = () => {
-  const data = [
+  const data = React.useContext(RepoContext);
+  const tadata = [
     {
       name: "Invoice 001",
       deployments: 10,
@@ -27,8 +30,8 @@ const page = () => {
 
       <div>
         <ButtonArea />
-        <TableComponent data={data} />
-        <DataTableComponent pageSize={5} />
+        <TableComponent data={tadata} />
+        <DataTableComponent data={data} pageSize={5} />
       </div>
     </div>
   );

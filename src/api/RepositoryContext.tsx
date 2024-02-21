@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect, createContext } from "react";
 import { repositoryAppInterface } from "./interface/repository";
 import { fetchRepositoryApp } from "./repository";
