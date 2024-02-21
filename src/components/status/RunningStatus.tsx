@@ -4,7 +4,7 @@ import "@/styles/status.scss";
 const RunningStatus = () => {
   return (
     <>
-      <div className='wrap'>
+      <div className='status-wrap'>
         <IoMdCheckmark className='text-green-500 text-2xl' />
 
         <div className='text-green-500 ml-1'>Running</div>

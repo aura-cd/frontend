@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import "@/styles//table.scss";
+import "@/styles/table.scss";
 interface TableComponentProps {
   data: {
     name: string;

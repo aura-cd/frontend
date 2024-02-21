@@ -45,6 +45,7 @@ const useTableHooks = (props: { pageSize: number }) => {
 
   return {
     table,
+    data,
   };
 };
 
