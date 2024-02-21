@@ -4,7 +4,7 @@ import * as React from "react";
 import { flexRender } from "@tanstack/react-table";
 import { columns } from "./Column";
 import { Button } from "@/components/ui/button";
-import "@/styles//dataprops..table.scss";
+import "@/styles//dataTable.scss";
 import { Input } from "@/components/ui/input";
 import {
   Table,
@@ -14,20 +14,27 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import useTableHooks from "./useTableHooks";
 import SheetComponent from "../SheetComponent";
+import { repositoryInterface } from "@/api/interface/repository";
 
-function DataTableComponent(props: { pageSize: number; table: any }) {
+function DataTableComponent(props: {
+  pageSize: number;
+  data: repositoryInterface;
+}) {
+  const { table } = useTableHooks({
+    pageSize: props.pageSize,
+    data: [props.data],
+  });
   return (
     <div className='container'>
       <div className='flex justify-between  '>
         <div className='flex items-center py-4'>
           <Input
             placeholder='Filter Name...'
-            value={
-              (props.table.getColumn("Name")?.getFilterValue() as string) ?? ""
-            }
+            value={(table.getColumn("Name")?.getFilterValue() as string) ?? ""}
             onChange={(event) =>
-              props.table.getColumn("Name")?.setFilterValue(event.target.value)
+              table.getColumn("Name")?.setFilterValue(event.target.value)
             }
             className='max-w-sm'
           />
@@ -37,15 +44,15 @@ function DataTableComponent(props: { pageSize: number; table: any }) {
             <Button
               variant='outline'
               size='sm'
-              onClick={() => props.table.previousPage()}
-              disabled={!props.table.getCanPreviousPage()}
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}
             >
               Previous
             </Button>
             <Button
               size='sm'
-              onClick={() => props.table.nextPage()}
-              disabled={!props.table.getCanNextPage()}
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}
             >
               Next
             </Button>
@@ -56,57 +63,42 @@ function DataTableComponent(props: { pageSize: number; table: any }) {
       <div className='rounded-md border'>
         <Table>
           <TableHeader>
-            {props.table
-              .getHeaderGroups()
-              .map(
-                (headerGroup: {
-                  id: React.Key | null | undefined;
-                  headers: any[];
-                }) => (
-                  <TableRow key={headerGroup.id}>
-                    {headerGroup.headers.map((header) => {
-                      return (
-                        <TableHead key={header.id}>
-                          {header.isPlaceholder
-                            ? null
-                            : flexRender(
-                                header.column.columnDef.header,
-                                header.getContext()
-                              )}
-                        </TableHead>
-                      );
-                    })}
-                  </TableRow>
-                )
-              )}
+            {table.getHeaderGroups().map((headerGroup) => (
+              <TableRow key={headerGroup.id}>
+                {headerGroup.headers.map((header) => {
+                  return (
+                    <TableHead key={header.id}>
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                    </TableHead>
+                  );
+                })}
+              </TableRow>
+            ))}
           </TableHeader>
           <TableBody>
-            {props.table.getRowModel().rows?.length ? (
-              props.table
-                .getRowModel()
-                .rows.map(
-                  (row: {
-                    id: React.Key | null | undefined;
-                    getIsSelected: () => any;
-                    getVisibleCells: () => any[];
-                  }) => (
-                    <TableRow
-                      key={row.id}
-                      data-state={row.getIsSelected() && "selected"}
-                    >
-                      {row.getVisibleCells().map((cell) => (
-                        <TableCell key={cell.id}>
-                          <SheetComponent id={cell.id} title={cell.id}>
-                            {flexRender(
-                              cell.column.columnDef.cell,
-                              cell.getContext()
-                            )}
-                          </SheetComponent>
-                        </TableCell>
-                      ))}
-                    </TableRow>
-                  )
-                )
+            {table.getRowModel().rows?.length ? (
+              table.getRowModel().rows.map((row) => (
+                <TableRow
+                  key={row.id}
+                  data-state={row.getIsSelected() && "selected"}
+                >
+                  {row.getVisibleCells().map((cell) => (
+                    <TableCell key={cell.id}>
+                      <SheetComponent id='2' title={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </SheetComponent>
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))
             ) : (
               <TableRow>
                 <TableCell
