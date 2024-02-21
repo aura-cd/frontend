@@ -15,6 +15,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import useTableHooks from "./useTableHooks";
+import SheetComponent from "../SheetComponent";
 
 function DataTableComponent(props: { pageSize: number }) {
   const { table } = useTableHooks({
@@ -55,19 +56,21 @@ function DataTableComponent(props: { pageSize: number }) {
           <TableBody>
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </TableCell>
-                  ))}
-                </TableRow>
+                <SheetComponent id='2' title='w'>
+                  <TableRow
+                    key={row.id}
+                    data-state={row.getIsSelected() && "selected"}
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                </SheetComponent>
               ))
             ) : (
               <TableRow>

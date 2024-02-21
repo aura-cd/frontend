@@ -3,7 +3,6 @@ import DataTableComponent from "@/components/DetaTable/DataTableComponent";
 import React from "react";
 import ButtonArea from "../../components/ButtonArea";
 import LastPath from "@/components/path/LastPath";
-import BranchTab from "@/components/branch/BranchTab";
 
 const page = () => {
   return (
@@ -13,7 +12,6 @@ const page = () => {
       <div>
         <ButtonArea />
         <DataTableComponent pageSize={5} />
-        <BranchTab />
       </div>
     </div>
   );
