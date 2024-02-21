@@ -6,14 +6,13 @@ import UnknownStatus from "@/components/status/UnknownStatus";
 import RunningStatus from "@/components/status/RunningStatus";
 import PendingStatus from "@/components/status/PendingStatus";
 import FailedStatus from "@/components/status/FailedStatus";
-export const fetchRepository = async (organization_id: string) => {
+export const fetchRepositoryApp = async (organization_id: string) => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/organization/${organization_id}/repository`
+      `${process.env.NEXT_PUBLIC_API_URL}/organizations/${organization_id}/repositories`
     );
     const data: repositoryInterface = await response.json();
 
-    console.log(data);
     let jsonData = await response.json();
     const formattedData = jsonData.app.map((data: any) => {
       switch (data.status) {
@@ -32,8 +31,10 @@ export const fetchRepository = async (organization_id: string) => {
         case "Unknown":
           data.status = <UnknownStatus />;
       }
+
       return jsonData;
     });
+
     console.log(formattedData);
     return formattedData;
   } catch (error) {
