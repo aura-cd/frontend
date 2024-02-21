@@ -15,6 +15,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import useTableHooks from "./useTableHooks";
+import SheetComponent from "../SheetComponent";
 
 function DataTableComponent(props: { pageSize: number }) {
   const { table } = useTableHooks({
@@ -61,10 +62,12 @@ function DataTableComponent(props: { pageSize: number }) {
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
+                      <SheetComponent id='2' title={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </SheetComponent>
                     </TableCell>
                   ))}
                 </TableRow>
