@@ -25,7 +25,7 @@ export const environmentSchema = z.object({
   config: z.boolean(),
 });
 
-export const ServiceSchema = z.object({
+export const serviceSchema = z.object({
   kye: z.string().min(2).max(50),
   value: z.string().min(2).max(50),
   config: z.boolean(),
