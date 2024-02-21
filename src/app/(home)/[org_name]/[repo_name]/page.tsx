@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import ButtonArea from "../../components/ButtonArea";
 import LastPath from "@/components/path/LastPath";
 import { repositoryAppInterface } from "@/api/interface/repository";
-import { fetchRepositoryApp } from "@/api/repository";
 import { RepoContext } from "@/api/RepositoryContext";
 const page = () => {
   const data = React.useContext(RepoContext);

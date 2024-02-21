@@ -16,11 +16,11 @@ import {
 import useTableHooks from "./useTableHooks";
 import SheetComponent from "../SheetComponent";
 import { repositoryAppInterface } from "@/api/interface/repository";
-
+import { repositoryAppData } from "./data";
 function DataTableComponent(props: { pageSize: number; data: any }) {
   const { table } = useTableHooks({
     pageSize: props.pageSize,
-    data: props.data,
+    data: repositoryAppData,
   });
   return (
     <div className='container'>
@@ -84,7 +84,7 @@ function DataTableComponent(props: { pageSize: number; data: any }) {
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
-                      <SheetComponent id='2' title={cell.id}>
+                      <SheetComponent id={cell.id} title={cell.id}>
                         {flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext()
