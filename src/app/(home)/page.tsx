@@ -31,7 +31,11 @@ const Page = () => {
       <Pankuzu />
       <div>
         <ButtonArea />
-        <AccordionComponent data={data} />
+        {data === undefined ? (
+          <div>No Data</div>
+        ) : (
+          <AccordionComponent data={data} />
+        )}
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ export interface repositoryInterface {
   repositories: [
     {
       repository: string;
-      deployments: 0;
+      deployments: number;
     }
   ];
   apps: [

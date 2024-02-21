@@ -4,6 +4,8 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { useEffect } from "react";
 import { Button } from "../ui/button";
 import "@/styles//appButton.scss";
+import "@/styles/appButton.scss";
+import { RiLoaderFill } from "react-icons/ri";
 
 async function keycloakSessionLogOut() {
   try {
@@ -27,7 +29,11 @@ export default function AuthStatus() {
   }, [session, status]);
 
   if (status == "loading") {
-    return <div className='mx-5'>Loading...</div>;
+    return (
+      <div className='loadingIcon'>
+        <RiLoaderFill className='' />
+      </div>
+    );
   } else if (session) {
     return (
       <div className='mx-5'>

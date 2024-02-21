@@ -3,7 +3,10 @@
   border-bottom: 1px solid #888;
   margin-left: calc(100vw - 160px);
   margin: 10px 0;
-  padding: 8px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .installAppButton {
@@ -16,4 +19,8 @@
     opacity: 0.8;
     box-shadow: 0 0 rgba(0, 0, 0, 0.1);
   }
+}
+
+.loadingIcon {
+  font-size: 4rem;
 }
