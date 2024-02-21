@@ -17,10 +17,7 @@ import useTableHooks from "./useTableHooks";
 import SheetComponent from "../SheetComponent";
 import { repositoryAppInterface } from "@/api/interface/repository";
 
-function DataTableComponent(props: {
-  pageSize: number;
-  data: repositoryAppInterface[];
-}) {
+function DataTableComponent(props: { pageSize: number; data: any }) {
   const { table } = useTableHooks({
     pageSize: props.pageSize,
     data: props.data,
@@ -31,9 +28,9 @@ function DataTableComponent(props: {
         <div className='flex items-center py-4'>
           <Input
             placeholder='Filter Name...'
-            value={(table.getColumn("Name")?.getFilterValue() as string) ?? ""}
+            value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
             onChange={(event) =>
-              table.getColumn("Name")?.setFilterValue(event.target.value)
+              table.getColumn("name")?.setFilterValue(event.target.value)
             }
             className='max-w-sm'
           />
@@ -44,7 +41,6 @@ function DataTableComponent(props: {
               variant='outline'
               size='sm'
               onClick={() => table.previousPage()}
-              disabled={!table.getCanPreviousPage()}
             >
               Previous
             </Button>

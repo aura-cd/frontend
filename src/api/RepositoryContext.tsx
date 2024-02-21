@@ -1,29 +1,34 @@
 "use client";
-import { useState, useEffect, createContext } from "react";
-import { repositoryAppInterface } from "./interface/repository";
-import { fetchRepositoryApp } from "./repository";
-import React from "react";
-export const RepoContext = createContext({} as repositoryAppInterface);
+import { useState, createContext, useEffect } from "react";
+import {
+  repositoryAppInterface,
+  repositoryInterface,
+} from "./interface/repository";
 
-export default function RepositoryContext(props: React.PropsWithChildren<{}>) {
-  const [data, setData] = useState<repositoryAppInterface>(
-    {} as repositoryAppInterface
-  );
+import React from "react";
+
+export const RepoContext = createContext([] as repositoryInterface[]);
+
+export const RepoProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const [data, setData] = useState<repositoryInterface[]>([]);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchRepositoryApp = async (organization_id: string) => {
       try {
-        const response = await fetchRepositoryApp("test1");
-
-        setData(response);
-      } catch (e) {
-        console.error("Error fetching data", e);
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/organizations/${organization_id}/repositories`
+        );
+        const api_data: repositoryInterface[] = await response.json();
+        setData(api_data);
+      } catch (error) {
+        console.error("Error fetching data", error);
       }
-    }
-    fetchData();
+    };
+
+    fetchRepositoryApp("test1");
   }, []);
 
-  return (
-    <RepoContext.Provider value={data}>{props.children}</RepoContext.Provider>
-  );
-}
+  return <RepoContext.Provider value={data}>{children}</RepoContext.Provider>;
+};

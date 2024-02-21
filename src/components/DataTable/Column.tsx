@@ -7,7 +7,7 @@ import { repositoryAppInterface } from "@/api/interface/repository";
 
 export const columns: ColumnDef<repositoryAppInterface>[] = [
   {
-    id: "select",
+    id: "name",
     header: ({ table }) => (
       <Checkbox
         checked={
@@ -30,7 +30,7 @@ export const columns: ColumnDef<repositoryAppInterface>[] = [
   },
 
   {
-    accessorKey: "Name",
+    accessorKey: "name",
     header: ({ column }) => {
       return (
         <Button
@@ -45,39 +45,24 @@ export const columns: ColumnDef<repositoryAppInterface>[] = [
     cell: ({ row }) => <div className='lowercase'>{row.getValue("Name")}</div>,
   },
   {
-    accessorKey: "Status",
+    accessorKey: "status",
     header: ({ column }) => {
       return (
         <Button
           variant='ghost'
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Status
+          status
           <CaretSortIcon className='ml-2 h-4 w-4' />
         </Button>
       );
     },
     cell: ({ row }) => (
-      <div className='lowercase'>{row.getValue("Status")}</div>
+      <div className='lowercase'>{row.getValue("status")}</div>
     ),
   },
   {
-    accessorKey: "Usage",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant='ghost'
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Usage
-          <CaretSortIcon className='ml-2 h-4 w-4' />
-        </Button>
-      );
-    },
-    cell: ({ row }) => <div className='lowercase'>{row.getValue("Usage")}</div>,
-  },
-  {
-    accessorKey: "Ver",
+    accessorKey: "version",
     header: ({ column }) => {
       return (
         <Button
@@ -89,10 +74,12 @@ export const columns: ColumnDef<repositoryAppInterface>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => <div className='lowercase'>{row.getValue("Ver")}</div>,
+    cell: ({ row }) => (
+      <div className='lowercase'>{row.getValue("version")}</div>
+    ),
   },
   {
-    accessorKey: "Age",
+    accessorKey: "age",
     header: ({ column }) => {
       return (
         <Button
@@ -104,6 +91,6 @@ export const columns: ColumnDef<repositoryAppInterface>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => <div className='lowercase'>{row.getValue("Age")}</div>,
+    cell: ({ row }) => <div className='lowercase'>{row.getValue("age")}</div>,
   },
 ];

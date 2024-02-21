@@ -1,7 +1,10 @@
 "use client";
 
 import SucceededStatus from "@/components/status/SucceededStatus";
-import { repositoryInterface } from "./interface/repository";
+import {
+  repositoryAppInterface,
+  repositoryInterface,
+} from "./interface/repository";
 import UnknownStatus from "@/components/status/UnknownStatus";
 import RunningStatus from "@/components/status/RunningStatus";
 import PendingStatus from "@/components/status/PendingStatus";
@@ -11,31 +14,35 @@ export const fetchRepositoryApp = async (organization_id: string) => {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/organizations/${organization_id}/repositories`
     );
-    const data: repositoryInterface = await response.json();
-
-    let jsonData = await response.json();
-    const formattedData = jsonData.app.map((data: any) => {
-      switch (data.status) {
+    const data: repositoryInterface[] = await response.json();
+    console.log(data);
+    const formattedData = data.map((item: any) => {
+      switch (item.states) {
         case "Failed":
-          data.status = <FailedStatus />;
+          item.status = <FailedStatus />;
           break;
         case "Pending":
-          data.status = <PendingStatus />;
+          item.status = <PendingStatus />;
           break;
         case "Running":
-          data.status = <RunningStatus />;
+          item.status = <RunningStatus />;
           break;
         case "Succeeded":
-          data.status = <SucceededStatus />;
+          item.status = <SucceededStatus />;
           break;
         case "Unknown":
-          data.status = <UnknownStatus />;
+        default:
+          item.status = <UnknownStatus />;
       }
 
-      return jsonData;
+      return {
+        name: item.name,
+        version: item.version,
+        states: item.status,
+        age: item.age,
+      };
     });
 
-    console.log(formattedData);
     return formattedData;
   } catch (error) {
     console.error("Error fetching data", error);

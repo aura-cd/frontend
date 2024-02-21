@@ -19,11 +19,7 @@ const Sidebar = () => {
           {SidebarData.map(({ title, icon, link }) => {
             return (
               <Link href={link} key={link}>
-                <li
-                  key={link}
-                  id={link === params.page ? "active" : ""}
-                  className='row'
-                >
+                <li id={link === params.page ? "active" : ""} className='row'>
                   <div id='icon'>{icon}</div>
                   <div id='title'>{title}</div>
                 </li>
