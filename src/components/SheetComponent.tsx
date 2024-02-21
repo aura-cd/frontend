@@ -30,7 +30,7 @@ function SheetComponent({
 }) {
   return (
     <Sheet>
-      <SheetTrigger asChild>{children}</SheetTrigger>
+      <SheetTrigger>{children}</SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle className='title'>{title}</SheetTitle>
