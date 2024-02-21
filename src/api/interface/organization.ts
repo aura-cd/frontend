@@ -1,4 +1,4 @@
-export interface fetchHomeInterface {
+export interface fetchOrganizationInterface {
   organizationInfos: [
     {
       organization: string;

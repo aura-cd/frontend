@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { fetchHomeInterface } from "@/api/interface/home";
+import { fetchHomeInterface } from "@/api/interface/organization";
 interface AccordionComponentProps {
   data: fetchHomeInterface | undefined;
 }

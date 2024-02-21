@@ -5,16 +5,16 @@ import ButtonArea from "./components/ButtonArea";
 import AccordionComponent from "@/components/AccordionComponent";
 
 import Pankuzu from "@/components/path/Pankuzu";
-import { fetchHomeInterface } from "@/api/interface/home";
-import { fetchHome } from "@/api/home";
+import { fetchOrganizationInterface } from "@/api/interface/organization";
+import { fetchOrganization } from "@/api/organization";
 
 const Page = () => {
-  const [data, setData] = useState<fetchHomeInterface | undefined>();
+  const [data, setData] = useState<fetchOrganizationInterface | undefined>();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetchHome();
+        const response = await fetchOrganization();
         if (response !== null || undefined) {
           setData(response);
         }

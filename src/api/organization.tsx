@@ -1,13 +1,13 @@
 "use client";
 
-import { fetchHomeInterface } from "./interface/home";
+import { fetchOrganizationInterface } from "./interface/organization";
 
-export const fetchHome = async () => {
+export const fetchOrganization = async () => {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/home`, {
       method: "GET",
     });
-    const data: fetchHomeInterface = await response.json();
+    const data: fetchOrganizationInterface = await response.json();
 
     console.log(data);
     return data;
