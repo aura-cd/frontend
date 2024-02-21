@@ -1,8 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 .iconContainer {
   z-index: 100;
   display: flex;
@@ -24,7 +19,6 @@
 }
 
 .SidebarList {
-  height: auto;
   width: 100%;
   :active {
     background-color: #a3dcff;

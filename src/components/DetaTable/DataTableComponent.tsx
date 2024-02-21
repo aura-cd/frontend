@@ -23,16 +23,38 @@ function DataTableComponent(props: { pageSize: number }) {
   });
   return (
     <div className='container'>
-      <div className='flex items-center py-4'>
-        <Input
-          placeholder='Filter Name...'
-          value={(table.getColumn("Name")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("Name")?.setFilterValue(event.target.value)
-          }
-          className='max-w-sm'
-        />
+      <div className='flex justify-between  '>
+        <div className='flex items-center py-4'>
+          <Input
+            placeholder='Filter Name...'
+            value={(table.getColumn("Name")?.getFilterValue() as string) ?? ""}
+            onChange={(event) =>
+              table.getColumn("Name")?.setFilterValue(event.target.value)
+            }
+            className='max-w-sm'
+          />
+        </div>
+        <div className='flex items-center justify-end space-x-2 py-4'>
+          <div className='space-x-2'>
+            <Button
+              variant='outline'
+              size='sm'
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}
+            >
+              Previous
+            </Button>
+            <Button
+              size='sm'
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}
+            >
+              Next
+            </Button>
+          </div>
+        </div>
       </div>
+
       <div className='rounded-md border'>
         <Table>
           <TableHeader>
@@ -84,25 +106,6 @@ function DataTableComponent(props: { pageSize: number }) {
             )}
           </TableBody>
         </Table>
-      </div>
-      <div className='flex items-center justify-end space-x-2 py-4'>
-        <div className='space-x-2'>
-          <Button
-            variant='outline'
-            size='sm'
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            Previous
-          </Button>
-          <Button
-            size='sm'
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            Next
-          </Button>
-        </div>
       </div>
     </div>
   );
