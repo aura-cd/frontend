@@ -4,9 +4,8 @@ import {
   repositoryAppInterface,
   repositoryInterface,
 } from "./interface/repository";
-
+import { fetchRepository } from "./repository";
 import React from "react";
-import { fetchOrganizationApp } from "./repository";
 
 export const RepoContext = createContext([] as repositoryInterface[]);
 
@@ -17,8 +16,16 @@ export const RepoProvider: React.FC<{ children: React.ReactNode }> = ({
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchOrganizationApp("test1");
-      if (data) setData(data);
+      try {
+        const data = await fetchRepository("test1");
+
+        if (data) {
+          setData([data]);
+        }
+        console.log(data);
+      } catch (error) {
+        console.error("Error fetching data", error);
+      }
     };
     fetchData();
   }, []);

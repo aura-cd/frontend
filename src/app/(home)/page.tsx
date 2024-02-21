@@ -7,8 +7,6 @@ import AccordionComponent from "@/components/AccordionComponent";
 import Pankuzu from "@/components/path/Pankuzu";
 import { fetchOrganizationInterface } from "@/api/interface/organization";
 import { fetchOrganization } from "@/api/organization";
-import { fetchOrganizationApp } from "@/api/repository";
-
 const Page = () => {
   const [data, setData] = useState<fetchOrganizationInterface | undefined>();
 
@@ -16,8 +14,6 @@ const Page = () => {
     const fetchData = async () => {
       try {
         const response = await fetchOrganization();
-        const res = await fetchOrganizationApp("test1");
-        console.log(res);
         if (response !== null || undefined) {
           setData(response);
         }

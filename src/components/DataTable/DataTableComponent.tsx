@@ -16,7 +16,7 @@ import {
 import useTableHooks from "./useTableHooks";
 import SheetComponent from "../SheetComponent";
 import { repositoryAppInterface } from "@/api/interface/repository";
-import { repositoryAppData } from "./data";
+// import { repositoryAppData } from "./data";
 function DataTableComponent(props: { pageSize: number; data: any }) {
   const { table } = useTableHooks({
     pageSize: props.pageSize,
