@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import {
   ColumnFiltersState,
@@ -9,16 +10,20 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { data } from "./Datas";
 import { columns } from "./Column";
-const useTableHooks = (props: { pageSize: number }) => {
+import { repositoryInterface } from "@/api/interface/repository";
+
+const useTableHooks = (props: {
+  pageSize: number;
+  data: repositoryInterface[];
+}) => {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState({});
 
   const table = useReactTable({
-    data,
+    data: props.data,
     columns,
 
     onSortingChange: setSorting,
@@ -41,7 +46,7 @@ const useTableHooks = (props: { pageSize: number }) => {
       },
     },
   });
-  console.log(data);
+
   return {
     table,
   };
