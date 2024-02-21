@@ -1,10 +1,11 @@
 import { Checkbox } from "@radix-ui/react-checkbox";
 import { CaretSortIcon } from "@radix-ui/react-icons";
 import { ColumnDef } from "@tanstack/react-table";
-import { Button } from "../ui/button";
-import { repositoryInterface } from "@/api/interface/repository";
 
-export const columns: ColumnDef<repositoryInterface>[] = [
+import { Button } from "../ui/button";
+import { repositoryRepoAppInterface } from "@/api/interface/repository";
+
+export const columns: ColumnDef<repositoryRepoAppInterface>[] = [
   {
     id: "select",
     header: ({ table }) => (

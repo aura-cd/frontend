@@ -11,11 +11,11 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { columns } from "./Column";
-import { repositoryInterface } from "@/api/interface/repository";
+import { repositoryRepoAppInterface } from "@/api/interface/repository";
 
 const useTableHooks = (props: {
   pageSize: number;
-  data: repositoryInterface[];
+  data: repositoryRepoAppInterface[];
 }) => {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);

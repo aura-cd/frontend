@@ -16,15 +16,15 @@ import {
 } from "@/components/ui/table";
 import useTableHooks from "./useTableHooks";
 import SheetComponent from "../SheetComponent";
-import { repositoryInterface } from "@/api/interface/repository";
+import { repositoryRepoAppInterface } from "@/api/interface/repository";
 
 function DataTableComponent(props: {
   pageSize: number;
-  data: repositoryInterface;
+  data: repositoryRepoAppInterface[];
 }) {
   const { table } = useTableHooks({
     pageSize: props.pageSize,
-    data: [props.data],
+    data: props.data,
   });
   return (
     <div className='container'>

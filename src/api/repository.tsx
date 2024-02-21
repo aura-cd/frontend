@@ -6,7 +6,7 @@ import UnknownStatus from "@/components/status/UnknownStatus";
 import RunningStatus from "@/components/status/RunningStatus";
 import PendingStatus from "@/components/status/PendingStatus";
 import FailedStatus from "@/components/status/FailedStatus";
-export const fetchOrganization = async (organization_id: string) => {
+export const fetchRepository = async (organization_id: string) => {
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/organization/${organization_id}/repository`

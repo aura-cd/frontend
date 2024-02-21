@@ -1,11 +1,26 @@
 import Pankuzu from "@/components/path/Pankuzu";
 import DataTableComponent from "@/components/DataTable/DataTableComponent";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ButtonArea from "../../components/ButtonArea";
 import LastPath from "@/components/path/LastPath";
-import useTableHooks from "@/components/DataTable/useTableHooks";
+import { fetchRepository } from "@/api/repository";
+import {
+  repoFormatInterface,
+  repositoryInterface,
+  repositoryRepoAppInterface,
+} from "@/api/interface/repository";
+
 const page = () => {
-  const { table } = useTableHooks({ pageSize: 5, data: [] });
+  const [appData, setAppData] = useState<repositoryRepoAppInterface[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetchRepository("organization_id");
+      setAppData(response);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className='container'>
@@ -13,7 +28,7 @@ const page = () => {
       <LastPath />
       <div>
         <ButtonArea />
-        <DataTableComponent pageSize={5} table={table} />
+        <DataTableComponent pageSize={5} data={appData} />
       </div>
     </div>
   );
