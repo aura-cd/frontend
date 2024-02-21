@@ -19,7 +19,7 @@ function SheetComponent({
 }: {
   openButton: ReactNode;
   children: ReactNode;
-  description: string;
+  description?: string;
   title: string;
 }) {
   return (

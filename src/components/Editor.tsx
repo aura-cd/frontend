@@ -7,7 +7,7 @@ const Editor = () => {
     console.log(json);
   };
   return (
-    <div className='wrap'>
+    <div className='editor-wrap'>
       <YamlEditor onChange={handleChange} />
     </div>
   );
