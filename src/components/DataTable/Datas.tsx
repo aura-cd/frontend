@@ -30,20 +30,4 @@ export const data: Payment[] = [
     Ver: "3",
     Age: "3",
   },
-  {
-    ID: "4",
-    Name: "Payment 4",
-    Status: <SucceededStatus />,
-    Usage: "4",
-    Ver: "4",
-    Age: "4",
-  },
-  {
-    ID: "5",
-    Name: "Payment 5",
-    Status: <Unknown />,
-    Usage: "5",
-    Ver: "5",
-    Age: "5",
-  },
 ];
