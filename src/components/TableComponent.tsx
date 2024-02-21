@@ -25,8 +25,8 @@ function TableDemo(props: TableComponentProps) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((row: any) => (
-          <TableRow key={row.name}>
+        {data.map((row: any, index) => (
+          <TableRow key={index}>
             <TableCell>{row.name}</TableCell>
             <TableCell className='row-deployments'>{row.deployments}</TableCell>
           </TableRow>

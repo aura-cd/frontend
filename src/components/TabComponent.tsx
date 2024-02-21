@@ -17,8 +17,8 @@ const TabComponent = (props: TabContentTuple<2 | 3 | 4 | 5 | 6>) => {
     <Tabs defaultValue='account' className='w-[400px]'>
       <TabsList className='list'>
         {title &&
-          title.map((tab: string) => (
-            <TabsTrigger className='trigger' key={tab} value={tab}>
+          title.map((tab: string, index) => (
+            <TabsTrigger className='trigger' key={index} value={tab}>
               {tab}
             </TabsTrigger>
           ))}

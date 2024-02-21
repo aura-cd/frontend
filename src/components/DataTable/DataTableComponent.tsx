@@ -20,7 +20,7 @@ import { repositoryAppData } from "./data";
 function DataTableComponent(props: { pageSize: number; data: any }) {
   const { table } = useTableHooks({
     pageSize: props.pageSize,
-    data: repositoryAppData,
+    data: props.data,
   });
   return (
     <div className='container'>
@@ -60,9 +60,9 @@ function DataTableComponent(props: { pageSize: number; data: any }) {
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
+                {headerGroup.headers.map((header, index) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead key={index}>
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -77,13 +77,13 @@ function DataTableComponent(props: { pageSize: number; data: any }) {
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
+              table.getRowModel().rows.map((row, index) => (
                 <TableRow
-                  key={row.id}
+                  key={index}
                   data-state={row.getIsSelected() && "selected"}
                 >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                  {row.getVisibleCells().map((cell, index) => (
+                    <TableCell key={index}>
                       <SheetComponent id={cell.id} title={cell.id}>
                         {flexRender(
                           cell.column.columnDef.cell,

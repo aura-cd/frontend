@@ -37,6 +37,7 @@ export interface repoFormatInterface {
 export interface repositoryAppInterface {
   name: string;
   version: string;
-  states: JSX.Element;
+  // states: JSX.Element;
+  states: string;
   age: string;
 }
