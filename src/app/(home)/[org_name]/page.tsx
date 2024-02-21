@@ -2,7 +2,7 @@ import Pankuzu from "@/components/path/Pankuzu";
 import TableComponent from "@/components/TableComponent";
 import React from "react";
 import ButtonArea from "../components/ButtonArea";
-import DataTableComponent from "@/components/DetaTable/DataTableComponent";
+import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import LastPath from "@/components/path/LastPath";
 
 const page = () => {

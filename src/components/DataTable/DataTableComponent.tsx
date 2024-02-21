@@ -84,7 +84,7 @@ function DataTableComponent(props: { pageSize: number }) {
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
-                      <SheetComponent id='2' title={cell.id}>
+                      <SheetComponent id={cell.id} title={cell.id}>
                         {flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext()

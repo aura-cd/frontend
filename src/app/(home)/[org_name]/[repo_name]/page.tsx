@@ -1,5 +1,5 @@
 import Pankuzu from "@/components/path/Pankuzu";
-import DataTableComponent from "@/components/DetaTable/DataTableComponent";
+import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import React from "react";
 import ButtonArea from "../../components/ButtonArea";
 import LastPath from "@/components/path/LastPath";
