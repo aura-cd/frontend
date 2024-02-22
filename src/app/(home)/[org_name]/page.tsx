@@ -2,7 +2,7 @@
 import Pankuzu from "@/components/path/Pankuzu";
 import TableComponent from "@/components/TableComponent";
 import React, { use, useEffect } from "react";
-import ButtonArea from "../components/ButtonArea";
+import ButtonArea from "@/app/(home)/components/ButtonArea";
 import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import LastPath from "@/components/path/LastPath";
 import { RepoContext } from "@/api/RepoContext";

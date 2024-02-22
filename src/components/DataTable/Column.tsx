@@ -2,7 +2,7 @@ import { Checkbox } from "@radix-ui/react-checkbox";
 import { CaretSortIcon } from "@radix-ui/react-icons";
 import { ColumnDef } from "@tanstack/react-table";
 
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { repositoryAppInterface } from "@/api/interface/repository";
 
 export const columns: ColumnDef<repositoryAppInterface>[] = [

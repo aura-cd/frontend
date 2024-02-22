@@ -6,7 +6,7 @@ import {
   FormLabel,
   FormControl,
   FormMessage,
-} from "../ui/form";
+} from "@/components/ui/form";
 import "@/styles/inputField.scss";
 interface InputFieldProps {
   form: any;

@@ -2,7 +2,7 @@
 import Pankuzu from "@/components/path/Pankuzu";
 import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import React, { useEffect, useState } from "react";
-import ButtonArea from "../../components/ButtonArea";
+import ButtonArea from "@/app/(home)/components/ButtonArea";
 import LastPath from "@/components/path/LastPath";
 import { RepoContext } from "@/api/RepoContext";
 const page = () => {
@@ -14,7 +14,7 @@ const page = () => {
       <LastPath />
       <div>
         <ButtonArea />
-        {/* <DataTableComponent pageSize={5}  /> */}
+        <DataTableComponent pageSize={5} />
       </div>
     </div>
   );
