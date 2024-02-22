@@ -1,4 +1,4 @@
-import "@/components/branch/information/style/infoCard.scss";
+import "./style/InfoCard.scss";
 
 const InformationContents = () => {
   return (

@@ -45,7 +45,7 @@ export const columns: ColumnDef<repositoryAppInterface>[] = [
     cell: ({ row }) => <div className='lowercase'>{row.getValue("name")}</div>,
   },
   {
-    accessorKey: "states",
+    accessorKey: "status",
     header: ({ column }) => {
       return (
         <Button
@@ -58,7 +58,7 @@ export const columns: ColumnDef<repositoryAppInterface>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className='lowercase'>{row.getValue("states")}</div>
+      <div className='lowercase'>{row.getValue("status")}</div>
     ),
   },
   {
