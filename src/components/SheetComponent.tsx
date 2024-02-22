@@ -18,7 +18,6 @@ import OptionContents from "./branch/option/OptionContents";
 const tabName = ["Information", "Log", "Option"];
 const tabData = [<InformationContents />, <LogContents />, <OptionContents />];
 function SheetComponent({
-  id,
   description,
   title,
   children,

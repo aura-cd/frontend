@@ -14,8 +14,7 @@ interface TableComponentProps {
   }[];
 }
 
-function TableDemo(props: TableComponentProps) {
-  const { data } = props;
+function TableDemo(props: { data: TableComponentProps[] }) {
   return (
     <Table className='table'>
       <TableHeader>
@@ -25,7 +24,7 @@ function TableDemo(props: TableComponentProps) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((row: any, index) => (
+        {props.data.map((row: any, index: number) => (
           <TableRow key={index}>
             <TableCell>{row.name}</TableCell>
             <TableCell className='row-deployments'>{row.deployments}</TableCell>
