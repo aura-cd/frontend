@@ -46,7 +46,6 @@ function ServiceForm() {
             name='config'
             label='config'
             option={["true", "false"]}
-            placeholder={""}
           />
 
           <Button className='button' type='submit'>

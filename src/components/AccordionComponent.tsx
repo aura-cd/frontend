@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { fetchOrganizationInterface } from "@/api/interface/organization";
+import Link from "next/link";
 
 function AccordionComponent(props: { data: fetchOrganizationInterface }) {
   return (
@@ -23,7 +24,9 @@ function AccordionComponent(props: { data: fetchOrganizationInterface }) {
                 {item.organization}
               </AccordionTrigger>
               {item.repositories.map((repository: any, index: number) => (
+                <Link href={`/${repository}`}   >
                 <AccordionContent key={index}>{repository}</AccordionContent>
+                </Link>
               ))}
             </AccordionItem>
           ))}
