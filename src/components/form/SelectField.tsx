@@ -36,7 +36,11 @@ const SelectForm = (props: SelectFormProps) => {
                 </SelectTrigger>
                 <SelectContent>
                   {props.options.map((option) => (
-                    <SelectItem key={option.value} value={option.value}>
+                    <SelectItem
+                      key={option.value}
+                      value={option.value}
+                      className='field'
+                    >
                       {option.value}
                     </SelectItem>
                   ))}

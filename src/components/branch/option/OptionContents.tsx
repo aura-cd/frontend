@@ -26,11 +26,7 @@ const OptionContents = () => {
     <div className='tab'>
       <div className='tab-trigger'>
         {tabs.map((tab, index) => (
-          <button
-            key={index}
-            onClick={() => setActiveTab(index)}
-            className={activeTab === index ? "active" : ""}
-          >
+          <button key={index} onClick={() => setActiveTab(index)}>
             {tab.title}
           </button>
         ))}

@@ -52,34 +52,37 @@ function ResourceForm() {
             <div>
               <label className='form-label'>cpu</label>
             </div>
-
-            <InputField
-              form={form.control}
-              name='maxCpu'
-              placeholder='maxCpu'
-            />
-            <div>-</div>
-            <InputField
-              form={form.control}
-              name='minCpu'
-              placeholder='minCpu'
-            />
+            <div className='mulch-form-container'>
+              <InputField
+                form={form.control}
+                name='maxCpu'
+                placeholder='maxCpu'
+              />
+              <div className='hyphen'> - </div>
+              <InputField
+                form={form.control}
+                name='minCpu'
+                placeholder='minCpu'
+              />
+            </div>
           </div>
           <div className='form-container'>
             <div>
               <label className='form-label'>Memory</label>
             </div>
-            <InputField
-              form={form.control}
-              name='minMemory'
-              placeholder='minMemory'
-            />
-            <div>-</div>
-            <InputField
-              form={form.control}
-              name='maxMemory'
-              placeholder='maxMemory'
-            />
+            <div className='mulch-form-container'>
+              <InputField
+                form={form.control}
+                name='minMemory'
+                placeholder='minMemory'
+              />
+              <div className='hyphen'> - </div>
+              <InputField
+                form={form.control}
+                name='maxMemory'
+                placeholder='maxMemory'
+              />
+            </div>
           </div>
 
           <div className='form-container'>
@@ -142,7 +145,7 @@ function ResourceForm() {
           </div>
           <div className='button-area'>
             <div>
-              <Button className='button' type='submit' variant={"secondary"}>
+              <Button className='button' variant={"secondary"}>
                 Cansell
               </Button>
             </div>

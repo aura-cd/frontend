@@ -20,7 +20,7 @@ const InputField = (props: {
   placeholder: string;
 }) => {
   return (
-    <div className='field'>
+    <div className=''>
       <FormField
         control={props.form}
         name={props.name}

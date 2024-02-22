@@ -60,7 +60,7 @@ function EnviromentsForm() {
             </div>
             <div className='button-area'>
               <div>
-                <Button className='button' type='submit' variant={"secondary"}>
+                <Button className='button' variant={"secondary"}>
                   Cansell
                 </Button>
               </div>
