@@ -1,5 +1,4 @@
-import React from "react";
-import "./style/infoCard.scss";
+import "./style/InfoCard.scss";
 
 const InformationContents = () => {
   return (
