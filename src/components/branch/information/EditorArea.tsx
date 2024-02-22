@@ -1,5 +1,4 @@
 import Editor from "@/components/Editor";
-import React from "react";
 
 const EditorArea = () => {
   return (

@@ -6,17 +6,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { fetchHomeInterface } from "@/api/interface/organization";
-interface AccordionComponentProps {
-  data: fetchHomeInterface | undefined;
-}
-function AccordionComponent(props: AccordionComponentProps) {
-  const { data } = props;
+import { fetchOrganizationInterface } from "@/api/interface/organization";
+
+function AccordionComponent(props: { data: fetchOrganizationInterface }) {
   return (
     <div className='container'>
       <Accordion type='single' collapsible>
-        {data &&
-          data.organizationInfos.map((item, index) => (
+        {props.data &&
+          props.data.organizationInfos.map((item: any, index: number) => (
             <AccordionItem
               key={index}
               className='itemContainer'
@@ -25,7 +22,7 @@ function AccordionComponent(props: AccordionComponentProps) {
               <AccordionTrigger className='title'>
                 {item.organization}
               </AccordionTrigger>
-              {item.repositories.map((repository, index) => (
+              {item.repositories.map((repository: any, index: number) => (
                 <AccordionContent key={index}>{repository}</AccordionContent>
               ))}
             </AccordionItem>

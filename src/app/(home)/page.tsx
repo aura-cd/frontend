@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "@/styles//appButton.scss";
 import ButtonArea from "./components/ButtonArea";
 import AccordionComponent from "@/components/AccordionComponent";
@@ -7,7 +7,6 @@ import AccordionComponent from "@/components/AccordionComponent";
 import Pankuzu from "@/components/path/Pankuzu";
 import { fetchOrganizationInterface } from "@/api/interface/organization";
 import { fetchOrganization } from "@/api/organization";
-
 const Page = () => {
   const [data, setData] = useState<fetchOrganizationInterface | undefined>();
 
@@ -31,7 +30,11 @@ const Page = () => {
       <Pankuzu />
       <div>
         <ButtonArea />
-        <AccordionComponent data={data} />
+        {data === undefined ? (
+          <div>No Data</div>
+        ) : (
+          <AccordionComponent data={data} />
+        )}
       </div>
     </div>
   );

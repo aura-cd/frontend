@@ -1,6 +1,5 @@
 import ProgressComponent from "@/components/ProgressComponent";
-import React from "react";
-import "./style/InfoParameter.scss";
+import "@/components/branch/information/style/InfoParameter.scss";
 import { HiMiniCpuChip } from "react-icons/hi2";
 import { FaMemory } from "react-icons/fa";
 import { GrStorage } from "react-icons/gr";

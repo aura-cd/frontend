@@ -4,6 +4,7 @@ import "./globals.css";
 import Sidebar from "@/components/sidebar/Sidebar";
 
 import SessionProviderWrapper from "@/components/auth/sessionProviderWrapper";
+import { RepoProvider } from "@/api/RepoContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,12 +20,14 @@ export default function RootLayout({
 }) {
   return (
     <SessionProviderWrapper>
-      <html lang='ja'>
-        <body className={`${inter.className} flex direction-normal `}>
-          <Sidebar />
-          <main className='flex grid-rows-1 w-[90%]'>{children}</main>
-        </body>
-      </html>
+      <RepoProvider>
+        <html lang='ja'>
+          <body className={`${inter.className} flex direction-normal `}>
+            <Sidebar />
+            <main className='flex grid-rows-1 w-[90%]'>{children}</main>
+          </body>
+        </html>
+      </RepoProvider>
     </SessionProviderWrapper>
   );
 }

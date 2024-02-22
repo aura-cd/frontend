@@ -1,5 +1,4 @@
 "use client";
-
 import * as React from "react";
 import { flexRender } from "@tanstack/react-table";
 import { columns } from "./Column";
@@ -15,11 +14,16 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import useTableHooks from "./useTableHooks";
-import SheetComponent from "../SheetComponent";
-
-function DataTableComponent(props: { pageSize: number }) {
+import SheetComponent from "@/components/SheetComponent";
+import { repositoryAppInterface } from "@/api/interface/repository";
+// import { repositoryAppData } from "./data";
+function DataTableComponent(props: {
+  pageSize: number;
+  data: repositoryAppInterface[];
+}) {
   const { table } = useTableHooks({
     pageSize: props.pageSize,
+    data: props.data,
   });
   return (
     <div className='container'>
@@ -27,9 +31,9 @@ function DataTableComponent(props: { pageSize: number }) {
         <div className='flex items-center py-4'>
           <Input
             placeholder='Filter Name...'
-            value={(table.getColumn("Name")?.getFilterValue() as string) ?? ""}
+            value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
             onChange={(event) =>
-              table.getColumn("Name")?.setFilterValue(event.target.value)
+              table.getColumn("name")?.setFilterValue(event.target.value)
             }
             className='max-w-sm'
           />
@@ -40,7 +44,6 @@ function DataTableComponent(props: { pageSize: number }) {
               variant='outline'
               size='sm'
               onClick={() => table.previousPage()}
-              disabled={!table.getCanPreviousPage()}
             >
               Previous
             </Button>
@@ -60,9 +63,9 @@ function DataTableComponent(props: { pageSize: number }) {
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
+                {headerGroup.headers.map((header, index) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead key={index}>
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -77,14 +80,14 @@ function DataTableComponent(props: { pageSize: number }) {
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
+              table.getRowModel().rows.map((row, index) => (
                 <TableRow
-                  key={row.id}
+                  key={index}
                   data-state={row.getIsSelected() && "selected"}
                 >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      <SheetComponent id='2' title={cell.id}>
+                  {row.getVisibleCells().map((cell, index) => (
+                    <TableCell key={index}>
+                      <SheetComponent id={cell.id} title={cell.id}>
                         {flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext()
@@ -97,7 +100,7 @@ function DataTableComponent(props: { pageSize: number }) {
             ) : (
               <TableRow>
                 <TableCell
-                  colSpan={columns.length}
+                  colSpan={columns?.length}
                   className='h-24 text-center'
                 >
                   No results.

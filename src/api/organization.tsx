@@ -4,9 +4,13 @@ import { fetchOrganizationInterface } from "./interface/organization";
 
 export const fetchOrganization = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/home`, {
-      method: "GET",
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/organizations
+    `,
+      {
+        method: "GET",
+      }
+    );
     const data: fetchOrganizationInterface = await response.json();
 
     console.log(data);

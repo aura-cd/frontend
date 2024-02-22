@@ -1,11 +1,9 @@
 "use client";
-import React, { use } from "react";
 import { ReactNode } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { SidebarData } from "./SidebarData";
 import "@/styles/Sidebar.scss";
 import SidebarIcon from "./SidebarIcon";
-import AuthStatus from "@/components/auth/authStatus";
 import Link from "next/link";
 
 const Sidebar = () => {
@@ -17,14 +15,10 @@ const Sidebar = () => {
       <div className='Sidebar'>
         <SidebarIcon />
         <ul className='SidebarList'>
-          {SidebarData.map(({ title, icon, link }) => {
+          {SidebarData.map(({ title, icon, link }, index) => {
             return (
-              <Link href={link} key={link}>
-                <li
-                  key={link}
-                  id={link === params.page ? "active" : ""}
-                  className='row'
-                >
+              <Link href={link} key={index}>
+                <li id={link === params.page ? "active" : ""} className='row'>
                   <div id='icon'>{icon}</div>
                   <div id='title'>{title}</div>
                 </li>
@@ -36,9 +30,7 @@ const Sidebar = () => {
           style={{
             margin: "0,auto",
           }}
-        >
-          <AuthStatus />
-        </div>
+        ></div>
       </div>
     </>
   );

@@ -1,12 +1,13 @@
 import { Checkbox } from "@radix-ui/react-checkbox";
 import { CaretSortIcon } from "@radix-ui/react-icons";
 import { ColumnDef } from "@tanstack/react-table";
-import { Payment } from "./Types";
-import { Button } from "../ui/button";
 
-export const columns: ColumnDef<Payment>[] = [
+import { Button } from "@/components/ui/button";
+import { repositoryAppInterface } from "@/api/interface/repository";
+
+export const columns: ColumnDef<repositoryAppInterface>[] = [
   {
-    id: "select",
+    id: "name",
     header: ({ table }) => (
       <Checkbox
         checked={
@@ -29,7 +30,7 @@ export const columns: ColumnDef<Payment>[] = [
   },
 
   {
-    accessorKey: "Name",
+    accessorKey: "name",
     header: ({ column }) => {
       return (
         <Button
@@ -41,42 +42,27 @@ export const columns: ColumnDef<Payment>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => <div className='lowercase'>{row.getValue("Name")}</div>,
+    cell: ({ row }) => <div className='lowercase'>{row.getValue("name")}</div>,
   },
   {
-    accessorKey: "Status",
+    accessorKey: "states",
     header: ({ column }) => {
       return (
         <Button
           variant='ghost'
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Status
+          status
           <CaretSortIcon className='ml-2 h-4 w-4' />
         </Button>
       );
     },
     cell: ({ row }) => (
-      <div className='lowercase'>{row.getValue("Status")}</div>
+      <div className='lowercase'>{row.getValue("states")}</div>
     ),
   },
   {
-    accessorKey: "Usage",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant='ghost'
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Usage
-          <CaretSortIcon className='ml-2 h-4 w-4' />
-        </Button>
-      );
-    },
-    cell: ({ row }) => <div className='lowercase'>{row.getValue("Usage")}</div>,
-  },
-  {
-    accessorKey: "Ver",
+    accessorKey: "version",
     header: ({ column }) => {
       return (
         <Button
@@ -88,10 +74,12 @@ export const columns: ColumnDef<Payment>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => <div className='lowercase'>{row.getValue("Ver")}</div>,
+    cell: ({ row }) => (
+      <div className='lowercase'>{row.getValue("version")}</div>
+    ),
   },
   {
-    accessorKey: "Age",
+    accessorKey: "age",
     header: ({ column }) => {
       return (
         <Button
@@ -103,6 +91,6 @@ export const columns: ColumnDef<Payment>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => <div className='lowercase'>{row.getValue("Age")}</div>,
+    cell: ({ row }) => <div className='lowercase'>{row.getValue("age")}</div>,
   },
 ];

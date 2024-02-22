@@ -19,7 +19,6 @@ import { Button } from "./ui/button";
 const tabName = ["Information", "Log", "Option"];
 const tabData = [<InformationContents />, <LogContents />, <OptionContents />];
 function SheetComponent({
-  id,
   description,
   title,
   children,

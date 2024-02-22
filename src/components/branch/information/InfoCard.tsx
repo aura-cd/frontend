@@ -1,5 +1,4 @@
-import React from "react";
-import "./style/infoCard.scss";
+import "@/components/branch/information/style/infoCard.scss";
 
 const InformationContents = () => {
   return (

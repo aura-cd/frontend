@@ -1,12 +1,11 @@
 import { Input } from "@/components/ui/input";
-import React from "react";
 import {
   FormField,
   FormItem,
   FormLabel,
   FormControl,
   FormMessage,
-} from "../ui/form";
+} from "@/components/ui/form";
 import "@/styles/inputField.scss";
 interface InputFieldProps {
   form: any;
@@ -15,19 +14,22 @@ interface InputFieldProps {
   placeholder: string;
 }
 
-const InputField = (props: InputFieldProps) => {
-  const { name, label, form, placeholder } = props;
-
+const InputField = (props: {
+  form: any;
+  name: string;
+  label: string;
+  placeholder: string;
+}) => {
   return (
     <div className='container'>
       <FormField
-        control={form}
-        name={name}
+        control={props.form}
+        name={props.name}
         render={({ field }) => (
           <FormItem>
-            <FormLabel>{label}</FormLabel>
+            <FormLabel>{props.label}</FormLabel>
             <FormControl>
-              <Input placeholder={placeholder} {...field} />
+              <Input placeholder={props.placeholder} {...field} />
             </FormControl>
             <FormMessage />
           </FormItem>

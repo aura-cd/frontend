@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { Bs0CircleFill } from "react-icons/bs";
 import "@/styles/Sidebar.scss";
 
