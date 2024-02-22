@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import EnvironmentsForm from "@/components/branch/option/from/EnviromentsForm";
-import ResourceForm from"@/components/branch/option/from/ResourceForm";
-
+import ResourceForm from "@/components/branch/option/from/ResourceForm";
+import "./from/style/option.scss";
 
 interface Tab {
   title: string;
@@ -21,10 +21,10 @@ const OptionContents = () => {
   ]);
 
   const [activeTab, setActiveTab] = useState(0);
-    
+
   return (
-    <div>
-      <div className="tab-trigger">
+    <div className='tac'>
+      <div className='tab-trigger'>
         {tabs.map((tab, index) => (
           <button
             key={index}
@@ -35,9 +35,7 @@ const OptionContents = () => {
           </button>
         ))}
       </div>
-      <div className="tab-content">
-        {tabs[activeTab].content}
-      </div>
+      <div className='tab-content'>{tabs[activeTab].content}</div>
     </div>
   );
 };

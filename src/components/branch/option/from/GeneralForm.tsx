@@ -28,7 +28,6 @@ function LoginForm() {
           <InputField
             form={form.control}
             name='pod_name'
-            label='pod_name'
             placeholder='pod_name'
           />
 

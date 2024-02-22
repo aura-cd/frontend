@@ -17,25 +17,25 @@ interface InputFieldProps {
 const InputField = (props: {
   form: any;
   name: string;
-  label: string;
   placeholder: string;
 }) => {
   return (
-    <div className='container'>
-      <FormField
-        control={props.form}
-        name={props.name}
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel>{props.label}</FormLabel>
-            <FormControl>
-              <Input placeholder={props.placeholder} {...field} />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-    </div>
+    <FormField
+      control={props.form}
+      name={props.name}
+      render={({ field }) => (
+        <FormItem>
+          <FormControl>
+            <Input
+              className='field'
+              placeholder={props.placeholder}
+              {...field}
+            />
+          </FormControl>
+          <FormMessage />
+        </FormItem>
+      )}
+    />
   );
 };
 

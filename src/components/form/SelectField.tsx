@@ -17,7 +17,6 @@ import "@/styles/inputField.scss";
 interface SelectFormProps {
   form: any;
   name: string;
-  label: string;
   placeholder: string;
   options: { value: string }[];
 }
@@ -28,9 +27,8 @@ const SelectForm = (props: SelectFormProps) => {
       <FormField
         control={props.form}
         name={props.name}
-        render={({ field }) => (
+        render={() => (
           <FormItem>
-            <FormLabel>{props.label}</FormLabel>
             <FormControl>
               <Select>
                 <SelectTrigger className='w-[180px]'>

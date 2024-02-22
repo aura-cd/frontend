@@ -28,25 +28,24 @@ function ServiceForm() {
     <>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className='form'>
-          <InputField
-            form={form.control}
-            name='kye'
-            label='kye'
-            placeholder='kye'
-          />
+          <div>
+            <label>kye</label>
+            <InputField form={form.control} name='kye' placeholder='kye' />
+          </div>
 
-          <InputField
-            form={form.control}
-            name='value'
-            label='value'
-            placeholder='value'
-          />
-          <SelectField
-            form={form.control}
-            name='config'
-            label='config'
-            option={["true", "false"]}
-          />
+          <div>
+            <label>value</label>
+            <InputField form={form.control} name='value' placeholder='value' />
+          </div>
+          <div>
+            <label>config</label>
+            <SelectField
+              form={form.control}
+              name='config'
+              placeholder='config'
+              options={[{ value: "true" }, { value: "false" }]}
+            />
+          </div>
 
           <Button className='button' type='submit'>
             Submit
