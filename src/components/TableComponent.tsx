@@ -7,15 +7,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import "@/styles/table.scss";
-interface TableComponentProps {
-  data: {
-    name: string;
-    deployments: number;
-  }[];
-}
 
-function TableDemo(props: TableComponentProps) {
-  const { data } = props;
+function TableDemo(props: { data: { name: string; deployments: number }[] }) {
   return (
     <Table className='table'>
       <TableHeader>
@@ -25,7 +18,7 @@ function TableDemo(props: TableComponentProps) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {data.map((row: any, index) => (
+        {props.data.map((row: any, index: number) => (
           <TableRow key={index}>
             <TableCell>{row.name}</TableCell>
             <TableCell className='row-deployments'>{row.deployments}</TableCell>

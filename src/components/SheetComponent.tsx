@@ -11,9 +11,10 @@ import "@/styles/sheet.scss";
 import Link from "next/link";
 import { ReactNode } from "react";
 import TabComponent from "./TabComponent";
-import InformationContents from "./branch/information/InfoCard";
+import InformationContents from "./branch/information/InformationContents";
 import LogContents from "./branch/log/LogContents";
 import OptionContents from "./branch/option/OptionContents";
+import { Button } from "./ui/button";
 
 
 function SheetComponent({

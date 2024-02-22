@@ -1,4 +1,3 @@
-import React from "react";
 import { BsQuestion } from "react-icons/bs";
 import "@/styles/status.scss";
 const UnknownStatus = () => {

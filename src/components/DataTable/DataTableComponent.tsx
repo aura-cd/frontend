@@ -14,7 +14,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import useTableHooks from "./useTableHooks";
-import SheetComponent from "../SheetComponent";
+import SheetComponent from "@/components/SheetComponent";
 import { repositoryAppInterface } from "@/api/interface/repository";
 import { repositoryAppData } from "./data";
 function DataTableComponent(props: {

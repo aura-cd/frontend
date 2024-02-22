@@ -9,12 +9,11 @@ import {
 import { fetchOrganizationInterface } from "@/api/interface/organization";
 
 function AccordionComponent(props: { data: fetchOrganizationInterface }) {
-  const { data } = props;
   return (
     <div className='container'>
       <Accordion type='single' collapsible>
-        {data &&
-          data.organizationInfos.map((item: any, index: number) => (
+        {props.data &&
+          props.data.organizationInfos.map((item: any, index: number) => (
             <AccordionItem
               key={index}
               className='itemContainer'

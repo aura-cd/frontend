@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <SessionProviderWrapper>
-      <RepoProvider repoId='test1'>
+      <RepoProvider>
         <html lang='ja'>
           <body className={`${inter.className} flex direction-normal `}>
             <Sidebar />

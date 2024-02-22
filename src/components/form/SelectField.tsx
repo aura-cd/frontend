@@ -1,12 +1,10 @@
-import { Input } from "@/components/ui/input";
-import React from "react";
 import {
   FormField,
   FormItem,
   FormLabel,
   FormControl,
   FormMessage,
-} from "../ui/form";
+} from "@/components/ui/form";
 import "@/styles/inputField.scss";
 interface InputFieldProps {
   form: any;
@@ -16,20 +14,23 @@ interface InputFieldProps {
   option: string[];
 }
 
-const SelectField = (props: InputFieldProps) => {
-  const { name, label, form, option } = props;
-
+const SelectField = (props: {
+  form: any;
+  name: string;
+  label: string;
+  option: string[];
+}) => {
   return (
     <div className='container'>
       <FormField
-        control={form}
-        name={name}
+        control={props.form}
+        name={props.name}
         render={({ field }) => (
           <FormItem>
-            <FormLabel>{label}</FormLabel>
+            <FormLabel>{props.label}</FormLabel>
             <FormControl>
               <select {...field} className='select'>
-                {option.map((item, index) => (
+                {props.option.map((item, index) => (
                   <option key={index} value={item}>
                     {item}
                   </option>
