@@ -84,15 +84,14 @@ function DataTableComponent(props: {
                 <TableRow
                   key={index}
                   data-state={row.getIsSelected() && "selected"}
+             
                 >
                   {row.getVisibleCells().map((cell, index) => (
                     <TableCell key={index}>
-                      <SheetComponent id={cell.id} title={cell.id}>
                         {flexRender(
                           cell.column.columnDef.cell,
                           cell.getContext()
                         )}
-                      </SheetComponent>
                     </TableCell>
                   ))}
                 </TableRow>

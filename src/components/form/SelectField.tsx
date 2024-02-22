@@ -9,7 +9,6 @@ import {
 import "@/styles/inputField.scss";
 
 interface SelectFormProps {
- 
   form: any;
   name: string;
   label: string;
@@ -27,17 +26,17 @@ const SelectForm = (props: SelectFormProps) => {
           <FormItem>
             <FormLabel>{props.label}</FormLabel>
             <FormControl>
-              <Select>
-              <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder={props.placeholder} />
-              </SelectTrigger>
-              <SelectContent>
-                {props.options.map((option, index) => (
-                   <SelectItem key={index} value={option.value}>
-                    {option.value}
-                  </SelectItem>
-                ))}
-              </SelectContent>
+              <Select {...field}>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder={props.placeholder} />
+                </SelectTrigger>
+                <SelectContent>
+                  {props.options?.map((option) => (
+                    <SelectItem key={option.value} value={option.value}>
+                      {option.value}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
               </Select>
             </FormControl>
             <FormMessage />
