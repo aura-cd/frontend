@@ -7,14 +7,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import "@/styles/table.scss";
-interface TableComponentProps {
-  data: {
-    name: string;
-    deployments: number;
-  }[];
-}
 
-function TableDemo(props: { data: TableComponentProps[] }) {
+function TableDemo(props: { data: { name: string; deployments: number }[] }) {
   return (
     <Table className='table'>
       <TableHeader>

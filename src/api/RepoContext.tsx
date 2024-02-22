@@ -1,6 +1,5 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
-import { fetchRepo } from "./repository";
 import { repositoryAppInterface } from "./interface/repository";
 
 export const RepoContext = createContext(
