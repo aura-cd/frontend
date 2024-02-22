@@ -1,4 +1,11 @@
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
   FormField,
   FormItem,
   FormLabel,
@@ -6,36 +13,39 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import "@/styles/inputField.scss";
-interface InputFieldProps {
+
+interface SelectFormProps {
   form: any;
   name: string;
-  label: string;
   placeholder: string;
-  option: string[];
+  options: { value: string }[];
 }
 
-const SelectField = (props: {
-  form: any;
-  name: string;
-  label: string;
-  option: string[];
-}) => {
+const SelectForm = (props: SelectFormProps) => {
   return (
-    <div className='container'>
+    <div className='field'>
       <FormField
         control={props.form}
         name={props.name}
-        render={({ field }) => (
+        render={() => (
           <FormItem>
-            <FormLabel>{props.label}</FormLabel>
             <FormControl>
-              <select {...field} className='select'>
-                {props.option.map((item, index) => (
-                  <option key={index} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </select>
+              <Select>
+                <SelectTrigger className=''>
+                  <SelectValue placeholder={props.placeholder} />
+                </SelectTrigger>
+                <SelectContent>
+                  {props.options.map((option) => (
+                    <SelectItem
+                      key={option.value}
+                      value={option.value}
+                      className='field'
+                    >
+                      {option.value}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -45,4 +55,4 @@ const SelectField = (props: {
   );
 };
 
-export default SelectField;
+export default SelectForm;

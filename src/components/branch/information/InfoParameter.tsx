@@ -28,7 +28,7 @@ const InfoParameter = () => {
         </div>
         <div className='data-container'>
           <h6>50% (150m/300m)</h6>
-          <ProgressComponent value={22} />
+          <ProgressComponent value={80} />
         </div>
       </div>
       <div className='parameter-row'>

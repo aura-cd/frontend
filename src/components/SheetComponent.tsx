@@ -11,11 +11,6 @@ import "@/styles/sheet.scss";
 import Link from "next/link";
 import { ReactNode } from "react";
 import TabComponent from "./TabComponent";
-import InformationContents from "./branch/information/InformationContents";
-import LogContents from "./branch/log/LogContents";
-import OptionContents from "./branch/option/OptionContents";
-import { Button } from "./ui/button";
-
 
 function SheetComponent({
   description,
@@ -29,7 +24,7 @@ function SheetComponent({
 }) {
   return (
     <Sheet>
-      <SheetTrigger>{children}</SheetTrigger>
+      <SheetTrigger asChild>{children}</SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle className='title'>{title}</SheetTitle>
@@ -38,7 +33,7 @@ function SheetComponent({
             <p className='branch-link'>{description}</p>
           </Link>
         </SheetHeader>
-        <TabComponent  />
+        <TabComponent />
       </SheetContent>
     </Sheet>
   );

@@ -6,7 +6,7 @@ import { environmentSchema } from "./formSchema";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import InputField from "@/components/form/InputField";
-import "@/styles/loginForm.scss";
+import "./style/form.scss";
 import SelectField from "@/components/form/SelectField";
 // 3. Define your form schema.
 
@@ -28,29 +28,49 @@ function EnviromentsForm() {
     <>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className='form'>
-          <InputField
-            form={form.control}
-            name='kye'
-            label='kye'
-            placeholder='kye'
-          />
-          <InputField
-            form={form.control}
-            name='value'
-            label='value'
-            placeholder='value'
-          />
-          <SelectField
-            form={form.control}
-            name='config'
-            label='config'
-            option={["true", "false"]}
-            placeholder={""}
-          />
+          <div className='wrap'>
+            <div className='form-container'>
+              <div>
+                <label className='form-label'>Kye</label>
+              </div>
+              <InputField form={form.control} name='kye' placeholder='kye' />
+            </div>
 
-          <Button className='button' type='submit'>
-            Submit
-          </Button>
+            <div className='form-container'>
+              <div>
+                <label className='form-label'>Value</label>
+              </div>
+              <InputField
+                form={form.control}
+                name='value'
+                placeholder='value'
+              />
+            </div>
+
+            <div className='form-container'>
+              <div>
+                <label className='form-label'>Config</label>
+              </div>
+              <SelectField
+                form={form.control}
+                name='config'
+                placeholder='config'
+                options={[{ value: "true" }, { value: "false" }]}
+              />
+            </div>
+            <div className='button-area'>
+              <div>
+                <Button className='button' variant={"secondary"}>
+                  Cansell
+                </Button>
+              </div>
+              <div>
+                <Button className='submit-button' type='submit'>
+                  Submit
+                </Button>
+              </div>
+            </div>
+          </div>
         </form>
       </Form>
     </>

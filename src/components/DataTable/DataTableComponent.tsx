@@ -14,7 +14,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import useTableHooks from "./useTableHooks";
-import SheetComponent from "@/components/SheetComponent";
 import { repositoryAppInterface } from "@/api/interface/repository";
 import { repositoryAppData } from "./data";
 function DataTableComponent(props: {
@@ -87,12 +86,10 @@ function DataTableComponent(props: {
                 >
                   {row.getVisibleCells().map((cell, index) => (
                     <TableCell key={index}>
-                      <SheetComponent id={cell.id} title={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext()
-                        )}
-                      </SheetComponent>
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
                     </TableCell>
                   ))}
                 </TableRow>

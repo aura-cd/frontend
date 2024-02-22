@@ -6,9 +6,8 @@ import { serviceSchema } from "./formSchema";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import InputField from "@/components/form/InputField";
-import "@/styles/loginForm.scss";
 import SelectField from "@/components/form/SelectField";
-// 3. Define your form schema.
+import "./style/form.scss";
 
 function ServiceForm() {
   function onSubmit(values: z.infer<typeof serviceSchema>) {
@@ -28,30 +27,42 @@ function ServiceForm() {
     <>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className='form'>
-          <InputField
-            form={form.control}
-            name='kye'
-            label='kye'
-            placeholder='kye'
-          />
+          <div className='form-container'>
+            <div>
+              <label className='form-label'>kye</label>
+              <InputField form={form.control} name='kye' placeholder='kye' />
+            </div>
 
-          <InputField
-            form={form.control}
-            name='value'
-            label='value'
-            placeholder='value'
-          />
-          <SelectField
-            form={form.control}
-            name='config'
-            label='config'
-            option={["true", "false"]}
-            placeholder={""}
-          />
-
-          <Button className='button' type='submit'>
-            Submit
-          </Button>
+            <div>
+              <label className='form-label'>value</label>
+              <InputField
+                form={form.control}
+                name='value'
+                placeholder='value'
+              />
+            </div>
+            <div>
+              <label className='form-label'>config</label>
+              <SelectField
+                form={form.control}
+                name='config'
+                placeholder='config'
+                options={[{ value: "true" }, { value: "false" }]}
+              />
+            </div>
+            <div className='button-area'>
+              <div>
+                <Button className='button' type='submit' variant={"secondary"}>
+                  Cansell
+                </Button>
+              </div>
+              <div>
+                <Button className='submit-button' type='submit'>
+                  Submit
+                </Button>
+              </div>
+            </div>
+          </div>
         </form>
       </Form>
     </>
