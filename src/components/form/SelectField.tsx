@@ -23,7 +23,7 @@ interface SelectFormProps {
 
 const SelectForm = (props: SelectFormProps) => {
   return (
-    <div className='container'>
+    <div className='field'>
       <FormField
         control={props.form}
         name={props.name}
@@ -31,7 +31,7 @@ const SelectForm = (props: SelectFormProps) => {
           <FormItem>
             <FormControl>
               <Select>
-                <SelectTrigger className='w-[180px]'>
+                <SelectTrigger className=''>
                   <SelectValue placeholder={props.placeholder} />
                 </SelectTrigger>
                 <SelectContent>

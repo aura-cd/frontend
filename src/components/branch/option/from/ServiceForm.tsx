@@ -8,7 +8,7 @@ import { Form } from "@/components/ui/form";
 import InputField from "@/components/form/InputField";
 import "@/styles/loginForm.scss";
 import SelectField from "@/components/form/SelectField";
-// 3. Define your form schema.
+import "@/styles/loginForm.scss";
 
 function ServiceForm() {
   function onSubmit(values: z.infer<typeof serviceSchema>) {
@@ -28,28 +28,42 @@ function ServiceForm() {
     <>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className='form'>
-          <div>
-            <label>kye</label>
-            <InputField form={form.control} name='kye' placeholder='kye' />
-          </div>
+          <div className='form-container'>
+            <div>
+              <label className='form-label'>kye</label>
+              <InputField form={form.control} name='kye' placeholder='kye' />
+            </div>
 
-          <div>
-            <label>value</label>
-            <InputField form={form.control} name='value' placeholder='value' />
+            <div>
+              <label className='form-label'>value</label>
+              <InputField
+                form={form.control}
+                name='value'
+                placeholder='value'
+              />
+            </div>
+            <div>
+              <label className='form-label'>config</label>
+              <SelectField
+                form={form.control}
+                name='config'
+                placeholder='config'
+                options={[{ value: "true" }, { value: "false" }]}
+              />
+            </div>
+            <div className='button-area'>
+              <div>
+                <Button className='button' type='submit' variant={"secondary"}>
+                  Cansell
+                </Button>
+              </div>
+              <div>
+                <Button className='submit-button' type='submit'>
+                  Submit
+                </Button>
+              </div>
+            </div>
           </div>
-          <div>
-            <label>config</label>
-            <SelectField
-              form={form.control}
-              name='config'
-              placeholder='config'
-              options={[{ value: "true" }, { value: "false" }]}
-            />
-          </div>
-
-          <Button className='button' type='submit'>
-            Submit
-          </Button>
         </form>
       </Form>
     </>
