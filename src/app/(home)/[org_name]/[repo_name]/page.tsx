@@ -4,17 +4,17 @@ import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import React, { useEffect, useState } from "react";
 import ButtonArea from "../../components/ButtonArea";
 import LastPath from "@/components/path/LastPath";
-import { repositoryAppInterface } from "@/api/interface/repository";
-import { RepoContext } from "@/api/RepositoryContext";
+import { RepoContext } from "@/api/RepoContext";
 const page = () => {
   const data = React.useContext(RepoContext);
+  console.log(data);
   return (
     <div className='container'>
       <Pankuzu />
       <LastPath />
       <div>
         <ButtonArea />
-        <DataTableComponent pageSize={5} data={data} />
+        {/* <DataTableComponent pageSize={5}  /> */}
       </div>
     </div>
   );

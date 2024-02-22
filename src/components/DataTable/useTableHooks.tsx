@@ -23,7 +23,7 @@ const useTableHooks = (props: {
   const [rowSelection, setRowSelection] = useState({});
 
   const table = useReactTable({
-    data: props.data,
+    data: { ...props.data },
     columns,
 
     onSortingChange: setSorting,

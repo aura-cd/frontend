@@ -17,7 +17,10 @@ import useTableHooks from "./useTableHooks";
 import SheetComponent from "../SheetComponent";
 import { repositoryAppInterface } from "@/api/interface/repository";
 // import { repositoryAppData } from "./data";
-function DataTableComponent(props: { pageSize: number; data: any }) {
+function DataTableComponent(props: {
+  pageSize: number;
+  data: repositoryAppInterface[];
+}) {
   const { table } = useTableHooks({
     pageSize: props.pageSize,
     data: props.data,
@@ -97,7 +100,7 @@ function DataTableComponent(props: { pageSize: number; data: any }) {
             ) : (
               <TableRow>
                 <TableCell
-                  colSpan={columns.length}
+                  colSpan={columns?.length}
                   className='h-24 text-center'
                 >
                   No results.

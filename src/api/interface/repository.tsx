@@ -39,6 +39,6 @@ export interface repositoryAppInterface {
   name: string;
   version: string;
   // states: JSX.Element;
-  states: string;
+  status: string;
   age: string;
 }
