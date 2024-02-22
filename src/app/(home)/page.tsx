@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "@/styles//appButton.scss";
 import ButtonArea from "./components/ButtonArea";
 import AccordionComponent from "@/components/AccordionComponent";

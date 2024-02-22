@@ -1,5 +1,4 @@
 "use client";
-import React, { use } from "react";
 import { ReactNode } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { SidebarData } from "./SidebarData";

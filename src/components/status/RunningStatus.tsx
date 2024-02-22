@@ -1,4 +1,3 @@
-import React from "react";
 import { IoMdCheckmark } from "react-icons/io";
 import "@/styles/status.scss";
 const RunningStatus = () => {

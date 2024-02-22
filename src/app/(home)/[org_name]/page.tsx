@@ -1,7 +1,7 @@
 "use client";
 import Pankuzu from "@/components/path/Pankuzu";
 import TableComponent from "@/components/TableComponent";
-import React, { use, useEffect } from "react";
+import { useEffect, useContext } from "react";
 import ButtonArea from "@/app/(home)/components/ButtonArea";
 import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import LastPath from "@/components/path/LastPath";
@@ -10,7 +10,7 @@ import { fetchRepo } from "@/api/repository";
 import { repositoryAppInterface } from "@/api/interface/repository";
 
 const page = () => {
-  const { data, setData } = React.useContext(RepoContext);
+  const { data, setData } = useContext(RepoContext);
 
   useEffect(() => {
     const fetchData = async (org_id: string) => {
