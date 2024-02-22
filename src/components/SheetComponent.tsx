@@ -15,10 +15,8 @@ import InformationContents from "./branch/information/InfoCard";
 import LogContents from "./branch/log/LogContents";
 import OptionContents from "./branch/option/OptionContents";
 
-const tabName = ["Information", "Log", "Option"];
-const tabData = [<InformationContents />, <LogContents />, <OptionContents />];
+
 function SheetComponent({
-  id,
   description,
   title,
   children,
@@ -39,7 +37,7 @@ function SheetComponent({
             <p className='branch-link'>{description}</p>
           </Link>
         </SheetHeader>
-        <TabComponent title={tabName} tabData={tabData} />
+        <TabComponent  />
       </SheetContent>
     </Sheet>
   );

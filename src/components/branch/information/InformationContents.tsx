@@ -1,10 +1,10 @@
 import React from "react";
 import "./style/contents.scss";
 import InfoCard from "./InfoCard";
-import InfoParameter from "./InfoParameter";
+import InfoParameter from "@/components/branch/information/InfoParameter";
 const InformationContents = () => {
   return (
-    <div className='wrap'>
+    <div className='container-wrap'>
       <InfoCard />
       <InfoParameter />
     </div>

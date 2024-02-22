@@ -1,18 +1,13 @@
 import React, { ReactNode } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import "@/styles/tab.scss";
-type FixedLengthArray<
-  T extends string[] | React.JSX.Element[],
-  N extends number
-> = N extends T["length"] ? T : never;
+import InformationContents from "./branch/information/InformationContents";
+import LogContents from "./branch/log/LogContents";
+import OptionContents from "./branch/option/OptionContents";
 
-type TabContentTuple<N extends number> = {
-  title: FixedLengthArray<string[], N>;
-  tabData: FixedLengthArray<React.JSX.Element[], N>;
-};
-
-const TabComponent = (props: TabContentTuple<2 | 3 | 4 | 5 | 6>) => {
-  const { tabData, title } = props;
+const TabComponent = () => {
+  const title = ["Information", "Log", "Option"];
+const tabData = [<InformationContents />, <LogContents />, <OptionContents />];
   return (
     <Tabs defaultValue='account' className='w-[400px]'>
       <TabsList className='list'>
