@@ -23,7 +23,7 @@ const OptionContents = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className='tac'>
+    <div className='tab'>
       <div className='tab-trigger'>
         {tabs.map((tab, index) => (
           <button

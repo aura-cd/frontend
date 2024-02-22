@@ -10,7 +10,7 @@ import "@/styles/loginForm.scss";
 
 import SelectField from "@/components/form/SelectField";
 
-function LoginForm() {
+function ResourceForm() {
   function onSubmit(values: z.infer<typeof resourceSchema>) {
     console.log(values);
   }
@@ -33,11 +33,14 @@ function LoginForm() {
   });
 
   return (
-    <>
+    <div className='wrap'>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className='form'>
-          <div>
-            <label>Replicas</label>
+          <div className='form-container'>
+            <div>
+              <label className='form-label'>Replicas</label>
+            </div>
+
             <InputField
               form={form.control}
               name='replicas'
@@ -45,29 +48,33 @@ function LoginForm() {
             />
           </div>
 
-          <div>
-            <label>cpu</label>
+          <div className='form-container'>
+            <div>
+              <label className='form-label'>cpu</label>
+            </div>
+
+            <InputField
+              form={form.control}
+              name='maxCpu'
+              placeholder='maxCpu'
+            />
+            <div>-</div>
             <InputField
               form={form.control}
               name='minCpu'
               placeholder='minCpu'
             />
           </div>
-          <div>
-            <label>cpu</label>
-            <InputField
-              form={form.control}
-              name='maxCpu'
-              placeholder='maxCpu'
-            />
-          </div>
-          <div>
-            <label>Memory</label>
+          <div className='form-container'>
+            <div>
+              <label className='form-label'>Memory</label>
+            </div>
             <InputField
               form={form.control}
               name='minMemory'
               placeholder='minMemory'
             />
+            <div>-</div>
             <InputField
               form={form.control}
               name='maxMemory'
@@ -75,22 +82,10 @@ function LoginForm() {
             />
           </div>
 
-          <div>
-            <label>Replicas</label>
-            <InputField
-              form={form.control}
-              name='minReplicas'
-              placeholder='minReplicas'
-            />
-            <InputField
-              form={form.control}
-              name='maxReplicas'
-              placeholder='maxReplicas'
-            />
-          </div>
-
-          <div>
-            <label>targetPercentage</label>
+          <div className='form-container'>
+            <div>
+              <label className='form-label'>targetPercentage</label>
+            </div>
             <InputField
               form={form.control}
               name='targetPercentage'
@@ -98,8 +93,10 @@ function LoginForm() {
             />
           </div>
 
-          <div>
-            <label>Container</label>
+          <div className='form-container'>
+            <div>
+              <label className='form-label'>Container</label>
+            </div>
             <SelectField
               form={form.control}
               name='container'
@@ -108,8 +105,10 @@ function LoginForm() {
             />
           </div>
 
-          <div>
-            <label>State</label>
+          <div className='form-container'>
+            <div>
+              <label className='form-label'>State</label>
+            </div>
             <SelectField
               form={form.control}
               name='state'
@@ -118,8 +117,10 @@ function LoginForm() {
             />
           </div>
 
-          <div>
-            <label>Resource</label>
+          <div className='form-container'>
+            <div>
+              <label className='form-label'>Resource</label>
+            </div>
             <SelectField
               form={form.control}
               name='resource'
@@ -128,8 +129,10 @@ function LoginForm() {
             />
           </div>
 
-          <div>
-            <label>Target</label>
+          <div className='form-container'>
+            <div>
+              <label className='form-label'>Target</label>
+            </div>
             <SelectField
               form={form.control}
               name='target'
@@ -137,13 +140,22 @@ function LoginForm() {
               options={[{ value: "1" }, { value: "2" }, { value: "3" }]}
             />
           </div>
-          <Button className='button' type='submit'>
-            Submit
-          </Button>
+          <div className='button-area'>
+            <div>
+              <Button className='button' type='submit' variant={"secondary"}>
+                Cansell
+              </Button>
+            </div>
+            <div>
+              <Button className='submit-button' type='submit'>
+                Submit
+              </Button>
+            </div>
+          </div>
         </form>
       </Form>
-    </>
+    </div>
   );
 }
 
-export default LoginForm;
+export default ResourceForm;

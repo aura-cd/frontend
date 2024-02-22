@@ -20,22 +20,24 @@ const InputField = (props: {
   placeholder: string;
 }) => {
   return (
-    <FormField
-      control={props.form}
-      name={props.name}
-      render={({ field }) => (
-        <FormItem>
-          <FormControl>
-            <Input
-              className='field'
-              placeholder={props.placeholder}
-              {...field}
-            />
-          </FormControl>
-          <FormMessage />
-        </FormItem>
-      )}
-    />
+    <div className='field'>
+      <FormField
+        control={props.form}
+        name={props.name}
+        render={({ field }) => (
+          <FormItem>
+            <FormControl>
+              <Input
+                className='field'
+                placeholder={props.placeholder}
+                {...field}
+              />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+    </div>
   );
 };
 
