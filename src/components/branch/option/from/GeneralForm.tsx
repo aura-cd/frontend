@@ -6,7 +6,7 @@ import { generalSchema } from "./formSchema";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import InputField from "@/components/form/InputField";
-import "@/styles/loginForm.scss";
+import "./style/form.scss";
 // 3. Define your form schema.
 
 function LoginForm() {

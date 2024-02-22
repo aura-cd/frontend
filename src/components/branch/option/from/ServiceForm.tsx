@@ -6,9 +6,8 @@ import { serviceSchema } from "./formSchema";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import InputField from "@/components/form/InputField";
-import "@/styles/loginForm.scss";
 import SelectField from "@/components/form/SelectField";
-import "@/styles/loginForm.scss";
+import "./style/form.scss";
 
 function ServiceForm() {
   function onSubmit(values: z.infer<typeof serviceSchema>) {
