@@ -44,7 +44,8 @@ function EnviromentsForm() {
             form={form.control}
             name='config'
             label='config'
-            option={["true", "false"]}
+            placeholder='config'
+            options={[{ value: "true" }, { value: "false" }]}
           />
 
           <Button className='button' type='submit'>

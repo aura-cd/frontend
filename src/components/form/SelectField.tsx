@@ -1,4 +1,10 @@
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   FormField,
   FormItem,
@@ -26,12 +32,12 @@ const SelectForm = (props: SelectFormProps) => {
           <FormItem>
             <FormLabel>{props.label}</FormLabel>
             <FormControl>
-              <Select {...field}>
-                <SelectTrigger className="w-[180px]">
+              <Select>
+                <SelectTrigger className='w-[180px]'>
                   <SelectValue placeholder={props.placeholder} />
                 </SelectTrigger>
                 <SelectContent>
-                  {props.options?.map((option) => (
+                  {props.options.map((option) => (
                     <SelectItem key={option.value} value={option.value}>
                       {option.value}
                     </SelectItem>
