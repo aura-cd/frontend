@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 import { flexRender } from "@tanstack/react-table";
-import { columns } from "@/components/DataTable/Column";
+import { columns } from "./Column";
 import { Button } from "@/components/ui/button";
 import "@/styles//dataTable.scss";
 import { Input } from "@/components/ui/input";
@@ -13,13 +13,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import useTableHooks from "@/components/DataTable/useTableHooks";
-import { fetchBrunchInterface } from "@/api/interface/brunch";
-import { repositoryAppInterface } from "@/api/interface/repository";
-// import { repositoryAppData } from "./data";
-function DataTableComponent(props: {
+import useTableHooks from "./useTableHooks";
+import { dataTableInterface } from "@/api/interface/brunch";
+function BranchDataTableComponent(props: {
   pageSize: number;
-  data: repositoryAppInterface[];
+  data: dataTableInterface[];
 }) {
   const { table } = useTableHooks({
     pageSize: props.pageSize,
@@ -112,4 +110,4 @@ function DataTableComponent(props: {
   );
 }
 
-export default DataTableComponent;
+export default BranchDataTableComponent;

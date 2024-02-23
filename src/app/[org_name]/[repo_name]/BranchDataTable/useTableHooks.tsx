@@ -10,13 +10,12 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { columns } from "@/components/DataTable/Column";
-import { fetchBrunchInterface } from "@/api/interface/brunch";
-import { repositoryAppInterface } from "@/api/interface/repository";
+import { columns } from "./Column";
+import { dataTableInterface } from "@/api/interface/brunch";
 
 const useTableHooks = (props: {
   pageSize: number;
-  data: repositoryAppInterface[];
+  data: dataTableInterface[];
 }) => {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);

@@ -33,11 +33,14 @@ export interface repoFormatInterface {
 }
 
 export interface repositoryAppInterface {
-  name: string;
-  version: string;
-  // states: JSX.Element;
-  status: string;
-  age: string;
+  apps: [
+    {
+      name: string;
+      version: string;
+      status: string;
+      age: string;
+    }
+  ];
 }
 
 export interface repositoryInterface {

@@ -4,11 +4,13 @@ import Pankuzu from "@/components/path/Pankuzu";
 import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import ButtonArea from "@/app/(home)/components/ButtonArea";
 import LastPath from "@/components/path/LastPath";
-import { useContext } from "react";
 import { usePath } from "@/hook/usePath";
-const page = () => {
+import useBranch from "@/hook/useBranch";
+import BranchDataTableComponent from "./BranchDataTable/BranchDataTableComponent";
+import { dummyData } from "./BranchDataTable/data";
+const page = async () => {
   const { orgName, repoName } = usePath();
-  console.log(orgName, repoName);
+  const { data } = await useBranch(orgName, repoName);
 
   return (
     <div className='container'>
@@ -16,7 +18,11 @@ const page = () => {
       <LastPath />
       <div>
         <ButtonArea />
-        {/* <DataTableComponent pageSize={5} /> */}
+        {data !== undefined ? (
+          <BranchDataTableComponent data={data} pageSize={5} />
+        ) : (
+          <div>loading...</div>
+        )}
       </div>
     </div>
   );

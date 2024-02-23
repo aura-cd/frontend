@@ -6,8 +6,10 @@ import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import LastPath from "@/components/path/LastPath";
 import { useEffect } from "react";
 import useRepo from "@/hook/useRepo";
+import { usePath } from "@/hook/usePath";
 const Page = () => {
-  const { appsData, repositoriesData } = useRepo("org_name");
+  const { orgName } = usePath();
+  const { appsData, repositoriesData } = useRepo(orgName);
 
   return (
     <div className='container'>
