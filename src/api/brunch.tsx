@@ -1,7 +1,7 @@
 "use client";
 
 import { fetchBrunchInterface } from "@/api/interface/brunch";
-
+import { dummyData } from "@/app/[org_name]/[repo_name]/BranchDataTable/data.ts";
 export const fetchBranch = async (org_id: string, repo_id: string) => {
   try {
     const response = await fetch(
@@ -9,9 +9,8 @@ export const fetchBranch = async (org_id: string, repo_id: string) => {
       /branches
     `
     );
-    const data: fetchBrunchInterface = await response.json();
-
-    console.log(data);
+    // const data: fetchBrunchInterface = await response.json();
+    const data = dummyData;
     return data;
   } catch (error) {
     console.error("Error fetching data", error);
