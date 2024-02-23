@@ -6,6 +6,7 @@ import ButtonArea from "@/app/(home)/components/ButtonArea";
 import LastPath from "@/components/path/LastPath";
 import { usePath } from "@/hook/usePath";
 import useBranch from "@/hook/useBranch";
+import BranchDataTableComponent from "./BranchDataTable/BranchDataTableComponent";
 const page = async () => {
   const { orgName, repoName } = usePath();
   const { data } = await useBranch(orgName, repoName);
@@ -17,8 +18,8 @@ const page = async () => {
       <LastPath />
       <div>
         <ButtonArea />
-        {data === undefined ? (
-          <DataTableComponent data={data} pageSize={5} />
+        {data !== undefined ? (
+          <BranchDataTableComponent data={data} pageSize={5} />
         ) : (
           <div>loading...</div>
         )}

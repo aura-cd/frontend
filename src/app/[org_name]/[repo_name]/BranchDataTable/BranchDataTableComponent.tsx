@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/table";
 import useTableHooks from "./useTableHooks";
 import { dataTableInterface } from "@/api/interface/brunch";
-function DataTableComponent(props: {
+function BranchDataTableComponent(props: {
   pageSize: number;
   data: dataTableInterface[];
 }) {
@@ -110,4 +110,4 @@ function DataTableComponent(props: {
   );
 }
 
-export default DataTableComponent;
+export default BranchDataTableComponent;
