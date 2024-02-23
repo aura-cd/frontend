@@ -7,7 +7,7 @@ import LastPath from "@/components/path/LastPath";
 import { usePath } from "@/hook/usePath";
 import useBranch from "@/hook/useBranch";
 import BranchDataTableComponent from "./BranchDataTable/BranchDataTableComponent";
-import { dummyData } from "./dummyData";
+import { dummyData } from "./BranchDataTable/data";
 const page = async () => {
   const { orgName, repoName } = usePath();
   // const { data } = await useBranch(orgName, repoName);
