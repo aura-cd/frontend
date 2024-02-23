@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/table";
 import useTableHooks from "./useTableHooks";
 import { dataTableInterface } from "@/api/interface/brunch";
+// import{dummyData} from "@/mock/branch";
 function BranchDataTableComponent(props: {
   pageSize: number;
   data: dataTableInterface[];
