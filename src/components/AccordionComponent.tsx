@@ -23,9 +23,9 @@ function AccordionComponent(props: { data: fetchOrganizationInterface }) {
               <AccordionTrigger className='title'>
                 {item.organization}
               </AccordionTrigger>
-              {item.repositories.map((repository: any, index: number) => (
-                <Link href={`/${repository}`}   >
-                <AccordionContent key={index}>{repository}</AccordionContent>
+              {item.repositories.map((repository: any, repoIndex: number) => (
+                <Link href={`/${repository}`} key={repoIndex}>
+                  <AccordionContent>{repository}</AccordionContent>
                 </Link>
               ))}
             </AccordionItem>

@@ -4,10 +4,13 @@ import "@/styles/tab.scss";
 import InformationContents from "./branch/information/InformationContents";
 import LogContents from "./branch/log/LogContents";
 import OptionContents from "./branch/option/OptionContents";
-
 const TabComponent = () => {
   const title = ["Information", "Log", "Option"];
-const tabData = [<InformationContents />, <LogContents />, <OptionContents />];
+  const tabData = [
+    <InformationContents key='info' />,
+    <LogContents key='log' />,
+    <OptionContents key='option' />,
+  ];
 
   return (
     <Tabs defaultValue='account' className='w-[400px]'>
