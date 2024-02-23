@@ -4,11 +4,12 @@ import Pankuzu from "@/components/path/Pankuzu";
 import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import ButtonArea from "@/app/(home)/components/ButtonArea";
 import LastPath from "@/components/path/LastPath";
-import { RepoContext } from "@/store/useRepoContext";
 import { useContext } from "react";
+import { usePath } from "@/hook/usePath";
 const page = () => {
-  const data = useContext(RepoContext);
-  console.log(data);
+  const { orgName, repoName } = usePath();
+  console.log(orgName, repoName);
+
   return (
     <div className='container'>
       <Pankuzu />
