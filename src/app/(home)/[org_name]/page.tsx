@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import Pankuzu from "@/components/path/Pankuzu";
 import TableComponent from "@/components/TableComponent";
@@ -6,24 +5,13 @@ import ButtonArea from "@/app/(home)/components/ButtonArea";
 import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import LastPath from "@/components/path/LastPath";
 import { useEffect } from "react";
+import { useRepo } from "@/hook/useRepo";
 const page = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
-    // fetch data
+    useRepoData("org_id");
   }, []);
-  const tadata = [
-    {
-      name: "Invoice 001",
-      deployments: 10,
-    },
-    {
-      name: "Invoice 002",
-      deployments: 20,
-    },
-    {
-      name: "Invoice 003",
-      deployments: 30,
-    },
-  ];
+  const { repo_data, app_data } = repo_data("org_id");
 
   return (
     <div className='container'>
@@ -32,11 +20,11 @@ const page = () => {
 
       <div>
         <ButtonArea />
-        <TableComponent data={tadata} />
-        {data === null ? (
+        <TableComponent data={repo_data} />
+        {app_data === null ? (
           <div>loading...</div>
         ) : (
-          <DataTableComponent pageSize={5} data={data} />
+          <DataTableComponent pageSize={5} data={app_data} />
         )}
       </div>
     </div>
