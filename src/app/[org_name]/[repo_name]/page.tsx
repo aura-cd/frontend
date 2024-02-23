@@ -7,10 +7,10 @@ import LastPath from "@/components/path/LastPath";
 import { usePath } from "@/hook/usePath";
 import useBranch from "@/hook/useBranch";
 import BranchDataTableComponent from "./BranchDataTable/BranchDataTableComponent";
+import { dummyData } from "./dummyData";
 const page = async () => {
   const { orgName, repoName } = usePath();
-  const { data } = await useBranch(orgName, repoName);
-  console.log(orgName);
+  // const { data } = await useBranch(orgName, repoName);
 
   return (
     <div className='container'>
@@ -18,11 +18,12 @@ const page = async () => {
       <LastPath />
       <div>
         <ButtonArea />
-        {data !== undefined ? (
+        {/* {data !== undefined ? (
           <BranchDataTableComponent data={data} pageSize={5} />
         ) : (
           <div>loading...</div>
-        )}
+        )} */}
+        <BranchDataTableComponent data={dummyData} pageSize={5} />
       </div>
     </div>
   );

@@ -11,7 +11,6 @@ import { ReactNode } from "react";
 import TabComponent from "@/components/TabComponent";
 
 function SheetComponent({
-  description,
   title,
   children,
 }: {
@@ -26,10 +25,6 @@ function SheetComponent({
       <SheetContent>
         <SheetHeader>
           <SheetTitle className='title'>{title}</SheetTitle>
-
-          <Link href='/branch' passHref>
-            <p className='branch-link'>{description}</p>
-          </Link>
         </SheetHeader>
         <TabComponent />
       </SheetContent>
