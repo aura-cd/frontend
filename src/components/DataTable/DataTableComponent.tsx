@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 import { flexRender } from "@tanstack/react-table";
-import { columns } from "./Column";
+import { columns } from "@/components/DataTable/Column";
 import { Button } from "@/components/ui/button";
 import "@/styles//dataTable.scss";
 import { Input } from "@/components/ui/input";
@@ -13,7 +13,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import useTableHooks from "./useTableHooks";
+import useTableHooks from "@/components/DataTable/useTableHooks";
 import { repositoryAppInterface } from "@/api/interface/repository";
 import { repositoryAppData } from "./data";
 function DataTableComponent(props: {

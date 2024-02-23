@@ -3,7 +3,7 @@ import { ColumnDef } from "@tanstack/react-table";
 
 import { Button } from "@/components/ui/button";
 import { repositoryAppInterface } from "@/api/interface/repository";
-import SheetComponent from "../SheetComponent";
+import SheetComponent from "@/components/SheetComponent";
 
 const pro = ["name", "status", "version", "age"];
 export const columns: ColumnDef<repositoryAppInterface>[] = pro.map((item) => ({

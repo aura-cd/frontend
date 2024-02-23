@@ -1,8 +1,6 @@
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -10,7 +8,7 @@ import {
 import "@/styles/sheet.scss";
 import Link from "next/link";
 import { ReactNode } from "react";
-import TabComponent from "./TabComponent";
+import TabComponent from "@/components/TabComponent";
 
 function SheetComponent({
   description,
