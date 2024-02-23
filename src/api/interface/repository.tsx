@@ -1,4 +1,4 @@
-export interface repositoryInterface {
+export interface fetchRepositoryInterface {
   repositories: [
     {
       repository: string;
@@ -14,7 +14,6 @@ export interface repositoryInterface {
     }
   ];
 }
-[];
 
 export interface repoFormatInterface {
   repositories: [
@@ -39,4 +38,9 @@ export interface repositoryAppInterface {
   // states: JSX.Element;
   status: string;
   age: string;
+}
+
+export interface repositoryInterface {
+  repository: string;
+  deployments: number;
 }

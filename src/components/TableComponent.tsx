@@ -1,3 +1,4 @@
+import { repositoryInterface } from "@/api/interface/repository";
 import {
   Table,
   TableBody,
@@ -8,7 +9,7 @@ import {
 } from "@/components/ui/table";
 import "@/styles/table.scss";
 
-function TableDemo(props: { data: { name: string; deployments: number }[] }) {
+function TableDemo(props: { data: repositoryInterface[] }) {
   return (
     <Table className='table'>
       <TableHeader>

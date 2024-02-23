@@ -1,28 +1,13 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import Pankuzu from "@/components/path/Pankuzu";
 import TableComponent from "@/components/TableComponent";
 import ButtonArea from "@/app/(home)/components/ButtonArea";
 import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import LastPath from "@/components/path/LastPath";
-import useOrgById from "@/hook/useOrgById";
-
-const page = () => {
-  const data = useOrgById();
-  const tadata = [
-    {
-      name: "Invoice 001",
-      deployments: 10,
-    },
-    {
-      name: "Invoice 002",
-      deployments: 20,
-    },
-    {
-      name: "Invoice 003",
-      deployments: 30,
-    },
-  ];
+import { useEffect } from "react";
+import useRepo from "@/hook/useRepo";
+const Page = () => {
+  const { appsData, repositoriesData } = useRepo("org_name");
 
   return (
     <div className='container'>
@@ -31,15 +16,19 @@ const page = () => {
 
       <div>
         <ButtonArea />
-        <TableComponent data={tadata} />
-        {data === null ? (
+        {repositoriesData === undefined ? (
           <div>loading...</div>
         ) : (
-          <DataTableComponent pageSize={5} data={data} />
+          <TableComponent data={repositoriesData} />
+        )}
+        {appsData === undefined ? (
+          <div>loading...</div>
+        ) : (
+          <DataTableComponent pageSize={5} data={appsData} />
         )}
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;

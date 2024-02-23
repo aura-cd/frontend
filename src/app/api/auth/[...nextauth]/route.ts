@@ -4,6 +4,7 @@ import { encrypt } from "@/components/auth/encryption";
 import jwt_decode from "jwt-decode";
 
 // this will refresh an expired access token, when needed
+
 async function refreshAccessToken(token: any) {
   const resp = await fetch(`${process.env.REFRESH_TOKEN_URL}`, {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
