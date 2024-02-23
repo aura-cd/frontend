@@ -12,12 +12,8 @@ export interface fetchBrunchInterface {
 }
 
 export type dataTableInterface = {
-  branches: [
-    {
-      branchName: string;
-      status: string;
-      version: string;
-      age: string;
-    }
-  ];
+  branchName: string;
+  status: string;
+  version: string;
+  age: string;
 };

@@ -1,9 +1,12 @@
-import { fetchBrunchInterface } from "@/api/interface/brunch";
+import {
+  fetchBrunchInterface,
+  dataTableInterface,
+} from "@/api/interface/brunch";
 import { useEffect, useState } from "react";
 import { fetchBranch } from "@/api/brunch";
 
-const useBranch = async (org_id: string, repo_id: string) => {
-  const [data, setData] = useState<fetchBrunchInterface>();
+const useBranch = (org_id: string, repo_id: string) => {
+  const [data, setData] = useState<dataTableInterface[]>();
 
   useEffect(() => {
     const fetchData = async (org_id: string, repo_id: string) => {
@@ -12,9 +15,20 @@ const useBranch = async (org_id: string, repo_id: string) => {
         repo_id
       );
       if (res !== undefined) {
-        setData(res);
+        const tableData: dataTableInterface[] = res.branches.map((branch) => {
+          return {
+            branchName: branch.branchName,
+            status: branch.status,
+            version: branch.version,
+            age: branch.age,
+          };
+        });
+        if (tableData !== undefined && tableData !== null) {
+          setData(tableData);
+
+          return;
+        }
       }
-      return res;
     };
 
     fetchData(org_id, repo_id);
