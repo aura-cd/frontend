@@ -1,20 +1,13 @@
 export interface fetchRepositoryInterface {
-  repositories: [
-    {
-      repository: string;
-      deployments: number;
-    }
-  ];
-  apps: [
-    {
-      name: string;
-      status: string;
-      version: string;
-      age: string;
-    }
-  ];
+  repository: string;
+  deployments: number;
+  apps: {
+    name: string;
+    status: string;
+    version: string;
+    age: string;
+  }[];
 }
-
 export interface repoFormatInterface {
   repositories: [
     {
@@ -31,6 +24,7 @@ export interface repoFormatInterface {
     }
   ];
 }
+[];
 
 export interface repositoryAppInterface {
   apps: [

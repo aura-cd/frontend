@@ -1,8 +1,4 @@
 export interface fetchOrganizationInterface {
-  organizationInfos: [
-    {
-      organization: string;
-      repositories: [string];
-    }
-  ];
+  organization: string;
+  repositories: string[];
 }

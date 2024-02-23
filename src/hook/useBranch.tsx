@@ -6,16 +6,16 @@ import { useEffect, useState } from "react";
 import { fetchBranch } from "@/api/brunch";
 
 const useBranch = (org_id: string, repo_id: string) => {
-  const [data, setData] = useState<dataTableInterface[]>();
+  const [data, setData] = useState<dataTableInterface[]>([]);
 
   useEffect(() => {
     const fetchData = async (org_id: string, repo_id: string) => {
-      const res: fetchBrunchInterface | undefined = await fetchBranch(
+      const res: fetchBrunchInterface[] | undefined = await fetchBranch(
         org_id,
         repo_id
       );
       if (res !== undefined) {
-        const tableData: dataTableInterface[] = res.branches.map((branch) => {
+        const tableData: dataTableInterface[] = res.map((branch) => {
           return {
             branchName: branch.branchName,
             status: branch.status,
@@ -23,11 +23,7 @@ const useBranch = (org_id: string, repo_id: string) => {
             age: branch.age,
           };
         });
-        if (tableData !== undefined && tableData !== null) {
-          setData(tableData);
-
-          return;
-        }
+        setData(tableData);
       }
     };
 

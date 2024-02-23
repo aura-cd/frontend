@@ -38,6 +38,78 @@
         ]
       }
     },
+    "/organizations/{organization}/deployments/{deploymentName}": {
+      "get": {
+        "operationId": "BffService_GetBranchInformation",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetBranchInformationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "deploymentName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "BffService"
+        ]
+      }
+    },
+    "/organizations/{organization}/deployments/{deploymentName}/usage": {
+      "get": {
+        "operationId": "BffService_GetUsage",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetUsageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "deploymentName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "BffService"
+        ]
+      }
+    },
     "/organizations/{organization}/repositories": {
       "get": {
         "operationId": "BffService_GetRepositoryApps",
@@ -68,14 +140,14 @@
         ]
       }
     },
-    "/organizations/{organization}/repositories/{repository}/information": {
+    "/organizations/{organization}/repositories/{repository}/branches": {
       "get": {
-        "operationId": "BffService_GetBranchInfo",
+        "operationId": "BffService_GetRepoBranches",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetBranchInfoResponse"
+              "$ref": "#/definitions/v1GetRepoBranchesResponse"
             }
           },
           "default": {
@@ -151,11 +223,79 @@
         }
       }
     },
-    "v1GetBranchInfoResponse": {
+    "v1Branches": {
       "type": "object",
       "properties": {
+        "deploymentName": {
+          "type": "string"
+        },
+        "branch": {
+          "type": "string"
+        },
+        "pullRequestId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "age": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Deployment": {
+      "type": "object",
+      "properties": {
+        "podName": {
+          "type": "string"
+        },
+        "cpu": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "memory": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "storage": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetBranchInformationResponse": {
+      "type": "object",
+      "properties": {
+        "branchName": {
+          "type": "string"
+        },
+        "gitHubLink": {
+          "type": "string"
+        },
+        "pods": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Pod"
+          }
+        },
         "yaml": {
           "type": "string"
+        }
+      }
+    },
+    "v1GetRepoBranchesResponse": {
+      "type": "object",
+      "properties": {
+        "branches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Branches"
+          }
         }
       }
     },
@@ -175,6 +315,23 @@
             "type": "object",
             "$ref": "#/definitions/v1Apps"
           }
+        }
+      }
+    },
+    "v1GetUsageResponse": {
+      "type": "object",
+      "properties": {
+        "organization": {
+          "type": "string"
+        },
+        "deploymentName": {
+          "type": "string"
+        },
+        "isDisable": {
+          "type": "boolean"
+        },
+        "deployments": {
+          "$ref": "#/definitions/v1Deployment"
         }
       }
     },
@@ -201,6 +358,23 @@
           "items": {
             "type": "string"
           }
+        }
+      }
+    },
+    "v1Pod": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "age": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
         }
       }
     },
