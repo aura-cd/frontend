@@ -14,7 +14,6 @@ export interface repositoryInterface {
     }
   ];
 }
-[];
 
 export interface repoFormatInterface {
   repositories: [
@@ -40,4 +39,3 @@ export interface repositoryAppInterface {
   status: string;
   age: string;
 }
-[];
