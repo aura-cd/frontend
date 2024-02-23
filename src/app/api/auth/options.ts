@@ -1,9 +1,9 @@
 import jwt_decode from "jwt-decode";
-import {Account, NextAuthOptions, Session} from "next-auth";
-import {JWT} from "next-auth/jwt";
+import { Account, NextAuthOptions, Session } from "next-auth";
+import { JWT } from "next-auth/jwt";
 import KeycloakProvider from "next-auth/providers/keycloak";
 
-import {encrypt} from "@/components/auth/encryption";
+import { encrypt } from "@/components/auth/encryption";
 
 export const authOptions: NextAuthOptions = {
   providers: [

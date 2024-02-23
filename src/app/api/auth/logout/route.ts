@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth";
 
-import { getIdToken } from "@/components/auth/sessionTokenAccessor";
 import { authOptions } from "@/app/api/auth/options";
+import { getIdToken } from "@/components/auth/sessionTokenAccessor";
 
 export async function GET() {
   const session = await getServerSession(authOptions);
