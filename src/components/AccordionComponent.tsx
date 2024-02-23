@@ -21,11 +21,16 @@ function AccordionComponent(props: { data: fetchOrganizationInterface }) {
               value={`item-${index}`}
             >
               <AccordionTrigger className='title'>
-                {item.organization}
+                <Link href={`${item.organization}`}>{item.organization}</Link>
               </AccordionTrigger>
               {item.repositories.map((repository: any, repoIndex: number) => (
-                <Link href={`/${repository}`} key={repoIndex}>
-                  <AccordionContent>{repository}</AccordionContent>
+                <Link
+                  href={`${item.organization}/${repository}`}
+                  key={repoIndex}
+                >
+                  <AccordionContent>
+                    <p className='repo-name'>{repository}</p>
+                  </AccordionContent>
                 </Link>
               ))}
             </AccordionItem>
