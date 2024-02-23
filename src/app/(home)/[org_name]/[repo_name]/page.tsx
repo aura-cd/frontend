@@ -4,7 +4,7 @@ import Pankuzu from "@/components/path/Pankuzu";
 import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import ButtonArea from "@/app/(home)/components/ButtonArea";
 import LastPath from "@/components/path/LastPath";
-import { RepoContext } from "@/api/useRepoContext";
+import { RepoContext } from "@/store/useRepoContext";
 import { useContext } from "react";
 const page = () => {
   const data = useContext(RepoContext);

@@ -4,7 +4,7 @@ import "./globals.css";
 import Sidebar from "@/components/sidebar/Sidebar";
 
 import SessionProviderWrapper from "@/components/auth/sessionProviderWrapper";
-import { RepoProvider } from "@/api/useRepoContext";
+import { RepoProvider } from "@/store/useRepoContext";
 
 const inter = Inter({ subsets: ["latin"] });
 

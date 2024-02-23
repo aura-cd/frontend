@@ -1,6 +1,6 @@
 import { repositoryAppInterface } from "@/api/interface/repository";
 import { fetchRepo } from "@/api/repository";
-import { RepoContext } from "@/api/useRepoContext";
+import { RepoContext } from "@/store/useRepoContext";
 import { useContext, useEffect } from "react";
 
 const useOrgById = () => {
