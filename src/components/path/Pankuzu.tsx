@@ -15,7 +15,7 @@ const Pankuzu = () => {
         <div className="links">home</div>
       </Link>
 
-      {router.split("/").map((path: any, index: number) => {
+      {router.split("/").map((path, index: number) => {
         if (path) {
           joinedPath += path + "/";
           return (

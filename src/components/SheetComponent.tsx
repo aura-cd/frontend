@@ -1,6 +1,5 @@
 import "@/styles/sheet.scss";
 
-import Link from "next/link";
 import { ReactNode } from "react";
 
 import TabComponent from "@/components/TabComponent";

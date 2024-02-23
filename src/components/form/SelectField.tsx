@@ -1,10 +1,11 @@
 import "@/styles/inputField.scss";
 
+import { Control } from "react-hook-form";
+
 import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import {
@@ -16,7 +17,7 @@ import {
 } from "@/components/ui/select";
 
 interface SelectFormProps {
-  form: any;
+  form: unknown;
   name: string;
   placeholder: string;
   options: { value: string }[];
@@ -26,7 +27,7 @@ const SelectForm = (props: SelectFormProps) => {
   return (
     <div className="field">
       <FormField
-        control={props.form}
+        control={props.form as Control}
         name={props.name}
         render={() => (
           <FormItem>

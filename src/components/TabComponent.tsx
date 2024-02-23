@@ -27,7 +27,6 @@ const TabComponent = () => {
 
       {tabData &&
         tabData.map((con: ReactNode, index: number) => (
-          //@ts-ignore
           <TabsContent key={index} value={title[index]}>
             {con}
           </TabsContent>

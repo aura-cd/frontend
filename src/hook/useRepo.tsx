@@ -26,7 +26,7 @@ const useRepo = (org_id: string) => {
         }
       }
     };
-    fetchData();
+    void fetchData();
   }, [org_id]);
 
   return {

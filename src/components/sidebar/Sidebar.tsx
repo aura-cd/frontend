@@ -3,13 +3,12 @@
 import "@/styles/Sidebar.scss";
 
 import Link from "next/link";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 
 import { SidebarData } from "@/components/sidebar/SidebarData";
 import SidebarIcon from "@/components/sidebar/SidebarIcon";
 
 const Sidebar = () => {
-  const router = useRouter();
   const params = useParams();
 
   return (

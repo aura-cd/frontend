@@ -4,7 +4,6 @@ import "@/styles//dataTable.scss";
 import { flexRender } from "@tanstack/react-table";
 import * as React from "react";
 
-import { fetchBrunchInterface } from "@/api/interface/brunch";
 import { repositoryAppInterface } from "@/api/interface/repository";
 import { columns } from "@/components/DataTable/Column";
 import useTableHooks from "@/components/DataTable/useTableHooks";

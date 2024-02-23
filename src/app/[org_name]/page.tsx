@@ -6,13 +6,10 @@ import Pankuzu from "@/components/path/Pankuzu";
 import TableComponent from "@/components/TableComponent";
 import { usePath } from "@/hook/usePath";
 import useRepo from "@/hook/useRepo";
-import { app, dummyData, repository } from "@/mock/repo";
 const Page = () => {
   const { orgName } = usePath();
+  const { appsData, repositoriesData } = useRepo(orgName);
 
-  // const { appsData, repositoriesData } = useRepo(orgName);
-  const repositoriesData = repository;
-  const appsData = app;
   return (
     <div className="container">
       <Pankuzu />

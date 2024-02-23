@@ -26,48 +26,42 @@ function ServiceForm() {
   });
 
   return (
-    <>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="form">
-          <div className="form-container">
-            <div>
-              <label className="form-label">kye</label>
-              <InputField form={form.control} name="kye" placeholder="kye" />
-            </div>
+    <Form {...form}>
+      <form onSubmit={() => form.handleSubmit(onSubmit)} className="form">
+        <div className="form-container">
+          <div>
+            <label className="form-label">kye</label>
+            <InputField form={form.control} name="kye" placeholder="kye" />
+          </div>
 
+          <div>
+            <label className="form-label">value</label>
+            <InputField form={form.control} name="value" placeholder="value" />
+          </div>
+          <div>
+            <label className="form-label">config</label>
+            <SelectField
+              form={form.control}
+              name="config"
+              placeholder="config"
+              options={[{ value: "true" }, { value: "false" }]}
+            />
+          </div>
+          <div className="button-area">
             <div>
-              <label className="form-label">value</label>
-              <InputField
-                form={form.control}
-                name="value"
-                placeholder="value"
-              />
+              <Button className="button" type="submit" variant={"secondary"}>
+                Cansell
+              </Button>
             </div>
             <div>
-              <label className="form-label">config</label>
-              <SelectField
-                form={form.control}
-                name="config"
-                placeholder="config"
-                options={[{ value: "true" }, { value: "false" }]}
-              />
-            </div>
-            <div className="button-area">
-              <div>
-                <Button className="button" type="submit" variant={"secondary"}>
-                  Cansell
-                </Button>
-              </div>
-              <div>
-                <Button className="submit-button" type="submit">
-                  Submit
-                </Button>
-              </div>
+              <Button className="submit-button" type="submit">
+                Submit
+              </Button>
             </div>
           </div>
-        </form>
-      </Form>
-    </>
+        </div>
+      </form>
+    </Form>
   );
 }
 

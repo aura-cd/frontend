@@ -27,55 +27,49 @@ function EnviromentsForm() {
   });
 
   return (
-    <>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="form">
-          <div className="wrap">
-            <div className="form-container">
-              <div>
-                <label className="form-label">Kye</label>
-              </div>
-              <InputField form={form.control} name="kye" placeholder="kye" />
+    <Form {...form}>
+      <form onSubmit={() => form.handleSubmit(onSubmit)} className="form">
+        <div className="wrap">
+          <div className="form-container">
+            <div>
+              <label className="form-label">Kye</label>
             </div>
+            <InputField form={form.control} name="kye" placeholder="kye" />
+          </div>
 
-            <div className="form-container">
-              <div>
-                <label className="form-label">Value</label>
-              </div>
-              <InputField
-                form={form.control}
-                name="value"
-                placeholder="value"
-              />
+          <div className="form-container">
+            <div>
+              <label className="form-label">Value</label>
             </div>
+            <InputField form={form.control} name="value" placeholder="value" />
+          </div>
 
-            <div className="form-container">
-              <div>
-                <label className="form-label">Config</label>
-              </div>
-              <SelectField
-                form={form.control}
-                name="config"
-                placeholder="config"
-                options={[{ value: "true" }, { value: "false" }]}
-              />
+          <div className="form-container">
+            <div>
+              <label className="form-label">Config</label>
             </div>
-            <div className="button-area">
-              <div>
-                <Button className="button" variant={"secondary"}>
-                  Cansell
-                </Button>
-              </div>
-              <div>
-                <Button className="submit-button" type="submit">
-                  Submit
-                </Button>
-              </div>
+            <SelectField
+              form={form.control}
+              name="config"
+              placeholder="config"
+              options={[{ value: "true" }, { value: "false" }]}
+            />
+          </div>
+          <div className="button-area">
+            <div>
+              <Button className="button" variant={"secondary"}>
+                Cansell
+              </Button>
+            </div>
+            <div>
+              <Button className="submit-button" type="submit">
+                Submit
+              </Button>
             </div>
           </div>
-        </form>
-      </Form>
-    </>
+        </div>
+      </form>
+    </Form>
   );
 }
 

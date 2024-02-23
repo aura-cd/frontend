@@ -17,7 +17,7 @@ export async function GET() {
     )}`;
 
     try {
-      const resp = await fetch(url, { method: "GET" });
+      await fetch(url, { method: "GET" });
     } catch (err) {
       console.error(err);
       return new Response(null, { status: 500 });

@@ -24,21 +24,19 @@ function LoginForm() {
   });
 
   return (
-    <>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="form">
-          <InputField
-            form={form.control}
-            name="pod_name"
-            placeholder="pod_name"
-          />
+    <Form {...form}>
+      <form onSubmit={() => form.handleSubmit(onSubmit)} className="form">
+        <InputField
+          form={form.control}
+          name="pod_name"
+          placeholder="pod_name"
+        />
 
-          <Button className="button" type="submit">
-            Submit
-          </Button>
-        </form>
-      </Form>
-    </>
+        <Button className="button" type="submit">
+          Submit
+        </Button>
+      </form>
+    </Form>
   );
 }
 

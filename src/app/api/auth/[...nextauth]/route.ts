@@ -1,12 +1,13 @@
 import jwt_decode from "jwt-decode";
-import NextAuth from "next-auth";
+import NextAuth, { Account, AuthOptions, Session } from "next-auth";
+import { JWT } from "next-auth/jwt";
 import KeycloakProvider from "next-auth/providers/keycloak";
 
 import { encrypt } from "@/components/auth/encryption";
 
 // this will refresh an expired access token, when needed
 
-async function refreshAccessToken(token: any) {
+async function refreshAccessToken(token: { refresh_token: string }) {
   const resp = await fetch(`${process.env.REFRESH_TOKEN_URL}`, {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({
@@ -17,7 +18,12 @@ async function refreshAccessToken(token: any) {
     }),
     method: "POST",
   });
-  const refreshToken = await resp.json();
+  const refreshToken = (await resp.json()) as {
+    access_token: string;
+    id_token: string;
+    expires_in: number;
+    refresh_token: string;
+  };
   if (!resp.ok) throw refreshToken;
 
   return {
@@ -30,7 +36,7 @@ async function refreshAccessToken(token: any) {
   };
 }
 
-export const authOptions = {
+export const authOptions: AuthOptions = {
   providers: [
     KeycloakProvider({
       clientId: `${process.env.DEMO_FRONTEND_CLIENT_ID}`,
@@ -40,10 +46,10 @@ export const authOptions = {
   ],
 
   callbacks: {
-    async jwt({ token, account }: any) {
+    async jwt({ token, account }: { token: JWT; account: Account | null }) {
       const nowTimeStamp = Math.floor(Date.now() / 1000);
 
-      if (account) {
+      if (account?.access_token) {
         // account is only available the first time this callback is called on a new session (after the user signs in)
 
         token.decoded = jwt_decode(account.access_token);
@@ -52,14 +58,16 @@ export const authOptions = {
         token.expires_at = account.expires_at;
         token.refresh_token = account.refresh_token;
         return token;
-      } else if (nowTimeStamp < token.expires_at) {
+      } else if (nowTimeStamp < Number(token.expires_at)) {
         // token has not expired yet, return it
         return token;
       } else {
         // token is expired, try to refresh it
         console.log("Token has expired. Will refresh...");
         try {
-          const refreshedToken = await refreshAccessToken(token);
+          const refreshedToken = await refreshAccessToken(
+            token as { refresh_token: string },
+          );
           console.log("Token is refreshed.");
           return refreshedToken;
         } catch (error) {
@@ -68,17 +76,25 @@ export const authOptions = {
         }
       }
     },
-    async session({ session, token }: any) {
+    session({ session: session_, token }: { session: Session; token: JWT }) {
       // Send properties to the client
-      session.access_token = encrypt(token.access_token); // see utils/sessionTokenAccessor.js
-      session.id_token = encrypt(token.id_token); // see utils/sessionTokenAccessor.js
-      session.roles = token.decoded.realm_access.roles;
+      const session = session_ as Session & {
+        access_token: string;
+        id_token: string;
+        roles: string[];
+        error: unknown;
+      };
+      session.access_token = encrypt(token.access_token as string); // see utils/sessionTokenAccessor.js
+      session.id_token = encrypt(token.id_token as string); // see utils/sessionTokenAccessor.js
+      session.roles = (
+        token.decoded as { realm_access: { roles: string[] } }
+      ).realm_access.roles;
       session.error = token.error;
       return session;
     },
   },
 };
 
-const handler = NextAuth(authOptions);
+const handler = NextAuth(authOptions) as typeof NextAuth;
 
 export { handler as GET, handler as POST };

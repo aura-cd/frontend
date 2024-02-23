@@ -11,7 +11,6 @@ import {
 } from "@tanstack/react-table";
 import { useState } from "react";
 
-import { fetchBrunchInterface } from "@/api/interface/brunch";
 import { repositoryAppInterface } from "@/api/interface/repository";
 import { columns } from "@/components/DataTable/Column";
 

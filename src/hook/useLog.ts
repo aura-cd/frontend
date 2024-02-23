@@ -10,7 +10,7 @@ const useLog = (organization: string, pod: string) => {
       `${process.env.NEXT_PUBLIC_API_URL}organizations/${organization}/pods/${pod}/log`,
     );
     sseRef.current.onmessage = (event) => {
-      setLog((prevLog) => [...prevLog, event.data]);
+      setLog((prevLog) => [...prevLog, event.data as string]);
     };
     return () => {
       sseRef.current?.close();

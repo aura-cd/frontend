@@ -1,8 +1,6 @@
 "use client";
 import "@/styles/appButton.scss";
 
-import { useEffect, useState } from "react";
-
 import ButtonArea from "@/app/(home)/components/ButtonArea";
 import AccordionComponent from "@/components/AccordionComponent";
 import Pankuzu from "@/components/path/Pankuzu";

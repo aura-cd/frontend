@@ -15,7 +15,7 @@ function AccordionComponent(props: { data: fetchOrganizationInterface[] }) {
     <div className="container">
       <Accordion type="single" collapsible>
         {props.data &&
-          props.data.map((item: any, index: number) => (
+          props.data.map((item, index: number) => (
             <AccordionItem
               key={index}
               className="itemContainer"
@@ -24,7 +24,7 @@ function AccordionComponent(props: { data: fetchOrganizationInterface[] }) {
               <AccordionTrigger className="title">
                 <Link href={`${item.organization}`}>{item.organization}</Link>
               </AccordionTrigger>
-              {item.repositories.map((repository: any, repoIndex: number) => (
+              {item.repositories.map((repository, repoIndex: number) => (
                 <Link
                   href={`${item.organization}/${repository}`}
                   key={repoIndex}

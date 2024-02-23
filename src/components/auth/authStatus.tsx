@@ -23,10 +23,10 @@ export default function AuthStatus() {
     if (
       status != "loading" &&
       session &&
-      // @ts-ignore
-      session.error === "RefreshAccessTokenError"
+      (session as unknown as { error: string }).error ===
+        "RefreshAccessTokenError"
     ) {
-      signOut({ callbackUrl: "/" });
+      void signOut({ callbackUrl: "/" });
     }
   }, [session, status]);
 
@@ -42,7 +42,9 @@ export default function AuthStatus() {
         <Button
           className="installAppButton"
           onClick={() => {
-            keycloakSessionLogOut().then(() => signOut({ callbackUrl: "/" }));
+            void keycloakSessionLogOut().then(() =>
+              signOut({ callbackUrl: "/" }),
+            );
           }}
         >
           Log out
@@ -53,7 +55,10 @@ export default function AuthStatus() {
 
   return (
     <div className="my-3">
-      <Button className="installAppButton" onClick={() => signIn("keycloak")}>
+      <Button
+        className="installAppButton"
+        onClick={() => void signIn("keycloak")}
+      >
         Log in
       </Button>
     </div>

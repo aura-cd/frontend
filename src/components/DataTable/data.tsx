@@ -1,5 +1,4 @@
 import { repositoryAppInterface } from "@/api/interface/repository";
-import SucceededStatus from "@/components/status/SucceededStatus";
 
 export const repositoryAppData: repositoryAppInterface[] = [
   {

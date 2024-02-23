@@ -3,7 +3,7 @@ import "@/styles/editor.scss";
 
 import YamlEditor from "@focus-reactive/react-yaml";
 const Editor = () => {
-  const handleChange = ({ json, text }: any) => {
+  const handleChange = ({ json }: { json: unknown }) => {
     console.log(json);
   };
   return (

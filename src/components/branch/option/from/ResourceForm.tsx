@@ -36,7 +36,7 @@ function ResourceForm() {
   return (
     <div className="wrap">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="form">
+        <form onSubmit={() => form.handleSubmit(onSubmit)} className="form">
           <div className="form-container">
             <div>
               <label className="form-label">Replicas</label>

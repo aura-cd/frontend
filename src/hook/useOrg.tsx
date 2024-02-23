@@ -4,7 +4,7 @@ import { fetchOrganizationInterface } from "@/api/interface/organization";
 import { fetchOrg } from "@/api/organization";
 
 export const useOrg = () => {
-  const [data, setData] = useState<fetchOrganizationInterface>();
+  const [data, setData] = useState<fetchOrganizationInterface[]>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,7 +15,7 @@ export const useOrg = () => {
       return res;
     };
 
-    fetchData();
+    void fetchData();
   }, []);
 
   return { data };

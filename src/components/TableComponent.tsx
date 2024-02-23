@@ -20,7 +20,7 @@ function TableDemo(props: { data: repositoryInterface[] }) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {props.data.map((row: any, index: number) => (
+        {props.data.map((row, index: number) => (
           <TableRow key={index}>
             <TableCell>{row.repository}</TableCell>
             <TableCell className="row-deployments">{row.deployments}</TableCell>

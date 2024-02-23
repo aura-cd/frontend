@@ -1,29 +1,23 @@
 import "@/styles/inputField.scss";
 
+import { Control, FieldValues } from "react-hook-form";
+
 import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-interface InputFieldProps {
-  form: any;
-  name: string;
-  label: string;
-  placeholder: string;
-}
-
 const InputField = (props: {
-  form: any;
+  form: unknown;
   name: string;
   placeholder: string;
 }) => {
   return (
     <div className="">
       <FormField
-        control={props.form}
+        control={props.form as Control<FieldValues>}
         name={props.name}
         render={({ field }) => (
           <FormItem>
