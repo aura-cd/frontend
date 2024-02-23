@@ -1,6 +1,6 @@
 "use client";
 
-import { fetchPullRequestInterface } from "@/api/interface/pullReqest";
+import { fetchPullRequestInterface } from "@/api/interface/deployment";
 export const fetchPullReq = async (
   org_id: string,
   repo_id: string,
