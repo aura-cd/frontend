@@ -1,12 +1,13 @@
-import { LuLoader } from "react-icons/lu";
 import "@/styles/status.scss";
+
+import { LuLoader } from "react-icons/lu";
 const PendingStatus = () => {
   return (
     <>
-      <div className='status-wrap'>
-        <LuLoader className='text-orange-500 text-2xl' />
+      <div className="status-wrap">
+        <LuLoader className="text-orange-500 text-2xl" />
 
-        <div className='text-orange-500 ml-1'>Pending</div>
+        <div className="text-orange-500 ml-1">Pending</div>
       </div>
     </>
   );

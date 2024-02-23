@@ -1,3 +1,12 @@
+import "@/styles/inputField.scss";
+
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import {
   Select,
   SelectContent,
@@ -5,14 +14,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  FormField,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormMessage,
-} from "@/components/ui/form";
-import "@/styles/inputField.scss";
 
 interface SelectFormProps {
   form: any;
@@ -23,7 +24,7 @@ interface SelectFormProps {
 
 const SelectForm = (props: SelectFormProps) => {
   return (
-    <div className='field'>
+    <div className="field">
       <FormField
         control={props.form}
         name={props.name}
@@ -31,7 +32,7 @@ const SelectForm = (props: SelectFormProps) => {
           <FormItem>
             <FormControl>
               <Select>
-                <SelectTrigger className=''>
+                <SelectTrigger className="">
                   <SelectValue placeholder={props.placeholder} />
                 </SelectTrigger>
                 <SelectContent>
@@ -39,7 +40,7 @@ const SelectForm = (props: SelectFormProps) => {
                     <SelectItem
                       key={option.value}
                       value={option.value}
-                      className='field'
+                      className="field"
                     >
                       {option.value}
                     </SelectItem>

@@ -1,12 +1,14 @@
 "use client";
+import "./style/form.scss";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+
 import { generalSchema } from "@/components/branch/option/from/formSchema";
+import InputField from "@/components/form/InputField";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
-import InputField from "@/components/form/InputField";
-import "./style/form.scss";
 // 3. Define your form schema.
 
 function LoginForm() {
@@ -24,14 +26,14 @@ function LoginForm() {
   return (
     <>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='form'>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="form">
           <InputField
             form={form.control}
-            name='pod_name'
-            placeholder='pod_name'
+            name="pod_name"
+            placeholder="pod_name"
           />
 
-          <Button className='button' type='submit'>
+          <Button className="button" type="submit">
             Submit
           </Button>
         </form>

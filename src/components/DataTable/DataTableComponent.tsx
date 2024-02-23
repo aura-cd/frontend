@@ -1,9 +1,14 @@
 "use client";
-import * as React from "react";
-import { flexRender } from "@tanstack/react-table";
-import { columns } from "@/components/DataTable/Column";
-import { Button } from "@/components/ui/button";
 import "@/styles//dataTable.scss";
+
+import { flexRender } from "@tanstack/react-table";
+import * as React from "react";
+
+import { fetchBrunchInterface } from "@/api/interface/brunch";
+import { repositoryAppInterface } from "@/api/interface/repository";
+import { columns } from "@/components/DataTable/Column";
+import useTableHooks from "@/components/DataTable/useTableHooks";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Table,
@@ -13,9 +18,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import useTableHooks from "@/components/DataTable/useTableHooks";
-import { fetchBrunchInterface } from "@/api/interface/brunch";
-import { repositoryAppInterface } from "@/api/interface/repository";
 // import { repositoryAppData } from "./data";
 function DataTableComponent(props: {
   pageSize: number;
@@ -26,29 +28,29 @@ function DataTableComponent(props: {
     data: props.data,
   });
   return (
-    <div className='container'>
-      <div className='flex justify-between  '>
-        <div className='flex items-center py-4'>
+    <div className="container">
+      <div className="flex justify-between  ">
+        <div className="flex items-center py-4">
           <Input
-            placeholder='Filter Name...'
+            placeholder="Filter Name..."
             value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
             onChange={(event) =>
               table.getColumn("name")?.setFilterValue(event.target.value)
             }
-            className='max-w-sm'
+            className="max-w-sm"
           />
         </div>
-        <div className='flex items-center justify-end space-x-2 py-4'>
-          <div className='space-x-2'>
+        <div className="flex items-center justify-end space-x-2 py-4">
+          <div className="space-x-2">
             <Button
-              variant='outline'
-              size='sm'
+              variant="outline"
+              size="sm"
               onClick={() => table.previousPage()}
             >
               Previous
             </Button>
             <Button
-              size='sm'
+              size="sm"
               onClick={() => table.nextPage()}
               disabled={!table.getCanNextPage()}
             >
@@ -58,7 +60,7 @@ function DataTableComponent(props: {
         </div>
       </div>
 
-      <div className='rounded-md border'>
+      <div className="rounded-md border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -70,7 +72,7 @@ function DataTableComponent(props: {
                         ? null
                         : flexRender(
                             header.column.columnDef.header,
-                            header.getContext()
+                            header.getContext(),
                           )}
                     </TableHead>
                   );
@@ -89,7 +91,7 @@ function DataTableComponent(props: {
                     <TableCell key={index}>
                       {flexRender(
                         cell.column.columnDef.cell,
-                        cell.getContext()
+                        cell.getContext(),
                       )}
                     </TableCell>
                   ))}
@@ -99,7 +101,7 @@ function DataTableComponent(props: {
               <TableRow>
                 <TableCell
                   colSpan={columns?.length}
-                  className='h-24 text-center'
+                  className="h-24 text-center"
                 >
                   No results.
                 </TableCell>

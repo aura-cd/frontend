@@ -1,7 +1,8 @@
+import jwt_decode from "jwt-decode";
 import NextAuth from "next-auth";
 import KeycloakProvider from "next-auth/providers/keycloak";
+
 import { encrypt } from "@/components/auth/encryption";
-import jwt_decode from "jwt-decode";
 
 // this will refresh an expired access token, when needed
 

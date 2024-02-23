@@ -1,11 +1,13 @@
 "use client";
 
-import { useSession, signIn, signOut } from "next-auth/react";
-import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import "@/styles//appButton.scss";
 import "@/styles/appButton.scss";
+
+import { signIn, signOut, useSession } from "next-auth/react";
+import { useEffect } from "react";
 import { RiLoaderFill } from "react-icons/ri";
+
+import { Button } from "@/components/ui/button";
 
 async function keycloakSessionLogOut() {
   try {
@@ -30,15 +32,15 @@ export default function AuthStatus() {
 
   if (status == "loading") {
     return (
-      <div className='loadingIcon'>
-        <RiLoaderFill className='' />
+      <div className="loadingIcon">
+        <RiLoaderFill className="" />
       </div>
     );
   } else if (session) {
     return (
-      <div className='mx-5'>
+      <div className="mx-5">
         <Button
-          className='installAppButton'
+          className="installAppButton"
           onClick={() => {
             keycloakSessionLogOut().then(() => signOut({ callbackUrl: "/" }));
           }}
@@ -50,8 +52,8 @@ export default function AuthStatus() {
   }
 
   return (
-    <div className='my-3'>
-      <Button className='installAppButton' onClick={() => signIn("keycloak")}>
+    <div className="my-3">
+      <Button className="installAppButton" onClick={() => signIn("keycloak")}>
         Log in
       </Button>
     </div>

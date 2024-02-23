@@ -1,6 +1,7 @@
 "use client";
-import { usePathname } from "next/navigation";
 import "@/styles//pankuzu.scss";
+
+import { usePathname } from "next/navigation";
 
 const LastPath = () => {
   const router = usePathname();
@@ -9,11 +10,11 @@ const LastPath = () => {
   const path = router.split("/")[routerLength - 1];
 
   return (
-    <div className='flex items-center text-sm px-4 w-full'>
+    <div className="flex items-center text-sm px-4 w-full">
       {routerLength === 2 ? (
-        <div className='path'>OrganizationName : {`< ${path} >`}</div>
+        <div className="path">OrganizationName : {`< ${path} >`}</div>
       ) : (
-        <div className='path'>RepositoryName : {`< ${path} >`}</div>
+        <div className="path">RepositoryName : {`< ${path} >`}</div>
       )}
     </div>
   );

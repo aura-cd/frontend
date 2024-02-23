@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
 import { Progress } from "@/components/ui/progress";
 
 const ProgressComponent = (props: { value: number }) => {
@@ -14,7 +15,7 @@ const ProgressComponent = (props: { value: number }) => {
   }, [props.value]);
 
   return (
-    <div className='w-full'>
+    <div className="w-full">
       <Progress value={progress} className={`w-[${progress - 100}%]`} />
     </div>
   );

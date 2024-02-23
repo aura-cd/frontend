@@ -1,9 +1,10 @@
-import {
-  fetchBrunchInterface,
-  dataTableInterface,
-} from "@/api/interface/brunch";
 import { useEffect, useState } from "react";
+
 import { fetchBranch } from "@/api/brunch";
+import {
+  dataTableInterface,
+  fetchBrunchInterface,
+} from "@/api/interface/brunch";
 
 const useBranch = (org_id: string, repo_id: string) => {
   const [data, setData] = useState<dataTableInterface[]>([]);
@@ -12,7 +13,7 @@ const useBranch = (org_id: string, repo_id: string) => {
     const fetchData = async (org_id: string, repo_id: string) => {
       const res: fetchBrunchInterface[] | undefined = await fetchBranch(
         org_id,
-        repo_id
+        repo_id,
       );
       if (res !== undefined) {
         const tableData: dataTableInterface[] = res.map((branch) => {

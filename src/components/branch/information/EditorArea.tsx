@@ -2,7 +2,7 @@ import Editor from "@/components/Editor";
 
 const EditorArea = () => {
   return (
-    <div className=''>
+    <div className="">
       <Editor />
     </div>
   );

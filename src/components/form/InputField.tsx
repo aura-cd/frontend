@@ -1,12 +1,13 @@
-import { Input } from "@/components/ui/input";
+import "@/styles/inputField.scss";
+
 import {
+  FormControl,
   FormField,
   FormItem,
   FormLabel,
-  FormControl,
   FormMessage,
 } from "@/components/ui/form";
-import "@/styles/inputField.scss";
+import { Input } from "@/components/ui/input";
 interface InputFieldProps {
   form: any;
   name: string;
@@ -20,7 +21,7 @@ const InputField = (props: {
   placeholder: string;
 }) => {
   return (
-    <div className=''>
+    <div className="">
       <FormField
         control={props.form}
         name={props.name}
@@ -28,7 +29,7 @@ const InputField = (props: {
           <FormItem>
             <FormControl>
               <Input
-                className='field'
+                className="field"
                 placeholder={props.placeholder}
                 {...field}
               />

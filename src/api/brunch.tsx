@@ -7,7 +7,7 @@ export const fetchBranch = async (org_id: string, repo_id: string) => {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/organizations/${org_id}/repositories/${repo_id}
       /branches
-    `
+    `,
     );
     // const data: fetchBrunchInterface[] = await response.json();
     const data = dummyData;

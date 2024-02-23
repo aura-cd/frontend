@@ -1,6 +1,7 @@
+import "@/styles/Sidebar.scss";
+
 import { ReactNode } from "react";
 import { Bs0CircleFill } from "react-icons/bs";
-import "@/styles/Sidebar.scss";
 
 interface SidebarDataProps {
   title: string;

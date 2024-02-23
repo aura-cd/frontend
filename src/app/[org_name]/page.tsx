@@ -1,12 +1,12 @@
 "use client";
-import Pankuzu from "@/components/path/Pankuzu";
-import TableComponent from "@/components/TableComponent";
 import ButtonArea from "@/app/(home)/components/ButtonArea";
 import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import LastPath from "@/components/path/LastPath";
-import { dummyData, repository, app } from "@/mock/repo";
+import Pankuzu from "@/components/path/Pankuzu";
+import TableComponent from "@/components/TableComponent";
 import { usePath } from "@/hook/usePath";
 import useRepo from "@/hook/useRepo";
+import { app, dummyData, repository } from "@/mock/repo";
 const Page = () => {
   const { orgName } = usePath();
 
@@ -14,7 +14,7 @@ const Page = () => {
   const repositoriesData = repository;
   const appsData = app;
   return (
-    <div className='container'>
+    <div className="container">
       <Pankuzu />
       <LastPath />
 

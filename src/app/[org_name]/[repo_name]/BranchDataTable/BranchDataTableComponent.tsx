@@ -1,9 +1,11 @@
 "use client";
-import * as React from "react";
-import { flexRender } from "@tanstack/react-table";
-import { columns } from "./Column";
-import { Button } from "@/components/ui/button";
 import "@/styles//dataTable.scss";
+
+import { flexRender } from "@tanstack/react-table";
+import * as React from "react";
+
+import { dataTableInterface } from "@/api/interface/brunch";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Table,
@@ -13,8 +15,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+
+import { columns } from "./Column";
 import useTableHooks from "./useTableHooks";
-import { dataTableInterface } from "@/api/interface/brunch";
 // import{dummyData} from "@/mock/branch";
 function BranchDataTableComponent(props: {
   pageSize: number;
@@ -25,29 +28,29 @@ function BranchDataTableComponent(props: {
     data: props.data,
   });
   return (
-    <div className='container'>
-      <div className='flex justify-between  '>
-        <div className='flex items-center py-4'>
+    <div className="container">
+      <div className="flex justify-between  ">
+        <div className="flex items-center py-4">
           <Input
-            placeholder='Filter Name...'
+            placeholder="Filter Name..."
             value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
             onChange={(event) =>
               table.getColumn("name")?.setFilterValue(event.target.value)
             }
-            className='max-w-sm'
+            className="max-w-sm"
           />
         </div>
-        <div className='flex items-center justify-end space-x-2 py-4'>
-          <div className='space-x-2'>
+        <div className="flex items-center justify-end space-x-2 py-4">
+          <div className="space-x-2">
             <Button
-              variant='outline'
-              size='sm'
+              variant="outline"
+              size="sm"
               onClick={() => table.previousPage()}
             >
               Previous
             </Button>
             <Button
-              size='sm'
+              size="sm"
               onClick={() => table.nextPage()}
               disabled={!table.getCanNextPage()}
             >
@@ -57,7 +60,7 @@ function BranchDataTableComponent(props: {
         </div>
       </div>
 
-      <div className='rounded-md border'>
+      <div className="rounded-md border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -69,7 +72,7 @@ function BranchDataTableComponent(props: {
                         ? null
                         : flexRender(
                             header.column.columnDef.header,
-                            header.getContext()
+                            header.getContext(),
                           )}
                     </TableHead>
                   );
@@ -88,7 +91,7 @@ function BranchDataTableComponent(props: {
                     <TableCell key={index}>
                       {flexRender(
                         cell.column.columnDef.cell,
-                        cell.getContext()
+                        cell.getContext(),
                       )}
                     </TableCell>
                   ))}
@@ -98,7 +101,7 @@ function BranchDataTableComponent(props: {
               <TableRow>
                 <TableCell
                   colSpan={columns?.length}
-                  className='h-24 text-center'
+                  className="h-24 text-center"
                 >
                   No results.
                 </TableCell>

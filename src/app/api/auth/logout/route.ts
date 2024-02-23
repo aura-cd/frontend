@@ -1,5 +1,6 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
+
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getIdToken } from "@/components/auth/sessionTokenAccessor";
 
 export async function GET() {
@@ -9,10 +10,10 @@ export async function GET() {
     const idToken = await getIdToken();
 
     // this will log out the user on Keycloak side
-    var url = `${
+    const url = `${
       process.env.END_SESSION_URL
     }?id_token_hint=${idToken}&post_logout_redirect_uri=${encodeURIComponent(
-      process.env.NEXTAUTH_URL!
+      process.env.NEXTAUTH_URL!,
     )}`;
 
     try {

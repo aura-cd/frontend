@@ -1,9 +1,10 @@
+import { useEffect, useState } from "react";
+
 import {
-  repositoryInterface,
   repositoryAppInterface,
+  repositoryInterface,
 } from "@/api/interface/repository";
 import { fetchRepo } from "@/api/repository";
-import { useEffect, useState } from "react";
 
 const useRepo = (org_id: string) => {
   const [appsData, setAppsData] = useState<repositoryAppInterface[]>();

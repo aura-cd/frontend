@@ -1,6 +1,7 @@
-import { fetchDeploymentInterface } from "@/api/interface/deployment";
 import { useEffect, useState } from "react";
+
 import { fetchDeployment } from "@/api/deployment";
+import { fetchDeploymentInterface } from "@/api/interface/deployment";
 const useBranch = (org_id: string, repo_id: string, pullReq_id: string) => {
   const [data, setData] = useState<fetchDeploymentInterface>();
 
@@ -9,7 +10,7 @@ const useBranch = (org_id: string, repo_id: string, pullReq_id: string) => {
       const res: fetchDeploymentInterface | undefined = await fetchDeployment(
         org_id,
         repo_id,
-        pullReq_id
+        pullReq_id,
       );
       if (res !== null && res !== undefined) {
         setData(res);

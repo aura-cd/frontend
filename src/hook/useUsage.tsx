@@ -1,6 +1,7 @@
+import { useEffect, useState } from "react";
+
 import { fetchUsageInterface } from "@/api/interface/usage";
 import { fetchUsage } from "@/api/usage";
-import { useEffect, useState } from "react";
 
 export const useUsage = (org_id: string, deploy_name: string) => {
   const [data, setData] = useState<fetchUsageInterface>();
@@ -14,7 +15,7 @@ export const useUsage = (org_id: string, deploy_name: string) => {
       return res;
     };
 
-    fetchData();
+    void fetchData();
   }, []);
 
   return { data };

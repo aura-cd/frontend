@@ -1,13 +1,15 @@
 "use client";
+import "./style/form.scss";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+
 import { serviceSchema } from "@/components/branch/option/from/formSchema";
-import { Button } from "@/components/ui/button";
-import { Form } from "@/components/ui/form";
 import InputField from "@/components/form/InputField";
 import SelectField from "@/components/form/SelectField";
-import "./style/form.scss";
+import { Button } from "@/components/ui/button";
+import { Form } from "@/components/ui/form";
 
 function ServiceForm() {
   function onSubmit(values: z.infer<typeof serviceSchema>) {
@@ -26,38 +28,38 @@ function ServiceForm() {
   return (
     <>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='form'>
-          <div className='form-container'>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="form">
+          <div className="form-container">
             <div>
-              <label className='form-label'>kye</label>
-              <InputField form={form.control} name='kye' placeholder='kye' />
+              <label className="form-label">kye</label>
+              <InputField form={form.control} name="kye" placeholder="kye" />
             </div>
 
             <div>
-              <label className='form-label'>value</label>
+              <label className="form-label">value</label>
               <InputField
                 form={form.control}
-                name='value'
-                placeholder='value'
+                name="value"
+                placeholder="value"
               />
             </div>
             <div>
-              <label className='form-label'>config</label>
+              <label className="form-label">config</label>
               <SelectField
                 form={form.control}
-                name='config'
-                placeholder='config'
+                name="config"
+                placeholder="config"
                 options={[{ value: "true" }, { value: "false" }]}
               />
             </div>
-            <div className='button-area'>
+            <div className="button-area">
               <div>
-                <Button className='button' type='submit' variant={"secondary"}>
+                <Button className="button" type="submit" variant={"secondary"}>
                   Cansell
                 </Button>
               </div>
               <div>
-                <Button className='submit-button' type='submit'>
+                <Button className="submit-button" type="submit">
                   Submit
                 </Button>
               </div>

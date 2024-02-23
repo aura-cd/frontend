@@ -5,7 +5,7 @@ import { dummyData } from "@/mock/repo";
 export const fetchRepo = async (org_id: string) => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/organizations/${org_id}/repositories`
+      `${process.env.NEXT_PUBLIC_API_URL}/organizations/${org_id}/repositories`,
     );
     const data: fetchRepositoryInterface = await response.json();
     // const data: fetchRepositoryInterface[] = dummyData;

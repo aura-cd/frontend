@@ -1,13 +1,16 @@
-import { FC, useState } from "react";
-import { useLog } from "@/hook/useLog";
+import "@patternfly/react-core/dist/styles/base.css";
+
+import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
+import WrapTextIcon from "@mui/icons-material/WrapText";
 import {
   LogViewer as LogViewer_,
   LogViewerSearch,
 } from "@patternfly/react-log-viewer";
-import "@patternfly/react-core/dist/styles/base.css";
+import { FC, useState } from "react";
+
+import { useLog } from "@/hook/useLog";
+
 import Styles from "./LogViewer.module.scss";
-import WrapTextIcon from "@mui/icons-material/WrapText";
-import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
 type Props = {
   organization: string;
@@ -26,7 +29,7 @@ const LogViewer: FC<Props> = ({ organization, pod }) => {
       scrollToRow={isScrollFollow ? log.length - 1 : undefined}
       toolbar={
         <div className={Styles.toolbar}>
-          <LogViewerSearch placeholder='Search value' minSearchChars={2} />
+          <LogViewerSearch placeholder="Search value" minSearchChars={2} />
           <button
             className={`${Styles.button} ${isTextWrapped && Styles.enable}`}
             onClick={() => setIsTextWrapped((pv) => !pv)}

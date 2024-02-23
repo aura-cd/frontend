@@ -1,6 +1,7 @@
+import { useEffect, useState } from "react";
+
 import { fetchOrganizationInterface } from "@/api/interface/organization";
 import { fetchOrg } from "@/api/organization";
-import { useEffect, useState } from "react";
 
 export const useOrg = () => {
   const [data, setData] = useState<fetchOrganizationInterface>();

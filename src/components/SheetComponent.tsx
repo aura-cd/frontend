@@ -1,3 +1,9 @@
+import "@/styles/sheet.scss";
+
+import Link from "next/link";
+import { ReactNode } from "react";
+
+import TabComponent from "@/components/TabComponent";
 import {
   Sheet,
   SheetContent,
@@ -5,10 +11,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import "@/styles/sheet.scss";
-import Link from "next/link";
-import { ReactNode } from "react";
-import TabComponent from "@/components/TabComponent";
 
 function SheetComponent({
   title,
@@ -24,7 +26,7 @@ function SheetComponent({
       <SheetTrigger asChild>{children}</SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle className='title'>{title}</SheetTitle>
+          <SheetTitle className="title">{title}</SheetTitle>
         </SheetHeader>
         <TabComponent />
       </SheetContent>

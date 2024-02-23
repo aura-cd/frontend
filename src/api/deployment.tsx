@@ -5,11 +5,11 @@ import { dummyData } from "@/mock/deploy";
 export const fetchDeployment = async (
   org_id: string,
   repo_id: string,
-  deployment_name: string
+  deployment_name: string,
 ) => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/organizations/${org_id}/repositories/${repo_id}/deployments/${deployment_name}`
+      `${process.env.NEXT_PUBLIC_API_URL}/organizations/${org_id}/repositories/${repo_id}/deployments/${deployment_name}`,
     );
     // const data: fetchDeploymentInterface = await response.json();
     const data = dummyData;

@@ -16,7 +16,7 @@ export interface repoFormatInterface {
     {
       repository: string;
       deployments: number;
-    }
+    },
   ];
   apps: [
     {
@@ -24,7 +24,7 @@ export interface repoFormatInterface {
       status: React.ReactNode;
       version: string;
       age: string;
-    }
+    },
   ];
 }
 [];
