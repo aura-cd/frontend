@@ -5,8 +5,9 @@ const useLog = (organization: string, pod: string) => {
   const sseRef = useRef<EventSource>();
   const [log, setLog] = useState<string[]>([]);
   useEffect(() => {
+    setLog([]);
     sseRef.current = new EventSource(
-      `http://localhost:8888/organizations/${organization}/pods/${pod}/log`
+      `${process.env.NEXT_PUBLIC_API_URL}organizations/${organization}/pods/${pod}/log`
     );
     sseRef.current.onmessage = (event) => {
       setLog((prevLog) => [...prevLog, event.data]);
@@ -14,7 +15,7 @@ const useLog = (organization: string, pod: string) => {
     return () => {
       sseRef.current?.close();
     };
-  }, []);
+  }, [organization, pod]);
   return log;
 };
 
