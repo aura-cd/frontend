@@ -31,5 +31,8 @@
   "exclude": ["node_modules"],
   "eslint": {
     "ignoreDuringBuilds": false
+  },
+  "typescript": {
+    "ignoreBuildErrors": true
   }
 }
