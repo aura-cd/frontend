@@ -5,10 +5,11 @@ import TableComponent from "@/components/TableComponent";
 import ButtonArea from "@/app/(home)/components/ButtonArea";
 import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import LastPath from "@/components/path/LastPath";
-import useOrgById from "@/hook/useOrgById";
-
+import { useEffect } from "react";
 const page = () => {
-  const data = useOrgById();
+  useEffect(() => {
+    // fetch data
+  }, []);
   const tadata = [
     {
       name: "Invoice 001",

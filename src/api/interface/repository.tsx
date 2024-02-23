@@ -40,3 +40,4 @@ export interface repositoryAppInterface {
   status: string;
   age: string;
 }
+[];

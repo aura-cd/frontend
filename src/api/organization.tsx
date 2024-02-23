@@ -2,14 +2,11 @@
 
 import { fetchOrganizationInterface } from "@/api/interface/organization";
 
-export const fetchOrganization = async () => {
+export const fetchOrg = async () => {
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/organizations
-    `,
-      {
-        method: "GET",
-      }
+    `
     );
     const data: fetchOrganizationInterface = await response.json();
 
