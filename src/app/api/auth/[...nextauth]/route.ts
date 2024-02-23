@@ -1,5 +1,5 @@
 import jwt_decode from "jwt-decode";
-import NextAuth, { Account, AuthOptions, Session } from "next-auth";
+import NextAuth, { Account, NextAuthOptions, Session } from "next-auth";
 import { JWT } from "next-auth/jwt";
 import KeycloakProvider from "next-auth/providers/keycloak";
 
@@ -36,7 +36,7 @@ async function refreshAccessToken(token: { refresh_token: string }) {
   };
 }
 
-export const authOptions: AuthOptions = {
+const authOptions: NextAuthOptions = {
   providers: [
     KeycloakProvider({
       clientId: `${process.env.DEMO_FRONTEND_CLIENT_ID}`,
