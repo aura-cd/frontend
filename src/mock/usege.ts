@@ -8,21 +8,10 @@ export const dummyData: fetchUsageInterface[] = [
       podName: "master",
       cpu: 0.5,
       memory: 0.5,
-      storage: "1Gi",
+      storage: 0.5,
     },
   },
 
-  {
-    organization: "sdc",
-    deploymentName: "develop",
-    isDisable: false,
-    deployments: {
-      podName: "develop",
-      cpu: 0.5,
-      memory: 0.5,
-      storage: "1Gi",
-    },
-  },
   {
     organization: "sdc",
     deploymentName: "feature/1",
@@ -31,7 +20,7 @@ export const dummyData: fetchUsageInterface[] = [
       podName: "feature/1",
       cpu: 0.5,
       memory: 0.5,
-      storage: "1Gi",
+      storage: 0.5,
     },
   },
   {
@@ -42,7 +31,7 @@ export const dummyData: fetchUsageInterface[] = [
       podName: "feature/2",
       cpu: 0.5,
       memory: 0.5,
-      storage: "1Gi",
+      storage: 0.5,
     },
   },
   {
@@ -53,7 +42,7 @@ export const dummyData: fetchUsageInterface[] = [
       podName: "feature/3",
       cpu: 0.5,
       memory: 0.5,
-      storage: "1Gi",
+      storage: 0.5,
     },
   },
   {
@@ -64,7 +53,7 @@ export const dummyData: fetchUsageInterface[] = [
       podName: "feature/4",
       cpu: 0.5,
       memory: 0.5,
-      storage: "1Gi",
+      storage: 0.5,
     },
   },
   {
@@ -75,7 +64,7 @@ export const dummyData: fetchUsageInterface[] = [
       podName: "feature/5",
       cpu: 0.5,
       memory: 0.5,
-      storage: "1Gi",
+      storage: 0.5,
     },
   },
   {
@@ -86,7 +75,18 @@ export const dummyData: fetchUsageInterface[] = [
       podName: "feature/6",
       cpu: 0.5,
       memory: 0.5,
-      storage: "1Gi",
+      storage: 0.5,
+    },
+  },
+  {
+    organization: "sdc",
+    deploymentName: "feature/7",
+    isDisable: false,
+    deployments: {
+      podName: "feature/7",
+      cpu: 0.5,
+      memory: 0.5,
+      storage: 0.5,
     },
   },
 ];

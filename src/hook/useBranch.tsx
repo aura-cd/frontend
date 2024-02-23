@@ -17,7 +17,7 @@ const useBranch = (org_id: string, repo_id: string) => {
       if (res !== undefined) {
         const tableData: dataTableInterface[] = res.map((branch) => {
           return {
-            branchName: branch.branchName,
+            branchName: branch.branch,
             status: branch.status,
             version: branch.version,
             age: branch.age,

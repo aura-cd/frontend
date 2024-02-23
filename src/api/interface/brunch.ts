@@ -1,6 +1,6 @@
 export interface fetchBrunchInterface {
   deploymentName: string;
-  branchName: string;
+  branch: string;
   pullRequestID: string;
   status: string;
   version: string;
