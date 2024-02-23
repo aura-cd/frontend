@@ -1,7 +1,9 @@
 export interface fetchBrunchInterface {
   branches: [
     {
-      name: string;
+      deploymentName: string;
+      branchName: string;
+      pullRequestName: string;
       status: string;
       version: string;
       age: string;

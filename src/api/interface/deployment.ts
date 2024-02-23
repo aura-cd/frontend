@@ -1,4 +1,4 @@
-export interface fetchPullRequestInterface {
+export interface fetchDeploymentInterface {
   branchName: string;
   gitHubLink: string;
   pods: [
