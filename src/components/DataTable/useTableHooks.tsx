@@ -10,7 +10,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { columns } from "./Column";
+import { columns } from "@/components/DataTable/Column";
 import { repositoryAppInterface } from "@/api/interface/repository";
 
 const useTableHooks = (props: {
@@ -23,7 +23,7 @@ const useTableHooks = (props: {
   const [rowSelection, setRowSelection] = useState({});
 
   const table = useReactTable({
-    data: props.data ,
+    data: props.data,
     columns,
 
     onSortingChange: setSorting,

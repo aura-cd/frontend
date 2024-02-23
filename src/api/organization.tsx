@@ -1,6 +1,6 @@
 "use client";
 
-import { fetchOrganizationInterface } from "./interface/organization";
+import { fetchOrganizationInterface } from "@/api/interface/organization";
 
 export const fetchOrganization = async () => {
   try {

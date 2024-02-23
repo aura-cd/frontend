@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
-import { repositoryAppInterface } from "./interface/repository";
+import { repositoryAppInterface } from "@/api/interface/repository";
 
 export const RepoContext = createContext(
   {} as {

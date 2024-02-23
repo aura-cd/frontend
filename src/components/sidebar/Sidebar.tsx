@@ -1,9 +1,9 @@
 "use client";
-import { ReactNode } from "react";
+
 import { useParams, useRouter } from "next/navigation";
-import { SidebarData } from "./SidebarData";
+import { SidebarData } from "@/components/sidebar/SidebarData";
 import "@/styles/Sidebar.scss";
-import SidebarIcon from "./SidebarIcon";
+import SidebarIcon from "@/components/sidebar/SidebarIcon";
 import Link from "next/link";
 
 const Sidebar = () => {
