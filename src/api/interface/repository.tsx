@@ -30,14 +30,10 @@ export interface repoFormatInterface {
 [];
 
 export interface repositoryAppInterface {
-  apps: [
-    {
-      name: string;
-      version: string;
-      status: string;
-      age: string;
-    }
-  ];
+  name: string;
+  version: string;
+  status: string;
+  age: string;
 }
 [];
 

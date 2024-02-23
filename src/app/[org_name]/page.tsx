@@ -4,9 +4,9 @@ import TableComponent from "@/components/TableComponent";
 import ButtonArea from "@/app/(home)/components/ButtonArea";
 import DataTableComponent from "@/components/DataTable/DataTableComponent";
 import LastPath from "@/components/path/LastPath";
-import { useEffect } from "react";
-import useRepo from "@/hook/useRepo";
+import { dummyData, repository, app } from "@/mock/repo";
 import { usePath } from "@/hook/usePath";
+import useRepo from "@/hook/useRepo";
 const Page = () => {
   const { orgName } = usePath();
   const { appsData, repositoriesData } = useRepo(orgName);
@@ -18,15 +18,15 @@ const Page = () => {
 
       <div>
         <ButtonArea />
-        {repositoriesData === undefined ? (
+        {repository === undefined ? (
           <div>loading...</div>
         ) : (
-          <TableComponent data={repositoriesData} />
+          <TableComponent data={repository} />
         )}
-        {appsData === undefined ? (
+        {app === undefined ? (
           <div>loading...</div>
         ) : (
-          <DataTableComponent pageSize={5} data={appsData} />
+          <DataTableComponent pageSize={5} data={app} />
         )}
       </div>
     </div>

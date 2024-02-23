@@ -15,7 +15,7 @@ const useRepo = (org_id: string) => {
       const res = await fetchRepo(org_id);
       if (res !== null && res !== undefined) {
         const apps: repositoryAppInterface[] = res.apps;
-        const repositories: repositoryInterface[] = res.repositories;
+        const repositories = res.repositories;
 
         if (apps !== null && apps !== undefined) {
           setAppsData(apps);

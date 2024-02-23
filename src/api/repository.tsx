@@ -7,8 +7,8 @@ export const fetchRepo = async (org_id: string) => {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/organizations/${org_id}/repositories`
     );
-    // const data: fetchRepositoryInterface = await response.json();
-    const data: fetchRepositoryInterface[] = dummyData;
+    const data: fetchRepositoryInterface = await response.json();
+    // const data: fetchRepositoryInterface[] = dummyData;
     return data;
   } catch (error) {
     console.error("Error fetching data", error);

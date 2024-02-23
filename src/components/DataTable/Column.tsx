@@ -21,7 +21,7 @@ export const columns: ColumnDef<repositoryAppInterface>[] = pro.map((item) => ({
   },
   cell: ({ row }) => (
     <div>
-      <SheetComponent title='rr' description='http'>
+      <SheetComponent title={row.original.name}>
         <div className='lowercase'>{row.getValue(item)}</div>
       </SheetComponent>
     </div>

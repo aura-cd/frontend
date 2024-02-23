@@ -34,3 +34,35 @@ export const dummyData: fetchRepositoryInterface[] = [
     ],
   },
 ];
+
+export const app = [
+  {
+    name: "sdc",
+    status: "active",
+    version: "v1.0.0",
+    age: "2 days",
+  },
+  {
+    name: "sdc",
+    status: "active",
+    version: "v1.0.0",
+    age: "2 days",
+  },
+  {
+    name: "sdc",
+    status: "active",
+    version: "v1.0.0",
+    age: "2 days",
+  },
+];
+
+export const repository = [
+  {
+    repository: "sdc",
+    deployments: 0,
+  },
+  {
+    repository: "sdc",
+    deployments: 0,
+  },
+];

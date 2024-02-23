@@ -21,7 +21,7 @@ function TableDemo(props: { data: repositoryInterface[] }) {
       <TableBody>
         {props.data.map((row: any, index: number) => (
           <TableRow key={index}>
-            <TableCell>{row.name}</TableCell>
+            <TableCell>{row.repository}</TableCell>
             <TableCell className='row-deployments'>{row.deployments}</TableCell>
           </TableRow>
         ))}

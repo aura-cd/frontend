@@ -6,6 +6,6 @@ export interface fetchUsageInterface {
     podName: string;
     cpu: number;
     memory: number;
-    storage: string;
+    storage: number;
   };
 }
