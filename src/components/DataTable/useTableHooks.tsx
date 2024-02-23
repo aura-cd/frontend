@@ -11,6 +11,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { columns } from "@/components/DataTable/Column";
+import { fetchBrunchInterface } from "@/api/interface/brunch";
 import { repositoryAppInterface } from "@/api/interface/repository";
 
 const useTableHooks = (props: {

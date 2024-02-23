@@ -6,9 +6,11 @@ import ButtonArea from "@/app/(home)/components/ButtonArea";
 import LastPath from "@/components/path/LastPath";
 import { useContext } from "react";
 import { usePath } from "@/hook/usePath";
-const page = () => {
+import useBranch from "@/hook/useBranch";
+const page = async () => {
   const { orgName, repoName } = usePath();
-  console.log(orgName, repoName);
+  const { data } = await useBranch(orgName, repoName);
+  console.log(orgName);
 
   return (
     <div className='container'>
@@ -16,7 +18,11 @@ const page = () => {
       <LastPath />
       <div>
         <ButtonArea />
-        {/* <DataTableComponent pageSize={5} /> */}
+        {data === undefined ? (
+          <DataTableComponent data={data} pageSize={5} />
+        ) : (
+          <div>loading...</div>
+        )}
       </div>
     </div>
   );

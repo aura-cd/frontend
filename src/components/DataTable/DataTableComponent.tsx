@@ -14,15 +14,16 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import useTableHooks from "@/components/DataTable/useTableHooks";
+import { fetchBrunchInterface } from "@/api/interface/brunch";
 import { repositoryAppInterface } from "@/api/interface/repository";
-import { repositoryAppData } from "./data";
+// import { repositoryAppData } from "./data";
 function DataTableComponent(props: {
   pageSize: number;
   data: repositoryAppInterface[];
 }) {
   const { table } = useTableHooks({
     pageSize: props.pageSize,
-    data: repositoryAppData,
+    data: props.data,
   });
   return (
     <div className='container'>
