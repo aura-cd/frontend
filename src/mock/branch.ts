@@ -1,4 +1,7 @@
-import { fetchBrunchInterface } from "@/api/interface/brunch";
+import {
+  dataTableInterface,
+  fetchBrunchInterface,
+} from "@/api/interface/brunch";
 export const dummyData: fetchBrunchInterface[] = [
   {
     deploymentName: "string",
@@ -79,5 +82,67 @@ export const dummyData: fetchBrunchInterface[] = [
     status: "string",
     version: "string",
     age: "string",
+  },
+];
+export const formatData: dataTableInterface[] = [
+  {
+    branch: "master",
+    status: "active",
+    version: "v1.0.0",
+    age: "2 days",
+  },
+  {
+    branch: "develop",
+    status: "active",
+    version: "v1.0.0",
+    age: "2 days",
+  },
+  {
+    branch: "feature/1",
+    status: "active",
+    version: "v1.0.0",
+    age: "2 days",
+  },
+  {
+    branch: "feature/2",
+    status: "active",
+    version: "v1.0.0",
+    age: "2 days",
+  },
+  {
+    branch: "feature/3",
+    status: "active",
+    version: "v1.0.0",
+    age: "2 days",
+  },
+  {
+    branch: "feature/4",
+    status: "active",
+    version: "v1.0.0",
+    age: "2 days",
+  },
+  {
+    branch: "feature/5",
+    status: "active",
+    version: "v1.0.0",
+    age: "2 days",
+  },
+  {
+    branch: "feature/6",
+    status: "active",
+    version: "v1.0.0",
+    age: "2 days",
+  },
+  {
+    branch: "feature/7",
+    status: "active",
+    version: "v1.0.0",
+    age: "2 days",
+  },
+  {
+    branch: "feature/8",
+    status: "active",
+    version: "v1.0.0",
+    age: "2 days",
   },
 ];

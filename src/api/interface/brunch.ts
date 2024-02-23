@@ -8,7 +8,7 @@ export interface fetchBrunchInterface {
 }
 [];
 export type dataTableInterface = {
-  branchName: string;
+  branch: string;
   status: string;
   version: string;
   age: string;

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { dataTableInterface } from "@/api/interface/brunch";
 import SheetComponent from "@/components/SheetComponent";
 
-const pro = ["branchName", "status", "version", "age"];
+const pro = ["branch", "status", "version", "age"];
 export const columns: ColumnDef<dataTableInterface>[] = pro.map((item) => ({
   accessorKey: item,
   header: ({ column }) => {
@@ -21,7 +21,7 @@ export const columns: ColumnDef<dataTableInterface>[] = pro.map((item) => ({
   },
   cell: ({ row }) => (
     <div>
-      <SheetComponent title={row.original.branchName}>
+      <SheetComponent title={row.original.branch}>
         <div className='lowercase'>{row.getValue(item)}</div>
       </SheetComponent>
     </div>

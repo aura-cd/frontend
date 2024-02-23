@@ -9,8 +9,10 @@ import { usePath } from "@/hook/usePath";
 import useRepo from "@/hook/useRepo";
 const Page = () => {
   const { orgName } = usePath();
-  const { appsData, repositoriesData } = useRepo(orgName);
 
+  // const { appsData, repositoriesData } = useRepo(orgName);
+  const repositoriesData = repository;
+  const appsData = app;
   return (
     <div className='container'>
       <Pankuzu />
@@ -18,15 +20,15 @@ const Page = () => {
 
       <div>
         <ButtonArea />
-        {repository === undefined ? (
+        {repositoriesData === undefined ? (
           <div>loading...</div>
         ) : (
-          <TableComponent data={repository} />
+          <TableComponent data={repositoriesData} />
         )}
-        {app === undefined ? (
+        {appsData === undefined ? (
           <div>loading...</div>
         ) : (
-          <DataTableComponent pageSize={5} data={app} />
+          <DataTableComponent pageSize={5} data={appsData} />
         )}
       </div>
     </div>
