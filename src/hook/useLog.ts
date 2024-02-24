@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import {ApiEndpoint} from "@/env";
 
 const useLog = (organization: string, pod: string) => {
   const sseRef = useRef<EventSource>();
@@ -7,7 +8,7 @@ const useLog = (organization: string, pod: string) => {
   useEffect(() => {
     setLog([]);
     sseRef.current = new EventSource(
-      `${process.env.NEXT_PUBLIC_API_URL}organizations/${organization}/pods/${pod}/log`,
+      `${ApiEndpoint}/organizations/${organization}/pods/${pod}/log`,
     );
     sseRef.current.onmessage = (event) => {
       setLog((prevLog) => [...prevLog, event.data as string]);
