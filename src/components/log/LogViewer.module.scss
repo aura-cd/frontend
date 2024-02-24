@@ -1,0 +1,15 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  .button {
+    width: 36px;
+    height: 36px;
+    padding: 5px;
+    flex-shrink: 0;
+  }
+  .enable {
+    background-color: #c0c0c0;
+    border-radius: 50%;
+  }
+}
