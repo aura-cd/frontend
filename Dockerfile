@@ -18,5 +18,7 @@ WORKDIR /app
 
 COPY --from=builder /app ./
 
+EXPOSE 3000
+
 # Copy artifacts
 CMD ["./start.sh"]
