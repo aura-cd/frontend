@@ -14,7 +14,7 @@ import './global.css';
 export const App: FC = () => {
   return (
     <ProviderRoot>
-      <div>App</div>
+      <div>Aura-CD</div>
       {/* <RouterProvider router={router} /> */}
     </ProviderRoot>
   );
