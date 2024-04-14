@@ -1,0 +1,17 @@
+{
+  "name": "RITTAI ROOM 360 VIEWER",
+  "short_name": "ROOM 360 VIEWER",
+  "icons": [
+    {
+      "src": "/assets/images/logo/app_icon.png",
+      "sizes": "480x480",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#009996",
+  "background_color": "#ffffff",
+  "orientation": "any"
+}
